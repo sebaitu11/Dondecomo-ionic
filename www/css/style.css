@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+.resto-image {
+  width: 320px;
+  margin-top: -70px;
+
+}
+.image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.title-container h2 {
+  text-align: center;
+}

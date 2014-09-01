@@ -1,0 +1,13 @@
+<ion-view title="Barrios">
+  <ion-content class="has-header padding">
+   
+    <div class="list" ng-repeat="barrio in barrios">
+      <a class="item item-thumbnail-left" href="#/tab/barrio/{{barrio.id}}">
+        <img ng-src="img/barrio.jpg">
+        <h2>{{barrio.name}}</h2>
+        <p>{{barrio.details}}</p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view title="Restaurantes">
+  <ion-content class="has-header padding">
+   
+    <div class="list" ng-repeat="resto in restos">
+      <a class="item item-thumbnail-left" href="#/tab/resto/{{resto.id}}">
+        <img ng-src="img/{{resto.image}}.jpg">
+        <h2>{{resto.name}}</h2>
+        <p>{{resto.details}}</p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>
