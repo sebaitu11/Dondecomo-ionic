@@ -32,8 +32,8 @@
     </button>
   </div>
 
-    <div class="list" ng-repeat="resto in restos | filter : search">
-      <a class="item item-avatar" href="#/tab/resto/{{resto.id}}">
+    <div class="list">
+      <a ng-repeat="resto in restos | filter : search" class="item item-avatar" href="#/tab/resto/{{resto.id}}">
         <img ng-src="img/{{resto.image}}.jpg">
         <h2>{{resto.name}}</h2>
         <p>{{resto.details}}</p>

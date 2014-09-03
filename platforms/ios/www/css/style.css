@@ -1,6 +1,38 @@
 .list {
   margin-bottom: 10px !important; }
 
+.resto-slides {
+  height: 180px; }
+
+.slider-pager .slider-pager-page {
+  color: #c1c1c1 !important; }
+
+.image-container img {
+  width: 100%; }
+
+.restos-data {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%; }
+  .restos-data .data {
+    position: absolute;
+    top: 23%;
+    text-align: center;
+    width: 100%; }
+    .restos-data .data h2 {
+      color: #fff;
+      font-weight: bold;
+      font-size: 2.8em;
+      margin-top: 10px;
+      font-family: "Times New Roman", Georgia, Serif;
+      font-style: italic; }
+    .restos-data .data p {
+      color: #f39c12;
+      font-weight: bold;
+      font-size: 0.9em; }
+
 .barrio-slides {
   width: 320px !important;
   overflow: hidden; }
@@ -23,12 +55,20 @@
       .barrio-slides .image-container .barrio-data .data h2 {
         color: #fff;
         font-weight: bold;
-        font-size: 2.5em;
-        margin-top: 10px; }
+        font-size: 2.8em;
+        margin-top: 10px;
+        font-family: "Times New Roman", Georgia, Serif;
+        font-style: italic; }
       .barrio-slides .image-container .barrio-data .data p {
         color: #f39c12;
         font-weight: bold;
         font-size: 0.9em; }
+
+.image-container-detail {
+  height: 190px;
+  overflow: hidden; }
+  .image-container-detail img {
+    width: 100%; }
 
 .bar-stable {
   background: #c0392b !important; }
