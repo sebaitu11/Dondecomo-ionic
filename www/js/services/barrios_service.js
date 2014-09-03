@@ -4,7 +4,7 @@ angular.module('restoApp.services')
   return {
     all:function(){
       var deferred = $q.defer()
-      $http.get("http://10.0.1.4:3000/barrios")
+      $http.get("http://192.168.0.13:3000/barrios.json",{cache:true})
           .success(function(response){
               deferred.resolve(response)
           })

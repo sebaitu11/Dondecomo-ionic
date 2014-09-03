@@ -1,10 +1,19 @@
 
-angular.module('restoApp', ['ionic', 'restoApp.controllers', 'restoApp.services', 'restoApp.directives'])
+angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.controllers', 'restoApp.services', 'restoApp.directives'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, DSCacheFactory,$http) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+  DSCacheFactory('defaultCache', {
+        maxAge: 900000, // Items added to this cache expire after 15 minutes.
+        cacheFlushInterval: 6000000, // This cache will clear itself every hour.
+        deleteOnExpire: 'aggressive' // Items will be deleted from this cache right when they expire.
+    });
+
+    $http.defaults.cache = DSCacheFactory.get('defaultCache');
+
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
@@ -67,6 +76,36 @@ angular.module('restoApp', ['ionic', 'restoApp.controllers', 'restoApp.services'
         'tab-carta': {
           templateUrl: 'templates/tab-carta.html',
           controller: 'CartaCtrl'
+        }
+      }
+    })
+
+    .state('tab.platos', {
+      url: '/carta/:categoryId/platos',
+      views: {
+        'tab-carta': {
+          templateUrl: 'templates/tab-platos.html',
+          controller: 'PlatosCtrl'
+        }
+      }
+    })
+
+    .state('tab.menu', {
+      url: '/menu',
+      views: {
+        'tab-menu': {
+          templateUrl: 'templates/tab-menu.html',
+          controller: 'MenuCtrl'
+        }
+      }
+    })
+    
+    .state('tab.promos', {
+      url: '/promos',
+      views: {
+        'tab-promos': {
+          templateUrl: 'templates/tab-promociones.html',
+          controller: 'PromosCtrl'
         }
       }
     })

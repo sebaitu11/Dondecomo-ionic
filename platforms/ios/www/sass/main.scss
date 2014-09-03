@@ -1,0 +1,13 @@
+@import  "resto-view";
+@import  "barrios-view";
+@import  "resto-detail-view";
+
+.bar-stable {
+  background: #c0392b !important;
+  .title {
+    color: #fff !important;
+  }
+  .button {
+    color: #fff !important;
+  }
+}

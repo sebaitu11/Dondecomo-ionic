@@ -1,8 +1,39 @@
-<ion-view title="Restaurantes">
-  <ion-content class="has-header padding">
-   
-    <div class="list" ng-repeat="resto in restos">
-      <a class="item item-thumbnail-left" href="#/tab/resto/{{resto.id}}">
+<ion-view title="{{barrio.name}}"  >
+  <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-ios7-search" ng-click="switchSearch(showSearch)"></button>
+    </ion-nav-buttons>
+  <ion-content class="has-header">
+
+  <ion-slide-box ng-if="dataIsThere" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
+      
+      <ion-slide ng-repeat="resto in premRestos">  
+          <a  href="#/tab/resto/{{resto.id}}">
+          <div class="image-container">
+            <img ng-src="img/{{resto.image}}.jpg">
+            <div class="restos-data">
+              <div class="data">
+                <h2>{{resto.name}}</h2>
+                <p>{{resto.details}}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </ion-slide>
+
+  </ion-slide-box>
+
+     <div class="bar bar-header item-input-inset" ng-show="showSearch">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input type="search" ng-model="search" placeholder="Search">
+    </label>
+    <button class="button button-clear" ng-click="switchSearch(showSearch)">
+      Cancel
+    </button>
+  </div>
+
+    <div class="list" ng-repeat="resto in restos | filter : search">
+      <a class="item item-avatar" href="#/tab/resto/{{resto.id}}">
         <img ng-src="img/{{resto.image}}.jpg">
         <h2>{{resto.name}}</h2>
         <p>{{resto.details}}</p>

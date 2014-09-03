@@ -1,7 +1,10 @@
-<ion-content class="has-header padding">   
-  <div class="list">
-      <li class="item item-icon-left" ng-repeat="categoria in categorias">
-        <p>{{categoria.name}}</p>
-      </li>
-    </div>
-</ion-content>
+<ion-view title="{{resto.name}}">
+  <ion-content class="has-header padding">   
+    <div class="list">
+        <a class="item" href="#/tab/carta/{{categoria.id}}/platos" ng-repeat="categoria in categorias">
+          <p>{{categoria.name}}</p>
+          <span class="badge badge-assertive">{{categoria.cantidadPlatos}}</span>
+        </a>
+      </div>
+  </ion-content>
+</ion-view>
