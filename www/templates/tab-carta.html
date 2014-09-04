@@ -1,10 +1,12 @@
 <ion-view title="{{resto.name}}">
   <ion-content class="has-header padding">   
-    <div class="list">
-        <a class="item" href="#/tab/carta/{{categoria.id}}/platos" ng-repeat="categoria in categorias">
-          <p>{{categoria.name}}</p>
-          <span class="badge badge-assertive">{{categoria.cantidadPlatos}}</span>
-        </a>
-      </div>
+<!--   <ion-nav-buttons side="left">
+    <button class="back-button" ng-click="back()">
+      <i class="ion-ios7-arrow-left"></i><span>{{barrio.name}}</span>
+    </button>
+  </ion-nav-buttons> -->
+
+    <ng-include src="'templates/partials/tab-carta/_list-carta.html'"></ng-include>
+
   </ion-content>
 </ion-view>

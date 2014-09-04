@@ -3,6 +3,31 @@
     <div class="image-container-detail">
       <img class="resto-image" ng-src="img/{{resto.image}}.jpg">  
     </div>
+    <div class="resto-details">
+      <div class="atributos">
+        <div class="atributo" ng-if="resto.hasReservas">
+          <p class="reservas" >R</p>
+          <span>Reserva</span>  
+        </div>  
+        <div class="atributo" ng-if="resto.hasFumadores">
+          <p class="fumadores" >F</p>
+          <span>Fumadores</span>  
+        </div>  
+        <div class="atributo" ng-if="resto.hasMenu">
+          <p class="menuAtribute" >M</p>  
+          <span>Menu</span>  
+        </div>  
+        <div class="atributo" ng-if="resto.hasTickets">
+          <p class="tickets">T</p>  
+          <span>Tickets</span>  
+        </div>  
+        <div class="atributo extend" ng-if="resto.hasParking">
+          <p class="parking" >E</p>    
+          <span>Estacionamiento</span>  
+        </div>  
+      </div>
+    </div>
+
     <div class="list">
 
       <li class="item item-icon-left">

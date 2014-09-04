@@ -6,13 +6,44 @@
 }
 .slider-pager .slider-pager-page {
   color: #c1c1c1!important;
-
 }
 .image-container{
   img {
     width: 100%;
   }
 }
+.atributos {
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  
+  .reservas {
+    background: #e74c3c;
+  }
+  .fumadores {
+    background: #8e44ad;
+  }
+  .menuAtribute {
+    background: #f1c40f;
+  }
+  .tickets {
+    background: #2980b9;
+  }
+  .parking {
+    background: #16a085;
+  }
+  p {
+    border-radius: 6px;
+    color: #fff;
+    float: left;
+    font-weight: bold;
+    font-size: 0.7em;
+    margin: 0 0.2em;
+    padding: 0.1em 0.3em;
+  }
+}
+
+
 .restos-data{
   background: rgba(0, 0, 0, 0.5);
   position: absolute;

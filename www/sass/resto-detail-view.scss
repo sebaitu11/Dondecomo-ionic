@@ -5,3 +5,30 @@
     width: 100%;
   }
 }
+.resto-details {
+  background: #ecf0f1;
+  padding: 0.4em 0;
+  overflow: hidden;
+  .atributos{
+    position: static !important;
+    .atributo {
+      width: 33%;
+      float: left;
+      span {
+        display: block;
+        margin-top: 7px;
+      }
+      p {
+        margin-left: 1.1em;
+      }
+    }
+    .extend {
+      width: 44%;
+    }
+    p {
+      font-size: 1em;
+      margin:0.3em 0.2em;
+      padding: 0.2em 0.3em;
+    }
+  }
+}

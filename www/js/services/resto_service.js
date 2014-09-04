@@ -23,6 +23,12 @@ angular.module('restoApp.services')
               deferred.reject();
           })
       return deferred.promise; 
+    },
+    setSelectedResto:function(resto){
+        this.selectedResto = resto 
+    },
+    getSelectedResto:function(){
+        return this.selectedResto
     }
   }
 }]);

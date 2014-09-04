@@ -1,0 +1,14 @@
+<div class="list">
+  <a ng-repeat="resto in restos | filter : search" class="item item-avatar" href="#/tab/resto/{{resto.id}}">
+    <img ng-src="img/{{resto.image}}.jpg">
+    <h2>{{resto.name}}</h2>
+    <p>{{resto.details}}</p>
+    <div class="atributos">
+      <p class="reservas" ng-if="resto.reservas">R</p>
+      <p class="fumadores" ng-if="resto.fumadores">F</p>
+      <p class="menuAtribute" ng-if="resto.menu">M</p>  
+      <p class="tickets" ng-if="resto.tickets">T</p>  
+      <p class="parking" ng-if="resto.parking">E</p>    
+    </div>
+  </a>
+</div>

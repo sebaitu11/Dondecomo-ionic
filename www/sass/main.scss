@@ -1,6 +1,7 @@
 @import  "resto-view";
 @import  "barrios-view";
 @import  "resto-detail-view";
+@import  "carta-view";
 
 .bar-stable {
   background: #c0392b !important;
@@ -10,4 +11,7 @@
   .button {
     color: #fff !important;
   }
+}
+.bar {
+  border-bottom: none;
 }

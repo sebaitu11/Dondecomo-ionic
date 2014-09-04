@@ -1,4 +1,4 @@
-<ion-view title="{{barrio.name}}"  >
+<ion-view title="{{barrio.name}}">
   <ion-nav-buttons side="right">
       <button class="button button-icon icon ion-ios7-search" ng-click="switchSearch(showSearch)"></button>
     </ion-nav-buttons>
@@ -22,7 +22,7 @@
 
   </ion-slide-box>
 
-     <div class="bar bar-header item-input-inset" ng-show="showSearch">
+  <div class="bar bar-header item-input-inset" ng-show="showSearch">
     <label class="item-input-wrapper">
       <i class="icon ion-ios7-search placeholder-icon"></i>
       <input type="search" ng-model="search" placeholder="Search">
@@ -37,6 +37,13 @@
         <img ng-src="img/{{resto.image}}.jpg">
         <h2>{{resto.name}}</h2>
         <p>{{resto.details}}</p>
+        <div class="atributos">
+          <p class="reservas" ng-if="resto.reservas">R</p>
+          <p class="fumadores" ng-if="resto.fumadores">F</p>
+          <p class="menuAtribute" ng-if="resto.menu">M</p>  
+          <p class="tickets" ng-if="resto.tickets">T</p>  
+          <p class="parking" ng-if="resto.parking">E</p>    
+        </div>
       </a>
     </div>
 

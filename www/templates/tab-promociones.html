@@ -1,13 +1,7 @@
 <ion-view title="{{resto.name}}">
   <ion-content class="has-header padding">   
     
-    <div class="list" ng-repeat="promo in promos">
-      <a class="item item-thumbnail-left" href="#">
-        <img ng-src="img/plato.jpeg">
-        <h2>{{promo.name}}</h2>
-      </a>
-    </div>
-
+   <ng-include src="'templates/partials/tab-promociones/_list-promos.html'"></ng-include>
 
   </ion-content>
 </ion-view>

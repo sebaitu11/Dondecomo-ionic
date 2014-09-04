@@ -7,7 +7,8 @@ angular.module('restoApp.controllers')
     $scope.resto = response.resto.resto;  
     $scope.info = response.resto.info
     
-    $scope.$root.resto = response.resto.resto
+    Restos.setSelectedResto($scope.resto)
+    
     $scope.value = true;
 
   });

@@ -10,6 +10,28 @@
 .image-container img {
   width: 100%; }
 
+.atributos {
+  position: absolute;
+  top: 11px;
+  right: 10px; }
+  .atributos .reservas {
+    background: #e74c3c; }
+  .atributos .fumadores {
+    background: #8e44ad; }
+  .atributos .menuAtribute {
+    background: #f1c40f; }
+  .atributos .tickets {
+    background: #2980b9; }
+  .atributos .parking {
+    background: #16a085; }
+  .atributos p {
+    border-radius: 4px;
+    color: #fff;
+    float: left;
+    font-size: 0.7em;
+    margin: 0 0.2em;
+    padding: 0 0.3em; }
+
 .restos-data {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -39,7 +61,7 @@
   .barrio-slides .barrio-slide {
     position: relative; }
   .barrio-slides .image-container img {
-    height: 90vh;
+    height: 86vh;
     width: auto !important; }
   .barrio-slides .image-container .barrio-data {
     background: rgba(0, 0, 0, 0.5);
@@ -70,9 +92,43 @@
   .image-container-detail img {
     width: 100%; }
 
+.resto-details {
+  background: #ecf0f1;
+  padding: 0.4em 0;
+  overflow: hidden; }
+  .resto-details .atributos {
+    position: static !important; }
+    .resto-details .atributos .atributo {
+      width: 33%;
+      float: left; }
+      .resto-details .atributos .atributo span {
+        display: block;
+        margin-top: 7px; }
+      .resto-details .atributos .atributo p {
+        margin-left: 1.1em; }
+    .resto-details .atributos .extend {
+      width: 44%; }
+    .resto-details .atributos p {
+      font-size: 1em;
+      margin: 0.3em 0.2em;
+      padding: 0.2em 0.3em; }
+
+.back-button {
+  background: none;
+  border: none;
+  color: #fff; }
+  .back-button span {
+    display: block;
+    font-size: 0.9em; }
+  .back-button i {
+    font-size: 1.2em; }
+
 .bar-stable {
   background: #c0392b !important; }
   .bar-stable .title {
     color: #fff !important; }
   .bar-stable .button {
     color: #fff !important; }
+
+.bar {
+  border-bottom: none; }

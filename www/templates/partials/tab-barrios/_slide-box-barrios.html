@@ -1,0 +1,18 @@
+<ion-slide-box ng-if="dataIsThere" class="barrio-slides" on-slide-changed="slideHasChanged($index)">
+    
+    <ion-slide ng-repeat="barrio in barrios">  
+        <a  href="#/tab/barrio/{{barrio.id}}">
+        <div class="image-container">
+          <img ng-src="img/barrio{{barrio.id}}.jpg">
+          <div class="barrio-data">
+            <div class="data">
+              <h2>{{barrio.name}}</h2>
+              <p>{{barrio.details}}</p>
+              <p>{{barrio.restosCount}} Restaurants en este Barrio</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </ion-slide>
+
+</ion-slide-box>

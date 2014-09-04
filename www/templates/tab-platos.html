@@ -1,12 +1,7 @@
 <ion-view title="{{resto.name}}">
   <ion-content class="has-header padding">
    
-    <div class="list" ng-repeat="plato in platos">
-      <a class="item item-thumbnail-left" href="#/tab/resto/{{resto.id}}">
-        <img ng-src="img/plato.jpeg">
-        <h2>{{plato.name}}</h2>
-      </a>
-    </div>
-
+   <ng-include src="'templates/partials/tab-platos/_list-platos.html'"></ng-include>
+   
   </ion-content>
 </ion-view>

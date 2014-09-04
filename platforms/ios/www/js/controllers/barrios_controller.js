@@ -9,6 +9,8 @@ angular.module('restoApp.controllers')
     $scope.barrios = response;
     LoadingService.hide()
     $scope.dataIsThere = true;
+
+    $scope.$root.barrios = response
   })
 
   $scope.$root.tabsHidden = "tabs-item-hide";

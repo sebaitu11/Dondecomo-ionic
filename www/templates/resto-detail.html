@@ -3,28 +3,10 @@
     <div class="image-container-detail">
       <img class="resto-image" ng-src="img/{{resto.image}}.jpg">  
     </div>
-    <div class="list">
 
-      <li class="item item-icon-left">
-        <i class="icon ion-email"></i>
-        <p>{{info.email}}</p>
-      </li>
+    <ng-include src="'templates/partials/resto-details/_resto-attributes.html'"></ng-include>
 
-      <li class="item item-icon-left item-icon-right">
-        <i class="icon ion-ios7-telephone-outline"></i>
-        <p>{{info.telefono}}</p>
-      </li>
-
-      <li class="item item-icon-left">
-        <i class="icon ion-compass"></i>
-        <p>{{info.direccion}}</p>
-      </li>
-
-      <li class="item item-icon-left">
-        <i class="icon ion-person-stalker"></i>
-        <p>{{info.capacidad}}</p>
-      </li>
-
-    </div>
+    <ng-include src="'templates/partials/resto-details/_resto-info.html'"></ng-include>
+    
   </ion-content>
 </ion-view>
