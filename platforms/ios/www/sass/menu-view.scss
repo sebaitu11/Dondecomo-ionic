@@ -1,0 +1,17 @@
+.menu-card {
+  margin-top: 8px !important;
+  .price {
+    background: #ecf0f1;
+    text-align: right;
+    width: 100%;
+      p {
+        font-size: 1.2em !important;
+        font-weight: bold;
+        font-family: cursive;
+        margin-right: 1em;
+    }
+  }
+  .full-image {
+    height: 100%;
+  }
+}

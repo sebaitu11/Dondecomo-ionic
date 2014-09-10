@@ -1,12 +1,23 @@
-<ion-view title="{{resto.name}}">
-  <ion-content ng-show="value" has-header="true">
+<ion-view title="{{resto.name}}" >
+  <ion-content on-scroll="position()" class="resto-detail-view" ng-show="value" has-header="true">
+    
     <div class="image-container-detail">
       <img class="resto-image" ng-src="img/{{resto.image}}.jpg">  
     </div>
 
-    <ng-include src="'templates/partials/resto-details/_resto-attributes.html'"></ng-include>
+    <ng-include src="'templates/partials/resto-details/_resto-attributes.html'"></ng-include>    
 
-    <ng-include src="'templates/partials/resto-details/_resto-info.html'"></ng-include>
+    <div class="button-bar">
+      <a class="button" ui-sref="tab.restos-detail.info" ng-click="selectTab(1)"ng-class="{'active' : data.activeButton == 1}">Info    
+      </a>
+      <a class="button" ui-sref="tab.restos-detail.carta" ng-click="selectTab(2)" ng-class="{'active' : data.activeButton == 2}">Carta</a>
+      <a class="button" ui-sref="tab.restos-detail.menu" ng-click="selectTab(3)" ng-class="{'active' : data.activeButton == 3}">Menu del dia</a>
+      <a class="button" ui-sref="tab.restos-detail.promos" ng-click="selectTab(4)" ng-class="{'active' : data.activeButton == 4}">Promociones</a>
+    </div>
     
+    <ng-include ng-if="data.activeButton == 1" src="'templates/partials/resto-details/_resto-info.html'"></ng-include>    
+
+    <div ng-if="data.activeButton != 1" animation="slide-left-right" ui-view name="tab-data"></div>
+  
   </ion-content>
 </ion-view>

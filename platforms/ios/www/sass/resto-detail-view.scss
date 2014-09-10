@@ -1,13 +1,51 @@
 .image-container-detail {
-  height: 190px;
+  height: 160px;
   overflow: hidden;
   img {
     width: 100%;
   }
 }
+.button-bar {
+  padding: 0.5em;
+
+  .button {
+    background-color: #fff !important;
+    border-color :#16a085 !important;
+    min-height: 32px !important;
+    line-height: 30px !important;
+  }
+  .button.active{
+    box-shadow: none !important;
+    background: #16a085 !important;
+    color: #fff !important;
+  }
+  .button:last-child {
+    border-radius : 0px 6px 6px 0px;
+  }
+  .button:first-child {
+    border-radius : 6px 0px 0px 6px !important;
+  }
+}
+
+.resto-info {
+  .item {
+    padding: 9px 52px !important;
+  }
+  .icon {
+    font-size: 28px!important;
+  }
+}
+
+.resto-detail-view{
+  .button {
+    font-size: 11px;
+    padding: 0 2px;
+  }
+}
+
 .resto-details {
   background: #ecf0f1;
-  padding: 0.4em 0;
+  padding: 0.3em 0;
   overflow: hidden;
   .atributos{
     position: static !important;
@@ -16,7 +54,7 @@
       float: left;
       span {
         display: block;
-        margin-top: 7px;
+        margin-top: 4px;
       }
       p {
         margin-left: 1.1em;
@@ -28,7 +66,12 @@
     p {
       font-size: 1em;
       margin:0.3em 0.2em;
-      padding: 0.2em 0.3em;
+      padding: 0 0.3em;
     }
   }
+}
+
+#map {
+  height: 180px;
+  width: 100%;
 }

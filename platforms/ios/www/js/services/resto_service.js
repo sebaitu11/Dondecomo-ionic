@@ -3,7 +3,7 @@ angular.module('restoApp.services')
   return {
     all:function(barrioId){
       var deferred = $q.defer()
-      $http.get("http://192.168.0.13:3000/barrios/" + barrioId + "/restos.json",{cache:true})
+      $http.get("http://10.0.1.4:3000/barrios/" + barrioId + "/restos.json",{cache:true})
           .success(function(response){
               deferred.resolve(response)
           })
@@ -15,7 +15,7 @@ angular.module('restoApp.services')
 
     get:function(restoId){
      var deferred = $q.defer()
-      $http.get("http://192.168.0.13:3000/restos/" + restoId + ".json",{cache:true})
+      $http.get("http://10.0.1.4:3000/restos/" + restoId + ".json",{cache:true})
           .success(function(response){
               deferred.resolve(response)
           })
@@ -23,6 +23,12 @@ angular.module('restoApp.services')
               deferred.reject();
           })
       return deferred.promise; 
+    },
+    setSelectedResto:function(resto){
+        this.selectedResto = resto 
+    },
+    getSelectedResto:function(){
+        return this.selectedResto
     }
   }
 }]);

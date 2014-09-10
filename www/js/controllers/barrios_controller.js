@@ -1,6 +1,6 @@
 angular.module('restoApp.controllers')
 
-.controller('BarriosCtrl', function($scope,Barrios,LoadingService) {
+.controller('BarriosCtrl', function($scope,Barrios,LoadingService,$state) {
   LoadingService.show()
   
   $scope.dataIsThere = false;
@@ -12,5 +12,9 @@ angular.module('restoApp.controllers')
   })
 
   $scope.$root.tabsHidden = "tabs-item-hide";
+
+  // $scope.goToRestos = function(id){
+  //   $state.go("tab.restos",{barrioId : id})
+  // }
 
 })

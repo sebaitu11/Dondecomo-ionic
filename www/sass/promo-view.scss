@@ -1,0 +1,21 @@
+.promo-slides {}
+
+.promo-card {
+  margin-top: 8px !important;
+  img {
+    height: 200px;
+  }
+  .item {
+    h2 {
+      text-transform: capitalize;
+    }
+  }
+  .tab-item {
+    h3 {
+      font-size: 1em;
+      font-weight: 200;
+      margin: 0.5em;
+    }
+  }
+
+}

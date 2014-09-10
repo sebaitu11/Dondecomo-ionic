@@ -4,6 +4,7 @@
 .resto-slides{
   height: 180px;
 }
+
 .slider-pager .slider-pager-page {
   color: #c1c1c1!important;
 }
@@ -32,14 +33,16 @@
   .parking {
     background: #16a085;
   }
+  .wifi {
+    background: #e67e22;
+  }
   p {
-    border-radius: 6px;
+    border-radius: 4px;
     color: #fff;
     float: left;
-    font-weight: bold;
     font-size: 0.7em;
     margin: 0 0.2em;
-    padding: 0.1em 0.3em;
+    padding: 0 0.3em;
   }
 }
 

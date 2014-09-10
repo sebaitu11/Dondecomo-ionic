@@ -24,6 +24,8 @@
     background: #2980b9; }
   .atributos .parking {
     background: #16a085; }
+  .atributos .wifi {
+    background: #e67e22; }
   .atributos p {
     border-radius: 4px;
     color: #fff;
@@ -87,14 +89,39 @@
         font-size: 0.9em; }
 
 .image-container-detail {
-  height: 190px;
+  height: 160px;
   overflow: hidden; }
   .image-container-detail img {
     width: 100%; }
 
+.button-bar {
+  padding: 0.5em; }
+  .button-bar .button {
+    background-color: #fff !important;
+    border-color: #16a085 !important;
+    min-height: 32px !important;
+    line-height: 30px !important; }
+  .button-bar .button.active {
+    box-shadow: none !important;
+    background: #16a085 !important;
+    color: #fff !important; }
+  .button-bar .button:last-child {
+    border-radius: 0px 6px 6px 0px; }
+  .button-bar .button:first-child {
+    border-radius: 6px 0px 0px 6px !important; }
+
+.resto-info .item {
+  padding: 9px 52px !important; }
+.resto-info .icon {
+  font-size: 28px !important; }
+
+.resto-detail-view .button {
+  font-size: 11px;
+  padding: 0 2px; }
+
 .resto-details {
   background: #ecf0f1;
-  padding: 0.4em 0;
+  padding: 0.3em 0;
   overflow: hidden; }
   .resto-details .atributos {
     position: static !important; }
@@ -103,7 +130,7 @@
       float: left; }
       .resto-details .atributos .atributo span {
         display: block;
-        margin-top: 7px; }
+        margin-top: 4px; }
       .resto-details .atributos .atributo p {
         margin-left: 1.1em; }
     .resto-details .atributos .extend {
@@ -111,17 +138,66 @@
     .resto-details .atributos p {
       font-size: 1em;
       margin: 0.3em 0.2em;
-      padding: 0.2em 0.3em; }
+      padding: 0 0.3em; }
 
-.back-button {
+#map {
+  height: 180px;
+  width: 100%; }
+
+.back-button button {
   background: none;
   border: none;
-  color: #fff; }
-  .back-button span {
-    display: block;
-    font-size: 0.9em; }
-  .back-button i {
-    font-size: 1.2em; }
+  color: #333;
+  z-index: 100000; }
+
+.carta-list p {
+  margin: 0;
+  text-transform: capitalize; }
+.carta-list i {
+  color: #bdc3c7; }
+
+.platos-list {
+  padding-top: 30px; }
+  .platos-list h2 {
+    font-weight: 200;
+    text-transform: capitalize; }
+  .platos-list p {
+    float: left;
+    font-size: 0.8em;
+    margin: 0; }
+  .platos-list span {
+    color: #333; }
+
+.header-platos {
+  background: #ecf0f1; }
+  .header-platos h1 {
+    font-weight: 200;
+    text-transform: capitalize; }
+
+.menu-card {
+  margin-top: 8px !important; }
+  .menu-card .price {
+    background: #ecf0f1;
+    text-align: right;
+    width: 100%; }
+    .menu-card .price p {
+      font-size: 1.2em !important;
+      font-weight: bold;
+      font-family: cursive;
+      margin-right: 1em; }
+  .menu-card .full-image {
+    height: 100%; }
+
+.promo-card {
+  margin-top: 8px !important; }
+  .promo-card img {
+    height: 200px; }
+  .promo-card .item h2 {
+    text-transform: capitalize; }
+  .promo-card .tab-item h3 {
+    font-size: 1em;
+    font-weight: 200;
+    margin: 0.5em; }
 
 .bar-stable {
   background: #c0392b !important; }
@@ -132,3 +208,6 @@
 
 .bar {
   border-bottom: none; }
+
+.modal {
+  z-index: 100000 !important; }

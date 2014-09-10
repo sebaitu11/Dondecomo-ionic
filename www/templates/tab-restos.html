@@ -1,16 +1,18 @@
 <ion-view title="{{barrio.name}}">
  
   <ion-nav-buttons side="right">
-      <button class="button button-icon icon ion-ios7-search" ng-click="switchSearch(showSearch)"></button>
-    </ion-nav-buttons>
+      <button class="button button-icon icon ion-ios7-settings" ng-click="openModal()"></button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
+  </ion-nav-buttons>
+  
   <ion-content class="has-header">
 
     <ng-include src="'templates/partials/tab-restos/_slide-box-restos.html'"></ng-include>
     
-    <ng-include src="'templates/partials/tab-restos/_search.html'"></ng-include>
-    
     <ng-include src="'templates/partials/tab-restos/_list-restos.html'"></ng-include>
-
 
   </ion-content>
 </ion-view>

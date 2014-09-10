@@ -1,7 +1,7 @@
-<ion-view title="{{resto.name}}">
-  <ion-content class="has-header padding">
-   
-   <ng-include src="'templates/partials/tab-platos/_list-platos.html'"></ng-include>
-   
-  </ion-content>
-</ion-view>
+<div class="header-platos bar">
+  <div ng-click="back()" class="buttons back-button">
+    <button>Atras</button>
+  </div>
+  <h1 class="title">{{categoria.name}} </h1>
+</div>
+<ng-include src="'templates/partials/tab-platos/_list-platos.html'"></ng-include>

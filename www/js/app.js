@@ -49,7 +49,6 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
         }
       }
     })
-
     .state('tab.restos', {
       url: '/barrio/:barrioId',
       views: {
@@ -59,8 +58,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
         }
       }
     })
-
-    .state('tab.resto-detail', {
+    .state('tab.restos-detail', {
       url: '/resto/:id',
       views: {
         'tab-restos': {
@@ -69,41 +67,46 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
         }
       }
     })
-
-    .state('tab.carta', {
+    .state('tab.restos-detail.info', {
+      url: '/info',
+      views: {
+        'tab-data': {
+          templateUrl: 'templates/tab-info.html',
+          controller: 'RestoDetailCtrl'
+        }
+      }
+    })
+    .state('tab.restos-detail.carta', {
       url: '/carta',
       views: {
-        'tab-carta': {
+        'tab-data': {
           templateUrl: 'templates/tab-carta.html',
           controller: 'CartaCtrl'
         }
       }
     })
-
-    .state('tab.platos', {
-      url: '/carta/:categoryId/platos',
+    .state('tab.restos-detail.platos', {
+      url: '/platos/:categoryId',
       views: {
-        'tab-carta': {
+        'tab-data': {
           templateUrl: 'templates/tab-platos.html',
           controller: 'PlatosCtrl'
         }
       }
     })
-
-    .state('tab.menu', {
+    .state('tab.restos-detail.menu', {
       url: '/menu',
       views: {
-        'tab-menu': {
+        'tab-data': {
           templateUrl: 'templates/tab-menu.html',
           controller: 'MenuCtrl'
         }
       }
     })
-    
-    .state('tab.promos', {
+    .state('tab.restos-detail.promos', {
       url: '/promos',
       views: {
-        'tab-promos': {
+        'tab-data': {
           templateUrl: 'templates/tab-promociones.html',
           controller: 'PromosCtrl'
         }
