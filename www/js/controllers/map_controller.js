@@ -32,11 +32,24 @@ angular.module('restoApp.controllers')
 
     $scope.map = map;
   }
-  google.maps.event.addDomListener(window, 'load', initialize);
-  $timeout(function(){
-    initialize();
-  },400);
+  window.initialize = initialize;
   
+  function loadScript() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+        'callback=initialize';
+    document.body.appendChild(script);
+  }
+  if(!window.google){
+    loadScript();
+  }else{
+    $timeout(function(){
+      initialize();
+    },400);
+  }
+
+
   $scope.centerOnMe = function() {
     if(!$scope.map) {
       return;

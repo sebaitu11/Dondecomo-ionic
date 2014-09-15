@@ -1,17 +1,18 @@
+
 <ion-slide-box ng-if="dataIsThere" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
-    
-    <ion-slide ng-repeat="resto in premRestos">  
-        <a  href="#/tab/resto/{{resto.id}}">
-        <div class="image-container">
-          <img ng-src="img/{{resto.image}}.jpg">
-          <div class="restos-data">
-            <div class="data">
-              <h2>{{resto.name}}</h2>
-              <p>{{resto.details}}</p>
-            </div>
+
+  <ion-slide ng-repeat="prem in premRestos">  
+      <a  href="#/tab/resto/{{prem.id}}">
+      <div class="image-container">
+        <img ng-src="img/{{prem.image}}.jpg">
+        <div class="restos-data">
+          <div class="data">
+            <h2>{{prem.name}}</h2>
+            <p>{{prem.details}}</p>
           </div>
         </div>
-      </a>
-    </ion-slide>
+      </div>
+    </a>
+  </ion-slide>
 
 </ion-slide-box>

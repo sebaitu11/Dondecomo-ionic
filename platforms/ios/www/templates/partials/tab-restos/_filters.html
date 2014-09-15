@@ -8,24 +8,9 @@
     <ion-content>
       
       <ul class="list">
-        <li class="item item-checkbox">
-           <label class="checkbox">
-             <input type="checkbox">
-           </label>
-           Estacionamiento
-        </li>
-                <li class="item item-checkbox">
-           <label class="checkbox">
-             <input type="checkbox">
-           </label>
-           Menu
-        </li>
-                <li class="item item-checkbox">
-           <label class="checkbox">
-             <input type="checkbox">
-           </label>
-           Tickets
-        </li>
+        <ion-item class="item" ng-repeat="item in items">
+          <ion-checkbox ng-model="item.checked">{{item.name}}</ion-checkbox>
+        </ion-item>
       </ul>     
 
     </ion-content>

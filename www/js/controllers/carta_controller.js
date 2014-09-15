@@ -1,7 +1,9 @@
 angular.module('restoApp.controllers')
 
-.controller('CartaCtrl', function($scope,Carta,$state,Barrios,Restos,$ionicScrollDelegate) {
+.controller('CartaCtrl', function($scope,Carta,$state,Barrios,Restos,$ionicScrollDelegate,LoadingService) {
   $scope.resto = Restos.getSelectedResto()
+
+  LoadingService.show(false);
 
   var category = Carta.hasSelectedCategory()
   if(category){
@@ -10,6 +12,7 @@ angular.module('restoApp.controllers')
   if($scope.resto){
     Carta.all($scope.resto.id).then(function(response){
       $scope.categorias = response
+      LoadingService.hide();
     })
   }
   $scope.barrio = Barrios.getSelectedBarrio()

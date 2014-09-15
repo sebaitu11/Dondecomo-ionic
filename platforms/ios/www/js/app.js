@@ -5,6 +5,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
   DSCacheFactory('defaultCache', {
         maxAge: 900000, // Items added to this cache expire after 15 minutes.
         cacheFlushInterval: 6000000, // This cache will clear itself every hour.
@@ -70,7 +71,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
     .state('tab.restos-detail.info', {
       url: '/info',
       views: {
-        'tab-data': {
+        'tab-info': {
           templateUrl: 'templates/tab-info.html',
           controller: 'RestoDetailCtrl'
         }
@@ -79,7 +80,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
     .state('tab.restos-detail.carta', {
       url: '/carta',
       views: {
-        'tab-data': {
+        'tab-carta': {
           templateUrl: 'templates/tab-carta.html',
           controller: 'CartaCtrl'
         }
@@ -88,7 +89,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
     .state('tab.restos-detail.platos', {
       url: '/platos/:categoryId',
       views: {
-        'tab-data': {
+        'tab-carta': {
           templateUrl: 'templates/tab-platos.html',
           controller: 'PlatosCtrl'
         }
@@ -97,7 +98,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
     .state('tab.restos-detail.menu', {
       url: '/menu',
       views: {
-        'tab-data': {
+        'tab-menu': {
           templateUrl: 'templates/tab-menu.html',
           controller: 'MenuCtrl'
         }
@@ -106,7 +107,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
     .state('tab.restos-detail.promos', {
       url: '/promos',
       views: {
-        'tab-data': {
+        'tab-promo': {
           templateUrl: 'templates/tab-promociones.html',
           controller: 'PromosCtrl'
         }

@@ -8,11 +8,47 @@
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
   </ion-nav-buttons>
   
-  <ion-content class="has-header">
-
-    <ng-include src="'templates/partials/tab-restos/_slide-box-restos.html'"></ng-include>
+  <ion-content class="has-header" padding="false">
     
-    <ng-include src="'templates/partials/tab-restos/_list-restos.html'"></ng-include>
+    <ion-slide-box ng-if="dataIsThere" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
+    
+      <ion-slide ng-repeat="prem in premRestos">  
+          <a  href="#/tab/resto/{{prem.id}}">
+          <div class="image-container">
+            <img ng-src="img/{{prem.image}}.jpg">
+            <div class="restos-data">
+              <div class="data">
+                <h2>{{prem.name}}</h2>
+                <p>{{prem.details}}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </ion-slide>
 
-  </ion-content>
+    </ion-slide-box>
+
+    <ion-list ng-if="dataIsThere">
+      
+      <ion-item
+        class="resto-item item item-avatar"
+        ng-repeat="resto in restos"
+        ui-sref="tab.restos-detail({id :resto.id})">
+        
+        <img ng-src="img/{{resto.image}}.jpg">  
+        <h2>{{resto.name}}</h2>
+        <p>{{resto.details}}</p>
+        <div class="atributos">
+          <p class="reservas" ng-if="resto.reservas">R</p>
+          <p class="fumadores" ng-if="resto.fumadores">F</p>
+          <p class="menuAtribute" ng-if="resto.menu">M</p>  
+          <p class="tickets" ng-if="resto.tickets">T</p>  
+          <p class="parking" ng-if="resto.parking">E</p> 
+          <p class="wifi" ng-if="resto.wifi">W</p>    
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll icon="ion-ios7-reloading" ng-if="!noMoreItemsAvailable" on-infinite="loadData()" distance="10%"></ion-infinite-scroll>
+
 </ion-view>

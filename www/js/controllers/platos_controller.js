@@ -1,12 +1,14 @@
 angular.module('restoApp.controllers')
 
-.controller('PlatosCtrl', function($scope,Platos,$stateParams,Restos,$state,Carta) {
+.controller('PlatosCtrl', function($scope,Platos,$stateParams,Restos,$state,Carta,LoadingService) {
 
   $scope.resto = Restos.getSelectedResto()
   $scope.categoria = Carta.getSelectedCategory($stateParams.categoryId)
+  LoadingService.show(false)
   
   Platos.all($stateParams.categoryId).then(function(response){
     $scope.platos = response;  
+    LoadingService.hide();
   });
 
   $scope.$root.tabsHidden = "tabs-item-hide";
