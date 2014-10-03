@@ -1,13 +1,20 @@
 
-angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.controllers', 'restoApp.services', 'restoApp.directives'])
+angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','restoApp.controllers', 'restoApp.services', 'restoApp.directives'])
 
-.run(function($ionicPlatform, DSCacheFactory,$http) {
+.run(function($ionicPlatform,DSCacheFactory,$http,$cordovaGeolocation,$rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    console.log("ubicacion obtenida")
+    $rootScope.lat  = pos.coords.latitude
+    $rootScope.long = pos.coords.longitude
+  }, function(error) {
+    console.log("error")
+  })
+  
   DSCacheFactory('defaultCache', {
-        maxAge: 900000, // Items added to this cache expire after 15 minutes.
+        maxAge: 200000, // Items added to this cache expire after 15 minutes.
         cacheFlushInterval: 6000000, // This cache will clear itself every hour.
         deleteOnExpire: 'aggressive' // Items will be deleted from this cache right when they expire.
     });
@@ -22,7 +29,7 @@ angular.module('restoApp', ['ionic','angular-data.DSCacheFactory', 'restoApp.con
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-  });
+  })
 })
 
 .config(function($stateProvider, $urlRouterProvider,$httpProvider) {

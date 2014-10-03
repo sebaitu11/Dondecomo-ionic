@@ -1,19 +1,15 @@
-<div class="list card menu-card" ng-repeat="menu in menus">
+<div class="list menu-list">
 
-  <div class="item">
-    <h2>{{menu.name}}</h2>
-  </div>
-
-  <div class="item item-body">
-    <img class="full-image bttrlazyloading" imagemenu>
-    <p>
-      {{menu.description}}
-    </p>
-  </div>
-
-  <div class="item tabs tabs-secondary tabs-icon-left">
+  <div class="item menu-item" ng-repeat="menu in menus">
+    <div class="image-container">
+      <img class="full-image bttrlazyloading" imagemenu>
+    </div>
     <div class="price">
       <p>${{menu.price}}</p>
+    </div>
+    <div class="info-menu">
+      <h2>{{menu.name}}</h2>
+      <p>{{menu.description}}</p>
     </div>
   </div>
 

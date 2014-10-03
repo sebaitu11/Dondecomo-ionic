@@ -1,26 +1,31 @@
 angular.module('restoApp.controllers')
 
-.controller('RestoDetailCtrl', function($scope,Restos,$stateParams,$state,$ionicScrollDelegate,LoadingService) {
-  $scope.value = false;
+.controller('RestoDetailCtrl', function($scope,Restos,Barrios,$stateParams,LoadingService,$state) {
 
   LoadingService.show()
+  $scope.showData = false;
 
-  Restos.get($stateParams.id).then(function(response){
-    $scope.resto = response.resto.resto;  
-    $scope.info = response.resto.info
-    LoadingService.hide()
-    Restos.setSelectedResto($scope.resto)
-    
-    $scope.value = true;
+  $scope.resto = Restos.getSelectedResto()
+  $scope.barrio = Barrios.getSelectedBarrio()
 
+  Restos.get($stateParams.id).then(function(response){ 
+    $scope.info = response[0];
+    $scope.showData = true;
+    LoadingService.hide()    
   });
+
   $scope.data = {
-    activeButton : 1
+    activeButton : 1,
+    showSubheader : false
   }
-  $scope.selectTab = function(tab){
-    $scope.data.activeButton = tab;
+
+  $scope.atras = function(){
+    $state.go('tab.restos',{barrioId: $scope.barrio.id});
   }
   
-  $scope.$root.tabsHidden = "tabs-item-hide";
+  $scope.selectTab = function(tab){
+    $scope.data.showSubheader = false;
+    $scope.data.activeButton = tab;
+  }
 
 })

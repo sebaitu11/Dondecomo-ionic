@@ -2,7 +2,7 @@ angular.module('restoApp.controllers')
     
 .controller('MapCtrl', function($scope, $ionicLoading, $compile,$timeout) {
   function initialize() {
-    var myLatlng = new google.maps.LatLng(-33.444310,-70.627880);
+    var myLatlng = new google.maps.LatLng($scope.resto.lat,$scope.resto.lng);
     
     var mapOptions = {
       center: myLatlng,

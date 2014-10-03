@@ -1,19 +1,95 @@
-// .data-resto {
-//   overflow: visible;
-//   top: 140px;
-//   height: 400px;
-//   .scroll {
-//     background: #fff;
-//   }
-// }
-
-
 .image-container-detail {
-  height: 160px;
+  height: 200px;
   overflow: hidden;
-  img {
-    width: 100%;
+  position: relative;
+  .atras-container {
+    margin: 1.8em 0.5em;
+    position: absolute;
+    top: 0;
+    width: 54px;
+    h2 {
+      color: #fff;
+      font-size: 1.2em;
+      float: right;
+    }
+    i {
+      color: #fff;
+      float: left;
+      font-size: 1.6em;
+    }
   }
+  .overlay-top {
+    position: absolute;
+    top: 0;
+    height: 67px;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); 
+  }
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    height: 67px;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.90)));
+  }
+  .resto-name {
+    bottom: 6px;
+    color: #fff;
+    margin: 0.2em 0.5em;
+    font-size: 2em;
+    position: absolute;
+  }
+  span {
+    height: 100%;
+    width: 320px;
+    img {
+      width: 100%;
+    }
+  }
+  .llamar {
+    bottom: 11px;
+    background: #27ae60;
+    border-radius: 33px;
+    color: #fff;
+    margin : 0 auto;
+    position: absolute;
+    padding: 0.5em 0.8em;
+    right: 1em;
+    text-align: center;
+    text-decoration: none;
+    width: 44px;
+    i {
+      font-size: 2em;
+    }
+  }
+  .direccion{
+    background: #f39c12;
+    border-radius: 33px;
+    right: 5em;
+    position: absolute;
+    width: 44px;
+    bottom: 11px;
+    color: #fff;
+    text-align: center;
+    .kms {
+      margin: 0 auto;
+      padding: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 0.6em;
+      right: 0;
+      width: 16px;
+    }
+    p {
+      padding: 0.7em 0;
+      margin: 0;
+      font-size: 1.1em;
+    }
+  }
+}
+#map {
+  height: 180px;
 }
 .absolute-bar {
   position: absolute;
@@ -27,18 +103,18 @@
   bottom: 0;
   z-index: 1000000;
   a {
-    font-size: 0.7em;
+    font-size: 0.8em;
     padding: 0!important;
   }
   .button {
     background-color: #fff !important;
-    border-color :#16a085 !important;
+    border-color :#fd9627 !important;
     min-height: 32px !important;
     line-height: 30px !important;
   }
   .button.active{
     box-shadow: none !important;
-    background: #16a085 !important;
+    background: #fd9627 !important;
     color: #fff !important;
   }
   .button:last-child {
@@ -46,15 +122,6 @@
   }
   .button:first-child {
     border-radius : 6px 0px 0px 6px !important;
-  }
-}
-
-.resto-info {
-  .item {
-    padding: 9px 52px !important;
-  }
-  .icon {
-    font-size: 28px!important;
   }
 }
 
@@ -67,35 +134,19 @@
 }
 
 .resto-details {
-  background: #ecf0f1;
+  background: #ffa633;
   padding: 0.3em 0;
   overflow: hidden;
-  .atributos{
-    position: static !important;
-    .atributo {
-      width: 33%;
-      float: left;
-      span {
-        display: block;
-        margin-top: 4px;
-      }
-      p {
-        margin-left: 1.1em;
-      }
-    }
-    .extend {
-      width: 44%;
-    }
-    p {
-      font-size: 1em;
-      margin:0.3em 0.2em;
-      padding: 0 0.3em;
-    }
+  p {
+    color: #fff;
+    font-size: 1em;
+    font-weight: 200;
+    margin: 0;
+    padding: 1em;
+    text-align: center;
   }
 }
-
-#map {
-  height: 180px;
+.resto-info {
+  background: #fd9627;
   width: 100%;
-  z-index: 1;
 }

@@ -1,25 +1,46 @@
-<ion-view title="{{resto.name}}" >
-  <div class="button-bar">
-      <a class="button" ui-sref="tab.restos-detail" ng-click="selectTab(1)"ng-class="{'active' : data.activeButton == 1}">Info    
+<ion-view hide-nav-bar="true" hide-back-button="true">
+  <div class="button-bar ">
+      <a class="button" ui-sref="tab.restos-detail" ng-click="selectTab(1)"ng-class="{'active' : data.activeButton == 1}">Info 
       </a>
       <a class="button" ui-sref="tab.restos-detail.carta" ng-click="selectTab(2)" ng-class="{'active' : data.activeButton == 2}">Carta</a>
       <a class="button" ui-sref="tab.restos-detail.menu" ng-click="selectTab(3)" ng-class="{'active' : data.activeButton == 3}">Menu del dia</a>
       <a class="button" ui-sref="tab.restos-detail.promos" ng-click="selectTab(4)" ng-class="{'active' : data.activeButton == 4}">Promociones</a>
+  </div>
+
+  <div ng-controller="PlatosCtrl" ng-if="data.showSubheader" class="header-platos bar bar-subheader">
+    <button ng-click="back()"class="button">Atras</button>
+    <h1 class="title">{{categoria.name}}</h1>
+  </div>
+
+  <ion-content scroll="true" class="resto-detail-view" has-header="true" has-subheader="true">
+    
+    <div ng-if="data.activeButton == 1" class="image-container-detail">
+      <img class="resto-image bttrlazyloading" ng-src="{{resto.image}}" imageResto>  
+      <div class="overlay-top"></div>
+      <div class="overlay"></div>
+      <div class="atras-container">
+        <h2 class="back-button" ng-click="atras()">Atras</h2>
+        <i class="ion-ios7-arrow-left"></i>
+      </div>
+      <h2 class="resto-name">{{resto.name}}</h2>
+      <a class="llamar" href="tel:{{info.telefono}}">
+        <i class="ion-ios7-telephone"></i>
+      </a>
+      <a ng-if="resto.distance" class="direccion">
+        <p>{{resto.distance}}</p>
+        <p class="kms">kms</p>
+      </a>
     </div>
 
-  <ion-content scroll="true" on-scroll="getPosition()" class="resto-detail-view" ng-show="value" has-header="true">
-    
-    <div class="image-container-detail">
-      <img class="resto-image" ng-src="img/{{resto.image}}.jpg">  
+    <div ng-if="data.activeButton == 1" class="resto-details">
+      <p>"{{resto.details}}"</p>
     </div>
 
-    <ng-include src="'templates/partials/resto-details/_resto-attributes.html'"></ng-include>    
-      <ng-include ng-if="data.activeButton == 1" src="'templates/partials/resto-details/_resto-info.html'"></ng-include>    
+    <ng-include ng-show="data.activeButton == 1" src="'templates/partials/resto-details/_resto-info.html'"></ng-include>    
 
-      <div ui-view name="tab-carta"></div>
-      <div ui-view name="tab-menu"></div>
-      <div ui-view name="tab-promo"></div>
+    <div ui-view name="tab-carta"></div>
+    <div ui-view name="tab-menu"></div>
+    <div ui-view name="tab-promo"></div>
 
-    
   </ion-content>
 </ion-view>

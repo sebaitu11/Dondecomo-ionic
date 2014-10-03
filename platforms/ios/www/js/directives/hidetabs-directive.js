@@ -30,4 +30,21 @@ angular.module('restoApp.directives')
             $($el).trigger("bttrlazyloading.load")
         }
     };
+})
+
+.directive('imageresto', function($rootScope) {
+    return {
+        restrict: 'A',
+        link: function($scope, $el,$getScrollPosition) {
+            $($el).bttrlazyloading({
+                backgroundcolor: '#c0392b',
+                sm: {
+                    src: $scope.image,
+                    width: 350,
+                    height: 190
+                }
+            });
+            $($el).trigger("bttrlazyloading.load")
+        }
+    };
 });

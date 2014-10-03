@@ -1,15 +1,19 @@
 .barrio-slides{
   width: 320px !important;
   overflow: hidden;
-  
+  height: 100%;
+
   .barrio-slide{
     position: relative;
   }
 
   .image-container{
+    height: 100%;
+    width: 320px;
+    overflow: hidden;
     img {
-      height: 86vh;
-      width: auto !important;
+        min-width: 560px;
+        height: 100%;
     } 
     .barrio-data{
       background: rgba(0, 0, 0, 0.5);

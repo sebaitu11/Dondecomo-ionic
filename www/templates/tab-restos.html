@@ -1,10 +1,10 @@
 <ion-view title="{{barrio.name}}">
  
-  <ion-nav-buttons side="right">
+  <ion-nav-buttons side="right" ng-controller="FilterCtrl">
       <button class="button button-icon icon ion-ios7-settings" ng-click="openModal()"></button>
   </ion-nav-buttons>
 
-  <ion-nav-buttons side="right">
+  <ion-nav-buttons side="right" ng-controller="SearchCtrl">
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
   </ion-nav-buttons>
   
@@ -15,11 +15,11 @@
       <ion-slide ng-repeat="prem in premRestos">  
           <a  href="#/tab/resto/{{prem.id}}">
           <div class="image-container">
-            <img ng-src="img/{{prem.image}}.jpg">
+            <img class="bttrlazyloading" ng-src="{{prem.image}}" imageResto>
             <div class="restos-data">
               <div class="data">
                 <h2>{{prem.name}}</h2>
-                <p>{{prem.details}}</p>
+                <p>{{prem.tipo}}</p>
               </div>
             </div>
           </div>
@@ -29,26 +29,32 @@
     </ion-slide-box>
 
     <ion-list ng-if="dataIsThere">
-      
       <ion-item
-        class="resto-item item item-avatar"
-        ng-repeat="resto in restos"
+        class="resto-item item item-thumbnail-left"
+        collection-repeat="resto in restos | orderBy:predicate"
+        collection-item-width="'100%'"
+        collection-item-height="100"
+        ng-style="{height: 100}"
+        ng-click="setSelectedResto(resto)"
         ui-sref="tab.restos-detail({id :resto.id})">
         
-        <img ng-src="img/{{resto.image}}.jpg">  
+        <img ng-src="{{resto.avatar}}">  
         <h2>{{resto.name}}</h2>
-        <p>{{resto.details}}</p>
-        <div class="atributos">
-          <p class="reservas" ng-if="resto.reservas">R</p>
-          <p class="fumadores" ng-if="resto.fumadores">F</p>
-          <p class="menuAtribute" ng-if="resto.menu">M</p>  
-          <p class="tickets" ng-if="resto.tickets">T</p>  
-          <p class="parking" ng-if="resto.parking">E</p> 
-          <p class="wifi" ng-if="resto.wifi">W</p>    
+        <div class="tipo">
+          <p>{{resto.tipo}}</p>
         </div>
+        <div class="info-right">
+          <div ng-if="resto.distance" class="distancia">
+            <p>{{resto.distance}} kms</p>
+          </div>
+          <div class="hora">
+            <p class="open" ng-if="resto.open < current_time && resto.close > current_time">abierto</p>
+            <p class="close" ng-if="resto.close <= current_time">cerrado</p>
+          </div>
+        </div>
+
       </ion-item>
     </ion-list>
 
-    <ion-infinite-scroll icon="ion-ios7-reloading" ng-if="!noMoreItemsAvailable" on-infinite="loadData()" distance="10%"></ion-infinite-scroll>
-
+    </ion-content >
 </ion-view>

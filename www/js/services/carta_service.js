@@ -11,7 +11,7 @@ angular.module('restoApp.services')
     all:function(id){
       var deferred = $q.defer()
       var self = this;
-      $http.get("http://10.0.1.4:3000/resto/" + id + "/carta.json" ,{cache:true})
+      $http.get("http://192.168.0.13:3000/resto/" + id + "/carta.json" ,{cache:true})
           .success(function(response){
               deferred.resolve(response)
               self.data(response)
@@ -26,14 +26,6 @@ angular.module('restoApp.services')
           return categoria.id == id
         })
       return this.selectedCategory[0]
-    },
-    hasSelectedCategory:function(){
-      if(this.selectedCategory){
-        return this.selectedCategory[0]
-      }
-    },
-    removeCategory:function(){
-      this.selectedCategory = null;
     }
   }
 }]);

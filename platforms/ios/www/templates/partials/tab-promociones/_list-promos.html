@@ -1,30 +1,16 @@
-<ion-slide-box ng-if="dataIsThere" class="promo-slides" does-continue="true" on-slide-changed="slideHasChanged($index)">
-    
-    <ion-slide ng-repeat="promo in promos">  
-      <div class="list card promo-card"> 
-        <div class="item">
-          <h2>{{promo.name}}</h2>
-        </div>
+<div class="list menu-list">
 
-        <div class="item item-body">
-          <img class="full-image bttrlazyloading" imagepromo>
-          <p>
-            {{promo.description}}
-          </p>
-        </div>
+  <div class="item menu-item" ng-repeat="promo in promos">
+    <div class="image-container">
+      <img class="full-image bttrlazyloading" imagepromo>
+    </div>
+    <div class="price">
+      <p>${{promo.price}}</p>
+    </div>
+    <div class="info-menu">
+      <h2>{{promo.name}}</h2>
+      <p>{{promo.description}}</p>
+    </div>
+  </div>
 
-        <div class="item tabs tabs-secondary tabs-icon-left">
-          <div class="tab-item">
-            <h3>Precio Normal</h3>
-            <h4>${{promo.price}}</h4>
-          </div>
-          <div class="tab-item">
-            <h3>Precio Descuento</h3>
-            <h4>${{promo.final}}</h4>
-          </div>
-          
-        </div>
-      </div>
-    </ion-slide>
-
-</ion-slide-box>
+</div>

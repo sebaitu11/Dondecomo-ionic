@@ -1,4 +1,4 @@
-<ion-slide-box ng-if="dataIsThere" class="barrio-slides" on-slide-changed="slideHasChanged($index)">
+<ion-slide-box ng-if="dataIsThere" class="barrio-slides" does-continue="true" on-slide-changed="slideHasChanged($index)">
     
     <ion-slide ng-repeat="barrio in barrios">  
         <a ui-sref="tab.restos({ barrioId: barrio.id})">

@@ -2,7 +2,7 @@
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v1.0.0-beta.12-nightly-460
+ * Ionic, v1.0.0-beta.13
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -2287,11 +2287,11 @@ body.grade-b, body.grade-c {
   position: absolute;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.3);
-  opacity: 1; }
+  opacity: 1;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear; }
   .scroll-bar-indicator.scroll-bar-fade-out {
-    -webkit-transition: opacity 0.3s linear;
-    -moz-transition: opacity 0.3s linear;
-    transition: opacity 0.3s linear;
     opacity: 0; }
 
 .grade-b .scroll-bar-indicator, .grade-c .scroll-bar-indicator {
@@ -2307,25 +2307,25 @@ body.grade-b, body.grade-c {
     transform: translate3d(0, 0, 0) rotate(0); }
 
   100% {
-    transform: translate3d(0, 0, 0) rotate(-180deg); } }
+    transform: translate3d(0, 0, 0) rotate(180deg); } }
 
 @-webkit-keyframes refresh-spin {
   0% {
     -webkit-transform: translate3d(0, 0, 0) rotate(0); }
 
   100% {
-    -webkit-transform: translate3d(0, 0, 0) rotate(-180deg); } }
+    -webkit-transform: translate3d(0, 0, 0) rotate(180deg); } }
 
 @keyframes refresh-spin-back {
   0% {
-    transform: translate3d(0, 0, 0) rotate(-180deg); }
+    transform: translate3d(0, 0, 0) rotate(180deg); }
 
   100% {
     transform: translate3d(0, 0, 0) rotate(0); } }
 
 @-webkit-keyframes refresh-spin-back {
   0% {
-    -webkit-transform: translate3d(0, 0, 0) rotate(-180deg); }
+    -webkit-transform: translate3d(0, 0, 0) rotate(180deg); }
 
   100% {
     -webkit-transform: translate3d(0, 0, 0) rotate(0); } }
@@ -2378,16 +2378,28 @@ body.grade-b, body.grade-c {
     -webkit-animation-duration: 1.5s;
     -moz-animation-duration: 1.5s;
     animation-duration: 1.5s; }
-  .scroll-refresher.active .icon-pulling {
+  .scroll-refresher.active .icon-pulling:not(.pulling-rotation-disabled) {
     -webkit-animation-name: refresh-spin;
     -moz-animation-name: refresh-spin;
     animation-name: refresh-spin;
     -webkit-transform: translate3d(0, 0, 0) rotate(-180deg);
     transform: translate3d(0, 0, 0) rotate(-180deg); }
-  .scroll-refresher.active.refreshing .icon-pulling, .scroll-refresher.active.refreshing .text-pulling {
-    display: none; }
-  .scroll-refresher.active.refreshing .icon-refreshing, .scroll-refresher.active.refreshing .text-refreshing {
-    display: block; }
+  .scroll-refresher.active.refreshing {
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    transition: transform 0.2s;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+    .scroll-refresher.active.refreshing .icon-pulling, .scroll-refresher.active.refreshing .text-pulling {
+      display: none; }
+    .scroll-refresher.active.refreshing .icon-refreshing, .scroll-refresher.active.refreshing .text-refreshing {
+      display: block; }
+    .scroll-refresher.active.refreshing.refreshing-tail {
+      -webkit-transform: scale(0, 0);
+      transform: scale(0, 0); }
 
 ion-infinite-scroll {
   height: 60px;
@@ -3267,6 +3279,11 @@ a.subdued {
   border: none;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   padding-top: 2px; }
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+  margin-top: -2px;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  border-color: #444; }
 .tabs-striped.tabs-light .tabs {
   background-color: #444; }
 .tabs-striped.tabs-light .tab-item {
@@ -4103,6 +4120,8 @@ a.subdued {
   transition: 0.2s opacity linear;
   visibility: hidden;
   opacity: 0; }
+  .loading-container:not(.visible) .icon {
+    display: none; }
   .loading-container.visible {
     visibility: visible; }
   .loading-container.active {

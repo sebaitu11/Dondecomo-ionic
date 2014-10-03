@@ -1,31 +1,17 @@
-<div class="list resto-info">
-
-  <li class="item item-icon-left">
-    <i class="icon ion-email"></i>
-    <p>{{info.email}}</p>
-  </li>
-
-  <li class="item item-icon-left item-icon-right">
-    <i class="icon ion-ios7-telephone-outline"></i>
-    <p>{{info.telefono}}</p>
-  </li>
-
-  <li class="item item-icon-left">
-    <i class="icon ion-ios7-world-outline"></i>
-    <p>{{info.sitio}}</p>
-  </li>
-
-  <li class="item item-icon-left">
-    <i class="icon ion-ios7-clock-outline"></i>
-    <p>{{info.horario}}</p>
-  </li>
-
-  <li class="item item-icon-left">
-    <i class="icon ion-compass"></i>
-    <p>{{info.direccion}}</p>
-  </li>
-
+<div class="resto-info">
+  <ul class="list">
+    <li class="item">
+      <h4>Horario</h4>
+      <p>{{resto.open}}:00hrs a {{resto.close}}:00hrs</p>
+    </li>
+    <li class="item">
+      <h4>Dirección</h4>
+      <p>{{info.direccion}}</p>
+    </li>
+  </ul>
 </div>
+
+
   <div ng-controller="MapCtrl">
     <div id="map" data-tap-disabled="true"></div>
   </div>
