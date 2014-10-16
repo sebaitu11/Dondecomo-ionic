@@ -1,1 +1,9 @@
-<ng-include src="'templates/partials/tab-promociones/_list-promos.html'"></ng-include>
+<ion-view title="Promociones">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-left" ng-click="atras()">Atras</button>
+  </ion-nav-buttons>
+  <ion-content> 
+    <ng-include src="'templates/partials/tab-promociones/_list-promos.html'"></ng-include>
+    <h4 class="not-found" ng-if="noData">No hay Promociones disponibles</h4>
+  </ion-content>
+</ion-view>

@@ -6,7 +6,7 @@ angular.module('restoApp.directives')
         link: function($scope, $el,$getScrollPosition) {
             $($el).bttrlazyloading({
                 sm: {
-                    src: $scope.menu.image,
+                    src: $scope.menu.image_url,
                     width: 265,
                     height: 185
                 }
@@ -14,14 +14,13 @@ angular.module('restoApp.directives')
         }
     };
 })
-
 .directive('imagepromo', function($rootScope) {
     return {
         restrict: 'A',
         link: function($scope, $el,$getScrollPosition) {
             $($el).bttrlazyloading({
                 sm: {
-                    src: $scope.promo.image,
+                    src: $scope.promo.image_url,
                     width: 265,
                     height: 185,
                     triggermanually: true
@@ -39,7 +38,7 @@ angular.module('restoApp.directives')
             $($el).bttrlazyloading({
                 backgroundcolor: '#c0392b',
                 sm: {
-                    src: $scope.image,
+                    src: $scope.image_url,
                     width: 350,
                     height: 190
                 }

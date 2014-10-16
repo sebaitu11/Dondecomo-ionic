@@ -12,12 +12,21 @@ angular.module('restoApp.controllers')
   $scope.items = [
     { name: "peruano" , checked: false},
     { name: "coffee" , checked:false},
-    { name: "italiano", checked: false}
+    { name: "italiano", checked: false},
+    { name: "nacional", checked: false},
+    { name: "internacional", checked: false},
+    { name: "mexicano", checked: false}
   ];
+
+  $scope.showOneTime = true;
 
   $scope.openModal = function() {
     $scope.modal.show();
   };
+
+  $scope.clicked = function(){
+    $scope.showOneTime = false;
+  }
 
   $scope.closeModal = function() {
     var lastSelecteds = [];

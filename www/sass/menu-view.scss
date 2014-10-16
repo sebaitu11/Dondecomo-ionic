@@ -1,4 +1,30 @@
+.list .item.item-accordion {
+  line-height: 21px;
+  padding-top: 0.8em;
+  padding-bottom: 0.5em;
+  transition: 0.09s all linear;
+  p {
+    font-size: 13px;
+    font-weight: inherit;
+    margin: 0;
+    white-space: pre;
+    text-align: left;
+  }
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
 .menu-list {
+  .item {
+    p {
+      white-space: normal !important
+    }
+  }
   .menu-item {
     padding: 0 !important;
     .price {
@@ -6,7 +32,7 @@
       right: 0;
       top: 2em;
       p {
-        background: #c0392b;
+        background: #f06d22;
         color: #fff;
         font-size: 1.3em;
         font-weight: 200;
@@ -14,27 +40,23 @@
       }
     }
     .image-container {
-      height: 176px;
+      height: 150px;
       span {
         width: 100%;
       }
     }
     .info-menu {
-      background: rgba(0, 0, 0, 0.6);
       left: 0;
       right: 0;
       padding: 0.5em 1em;
       position: absolute;
-      bottom: 0;
+      bottom: 3em;
       h2 {
         color: #fff;
+        font-size: 1.3em;
         font-weight: bold;
-      }
-      p {
-        color: #fff;
-        margin : 0;
-        white-space: normal;
-        word-break: break-word;
+        text-shadow: 1px 1px 4px #333;
+        text-transform: capitalize;
       }
     }
   }

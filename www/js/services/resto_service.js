@@ -5,7 +5,7 @@ angular.module('restoApp.services')
   return {
     all:function(barrioId){
       var deferred = $q.defer()
-      $http({url : "http://192.168.0.13:3000/barrios/" + barrioId + "/restos.json",method: "GET",cache:true})
+      $http({url : "http://192.168.0.11:3000/barrios/" + barrioId + "/restos.json",method: "GET",cache:true})
           .success(function(response){
 
               deferred.resolve(response)
@@ -17,7 +17,7 @@ angular.module('restoApp.services')
     },
     getWithPosition:function(barrioId,position){
       var deferred = $q.defer()
-      $http({url : "http://192.168.0.13:3000/barrios/" + barrioId + "/restos.json",method: "GET",params: { lat: position[0], lng: position[1]},cache:true})
+      $http({url : "http://192.168.0.11:3000/barrios/" + barrioId + "/restos.json",method: "GET",params: { lat: position[0], lng: position[1]},cache:true})
           .success(function(response){
 
               deferred.resolve(response)
@@ -29,7 +29,7 @@ angular.module('restoApp.services')
     },
     getPremium:function(barrioId){
       var deferred = $q.defer()
-      $http.get("http://192.168.0.13:3000/barrios/" + barrioId + "/restos/premium.json",{cache:true})
+      $http.get("http://192.168.0.11:3000/barrios/" + barrioId + "/restos/premium.json",{cache:true})
           .success(function(response){
               deferred.resolve(response)
           })
@@ -41,7 +41,7 @@ angular.module('restoApp.services')
 
     get:function(restoId){
      var deferred = $q.defer()
-      $http.get("http://192.168.0.13:3000/resto/" + restoId + "/info.json",{cache:true})
+      $http.get("http://192.168.0.11:3000/resto/" + restoId + "/info.json",{cache:true})
           .success(function(response){
               deferred.resolve(response)
           })
@@ -65,7 +65,7 @@ angular.module('restoApp.services')
         data.push(obj.name)
        })
 
-      $http({url : "http://192.168.0.13:3000/filters.json",method:"GET", params: {"data[]" : data,barrio_id: barrioId,lat: position[0], lng: position[1] },cache:true})
+      $http({url : "http://192.168.0.11:3000/filters.json",method:"GET", params: {"data[]" : data,barrio_id: barrioId,lat: position[0], lng: position[1] },cache:true})
           .success(function(response){
               deferred.resolve(response)
           })

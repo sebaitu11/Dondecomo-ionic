@@ -36,6 +36,8 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
 
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
   $httpProvider.defaults.useXDomain = true;
+
+  $httpProvider.defaults.headers.common['Authorization'] = 'Token token=2da9fc9ad75a5f371403394ed7ddc8ec';
   
   $stateProvider
 
@@ -75,16 +77,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
         }
       }
     })
-    .state('tab.restos-detail.info', {
-      url: '/info',
-      views: {
-        'tab-info': {
-          templateUrl: 'templates/tab-info.html',
-          controller: 'RestoDetailCtrl'
-        }
-      }
-    })
-    .state('tab.restos-detail.carta', {
+    .state('tab.carta', {
       url: '/carta',
       views: {
         'tab-carta': {
@@ -93,7 +86,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
         }
       }
     })
-    .state('tab.restos-detail.platos', {
+    .state('tab.platos', {
       url: '/platos/:categoryId',
       views: {
         'tab-carta': {
@@ -102,7 +95,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
         }
       }
     })
-    .state('tab.restos-detail.menu', {
+    .state('tab.menu', {
       url: '/menu',
       views: {
         'tab-menu': {
@@ -111,7 +104,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
         }
       }
     })
-    .state('tab.restos-detail.promos', {
+    .state('tab.promos', {
       url: '/promos',
       views: {
         'tab-promo': {

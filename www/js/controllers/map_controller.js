@@ -34,21 +34,13 @@ angular.module('restoApp.controllers')
   }
   window.initialize = initialize;
   
-  function loadScript() {
+  window.loadScript = function() {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
         'callback=initialize';
     document.body.appendChild(script);
   }
-  if(!window.google){
-    loadScript();
-  }else{
-    $timeout(function(){
-      initialize();
-    },400);
-  }
-
 
   $scope.centerOnMe = function() {
     if(!$scope.map) {

@@ -4,15 +4,27 @@
 @import  "carta-view";
 @import  "menu-view";
 @import  "promo-view";
+@import  "search-view";
 
 .bar-stable {
-  background: #fd9a2a !important;
+  background: #f06d22 !important;
   .title {
     color: #fff !important;
+    left: 0 !important;
+    right: 0 !important;
   }
   .button {
     color: #fff !important;
   }
+}
+.tabs {
+  background: #f1f1f1;
+  color: #4d676e;
+  padding-top: 0px;
+}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+  background: #f06d22;
+  color: #fff;
 }
 .bar {
   border-bottom: none;
@@ -24,4 +36,19 @@
 .scroll {
   height: 100%;
   width: 100%;
+}
+.list {
+  padding-top: 0 !important;
+}
+.not-found {
+  color: #ccc;
+  font-size: 15px;
+  text-align: center;
+  padding : 1em;
+}
+.advice {
+  color: #333;
+  font-size: 15px;
+  text-align: center;
+  padding : 1em; 
 }
