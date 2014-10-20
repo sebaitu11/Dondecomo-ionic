@@ -10,18 +10,27 @@ $ionicModal.fromTemplateUrl('templates/partials/resto-details/_mapa.html', {
     });
 
   $scope.open = function() {
+    if(window.StatusBar) {
+    // org.apache.cordova.statusbar required
+      StatusBar.hide();
+    }
+
     if(!window.google){
-    window.loadScript();
+      window.loadScript();
     }else{
       $timeout(function(){
         window.initialize();
-      },400);
+      },1);
     }
     $scope.modal.show();
   };
 
   $scope.close = function() {
     $scope.modal.hide();
+    if(window.StatusBar) {
+    // org.apache.cordova.statusbar required
+      StatusBar.show();
+    }
   };
 
   $scope.$on('$destroy', function() {

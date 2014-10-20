@@ -22,9 +22,6 @@
     color: #bdc3c7;
     font-size: 22px !important;
   }
-  .item {
-    border-left: 3px solid #333;
-  }
   .avatar-categoria {
     background: #f06d22;
     border-radius : 30px !important;
@@ -42,9 +39,15 @@
     float: left;
     font-size: 0.8em;
     margin: 0;
+    width: 200px;
+    line-height: 14px;
+    white-space: normal !important;
   }
   span {
     color: #333;
+  }
+  li:nth-child(even) {
+    background: #f1f1f1;
   }
 }
 .header-platos {

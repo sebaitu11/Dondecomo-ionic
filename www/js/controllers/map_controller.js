@@ -1,17 +1,21 @@
 angular.module('restoApp.controllers')
     
-.controller('MapCtrl', function($scope, $ionicLoading, $compile,$timeout) {
+.controller('MapCtrl', function($scope, $ionicLoading, $compile,$timeout,LoadingService) {
   function initialize() {
-    var myLatlng = new google.maps.LatLng($scope.resto.lat,$scope.resto.lng);
-    
+    $scope.myLatlng = new google.maps.LatLng($scope.resto.lat,$scope.resto.lng);
+
+    _directionsRenderer = new google.maps.DirectionsRenderer();
+
     var mapOptions = {
-      center: myLatlng,
+      center: $scope.myLatlng,
       zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP
+
     };
     var map = new google.maps.Map(document.getElementById("map"),
         mapOptions);
     
+     _directionsRenderer.setMap(map);
     //Marker + infowindow + angularjs compiled ng-click
     var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
     var compiled = $compile(contentString)($scope);
@@ -21,7 +25,7 @@ angular.module('restoApp.controllers')
     });
 
     var marker = new google.maps.Marker({
-      position: myLatlng,
+      position: $scope.myLatlng,
       map: map,
       title: 'Uluru (Ayers Rock)'
     });
@@ -46,15 +50,30 @@ angular.module('restoApp.controllers')
     if(!$scope.map) {
       return;
     }
+    LoadingService.show(true,"Obteniendo Ubicación");
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      LoadingService.hide();
+      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+      var myLatlng = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
+      var bounds = new google.maps.LatLngBounds();
+      bounds.extend(myLatlng);
+      $scope.map.fitBounds(bounds);
 
-    $scope.loading = $ionicLoading.show({
-      content: 'Getting current location...',
-      showBackdrop: false
+      _request = {
+        origin: myLatlng,
+        destination: $scope.myLatlng,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+      };
+
+      var directionsService = new google.maps.DirectionsService();
+      
+      directionsService.route(_request, function (_response, _status) {
+        if (_status == google.maps.DirectionsStatus.OK) {
+            _directionsRenderer.setDirections(_response);
+        }
     });
 
-    navigator.geolocation.getCurrentPosition(function(pos) {
-      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-      $scope.loading.hide();
+
     }, function(error) {
       alert('Unable to get location: ' + error.message);
     });

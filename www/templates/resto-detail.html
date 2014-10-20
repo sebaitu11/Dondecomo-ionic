@@ -2,6 +2,11 @@
 
   <ion-content scroll="true" class="resto-detail-view" has-header="true">
     
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    
     <div class="image-container-detail">
       <img class="resto-image bttrlazyloading" ng-src="{{resto.image_url}}" imageResto>  
       <div class="overlay-top"></div>
@@ -53,7 +58,7 @@
         <div class="attr" ng-class="{ 'enabled' : resto.hasTickets }">
           <i class="icon ion-pricetags"></i>
         </div>
-        <p ng-class="{ 'opacity' : resto.hasTickets }">Tickets</p>
+        <p ng-class="{ 'opacity' : resto.hasTickets }">Chq. Restaurant</p>
       </div>
       <div class="attr-container">
         <div class="attr" ng-class="{ 'enabled' : resto.hasMenu }">

@@ -15,7 +15,7 @@
       on-refresh="doRefresh()">
     </ion-refresher>
 
-    <ion-slide-box ng-if="dataIsThere" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
+    <ion-slide-box ng-if="dataIsThere" show-pager="false" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
     
       <ion-slide ng-click="setSelectedResto(prem)" ng-repeat="prem in premRestos">  
           <a ui-sref="tab.restos-detail({id :prem.id})">

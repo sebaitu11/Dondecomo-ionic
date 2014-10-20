@@ -9,6 +9,8 @@ angular.module('restoApp.controllers')
       $scope.modal = modal;
     });
 
+  $scope.close_or_filter = "Cerrar"
+
   $scope.items = [
     { name: "peruano" , checked: false},
     { name: "coffee" , checked:false},
@@ -25,6 +27,13 @@ angular.module('restoApp.controllers')
   };
 
   $scope.clicked = function(){
+    $scope.close_or_filter = "Filtrar";
+    selecteds = $scope.items.filter(function(obj){
+      return obj.checked == true
+    })
+    if(selecteds.length < 1){
+      $scope.close_or_filter = "Cerrar";
+    }    
     $scope.showOneTime = false;
   }
 

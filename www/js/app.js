@@ -27,17 +27,16 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
     }
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.style(1);
     }
   })
 })
 
 .config(function($stateProvider, $urlRouterProvider,$httpProvider) {
 
-  delete $httpProvider.defaults.headers.common['X-Requested-With'];
-  $httpProvider.defaults.useXDomain = true;
-
   $httpProvider.defaults.headers.common['Authorization'] = 'Token token=2da9fc9ad75a5f371403394ed7ddc8ec';
+  
+  $httpProvider.interceptors.push('XSRFInterceptor')
   
   $stateProvider
 

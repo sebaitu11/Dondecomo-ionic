@@ -2,9 +2,9 @@ angular.module('restoApp.services')
 
 .factory('LoadingService', function($ionicLoading) {
   return {
-        show : function(param) {
+        show : function(param,message) {
           $ionicLoading.show({
-              template: '<i class="icon ion-loading-c"></i><br /> Cargando...',
+              template: '<i class="icon ion-loading-c"></i><br />' + message,
               animation: 'fade-in',
               showBackdrop: param,
               maxWidth: 300,

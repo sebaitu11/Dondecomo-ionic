@@ -11,7 +11,7 @@ angular.module('restoApp.services')
     all:function(){
       var deferred = $q.defer()
       var self = this;
-      $http.get("http://192.168.0.11:3000/barrios.json",{cache:true})
+      $http.get("http://damp-sands-5383.herokuapp.com/barrios.json",{cache:true})
           .success(function(response){
               deferred.resolve(response)
               self.data(response)
