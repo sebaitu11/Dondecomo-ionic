@@ -1,31 +1,33 @@
 angular.module('restoApp.controllers')
 
-.controller('RestoDetailCtrl', function($scope,Restos,Barrios,$stateParams,LoadingService,$state) {
+.controller('RestoDetailCtrl', function($scope,Restos,Barrios,$stateParams,$state,$rootScope) {
 
-  LoadingService.show()
-  $scope.showData = false;
-
+  $scope.$root.tabsHidden = true;
   $scope.resto = Restos.getSelectedResto()
   $scope.barrio = Barrios.getSelectedBarrio()
-
-  Restos.get($stateParams.id).then(function(response){ 
-    $scope.info = response[0];
-    $scope.showData = true;
-    LoadingService.hide()    
-  });
-
-  $scope.data = {
-    activeButton : 1,
-    showSubheader : false
-  }
+  $scope.current_time = new Date().getHours()
 
   $scope.atras = function(){
     $state.go('tab.restos',{barrioId: $scope.barrio.id});
   }
-  
-  $scope.selectTab = function(tab){
-    $scope.data.showSubheader = false;
-    $scope.data.activeButton = tab;
+
+  $scope.doRefresh = function(){
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      console.log("ubicacion obtenida")
+      $rootScope.lat  = pos.coords.latitude
+      $rootScope.long = pos.coords.longitude
+      $scope.getResto($scope.resto.id);
+    }, function(error) {
+      console.log("error")
+    })
+  }
+
+  $scope.getResto = function(restoId){
+    position = [$scope.lat, $scope.long]
+    Restos.get(restoId,position).then(function(response){
+      $scope.$broadcast('scroll.refreshComplete');
+      $scope.resto.distance = response
+    })
   }
 
 })

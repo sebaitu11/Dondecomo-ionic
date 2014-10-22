@@ -1,37 +1,56 @@
 angular.module('restoApp.controllers')
 
-.controller('RestosCtrl', function($scope,Restos,Barrios,$stateParams,LoadingService,$rootScope) {
+.controller('RestosCtrl', function($scope,Restos,Barrios,$location,$state,$stateParams,LoadingService,$rootScope) {
 
   LoadingService.show();
 
   $scope.dataIsThere = false;
-  $scope.current_time = new Date().getHours()
 
+  $scope.$root.tabsHidden = "tabs-item-hide";
   Barrios.setSelectedBarrio($stateParams.barrioId)
   $scope.barrio = Barrios.getSelectedBarrio()
   
   $scope.predicate = "distance"
+  
+  $scope.doRefresh = function(){
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      console.log("ubicacion obtenida")
+      $rootScope.lat  = pos.coords.latitude
+      $rootScope.long = pos.coords.longitude
+      $scope.getData();
+    }, function(error) {
+      console.log("error")
+    })
+  }
 
   $scope.getData = function(){
+    LoadingService.show();
     position = [$scope.lat, $scope.long]
     if($scope.lat && $scope.long){
 
       Restos.getWithPosition($stateParams.barrioId,position).then(function(response){
         $scope.restos = response;
-        $scope.premRestos = response.filter(function(resto){
-          return resto.is_premium == true
-        }) 
-        $scope.dataIsThere = true;
-        LoadingService.hide()
+        LoadingService.hide();
+        $scope.$broadcast('scroll.refreshComplete');
+        if(!$scope.premRestos){
+          $scope.premRestos = response.filter(function(resto){
+            return resto.is_premium == true
+          }) 
+          
+          $scope.dataIsThere = true;
+          LoadingService.hide()
+        }
       }); 
 
     }else {
       
       Restos.all($stateParams.barrioId).then(function(response){
         $scope.restos = response;
+        $scope.$broadcast('scroll.refreshComplete');
         $scope.premRestos = response.filter(function(resto){
           return resto.is_premium == true
         }) 
+        
         $scope.dataIsThere = true;
         LoadingService.hide()
       });       
@@ -45,6 +64,7 @@ angular.module('restoApp.controllers')
 
   $scope.getFilteredData = function (){
     position = [$scope.lat, $scope.long]
+    LoadingService.show();
     Restos.getFiltered($scope.selecteds,$stateParams.barrioId,position).then(function(response){
       $scope.restos = response;
       LoadingService.hide()

@@ -8,30 +8,48 @@
   }  
 }
 
-
+.carta-content {
+  top: 44px;
+}
 .carta-list{
   p {
-    margin: 0;
+    color: #000;
+    margin: 0.6em;
     text-transform: capitalize;
+    font-size: 0.9em;
+    font-weight: 200;
   }
   i {
-    color: #bdc3c7;
+    color: #000;
+    font-size: 22px !important;
+  }
+  .avatar-categoria {
+    background: #f06d22;
+    border-radius : 30px !important;
+    padding: 0.5em;
+    height: 40px;
   }
 }
 
 .platos-list {
-  padding-top: 30px;
   h2  {
-    font-weight: 200;
+    font-weight: 400;
     text-transform: capitalize;
   }
   p {
+    color: #777 !important;
     float: left;
     font-size: 0.8em;
     margin: 0;
+    width: 200px;
+    line-height: 14px;
+    white-space: normal !important;
   }
   span {
     color: #333;
+  }
+  li:nth-child(even) {
+    background: #f1f1f1;
   }
 }
 .header-platos {

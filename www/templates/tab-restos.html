@@ -20,7 +20,7 @@
       <ion-slide ng-click="setSelectedResto(prem)" ng-repeat="prem in premRestos">  
           <a ui-sref="tab.restos-detail({id :prem.id})">
           <div class="image-container">
-            <img class="bttrlazyloading" ng-src="{{prem.image_url}}" imageResto>
+            <img ng-cache ng-src="{{prem.image_url}}" imageresto>
             <div class="restos-data">
               <div class="data">
                 <h2>{{prem.name}}</h2>

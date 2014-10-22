@@ -13,13 +13,14 @@
 }
 .carta-list{
   p {
+    color: #000;
     margin: 0.6em;
     text-transform: capitalize;
     font-size: 0.9em;
     font-weight: 200;
   }
   i {
-    color: #bdc3c7;
+    color: #000;
     font-size: 22px !important;
   }
   .avatar-categoria {
@@ -32,10 +33,11 @@
 
 .platos-list {
   h2  {
-    font-weight: 200;
+    font-weight: 400;
     text-transform: capitalize;
   }
   p {
+    color: #777 !important;
     float: left;
     font-size: 0.8em;
     margin: 0;

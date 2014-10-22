@@ -1,40 +1,35 @@
 <ion-modal-view>
-    <ion-content >
+    <ion-content class="search-view">
       
       <div class="bar bar-header item-input-inset">
         <label class="item-input-wrapper">
           <i class="icon ion-ios7-search placeholder-icon"></i>
-          <input ng-model="text" ng-change="search(text)"  type="search" placeholder="Search">
+          <input ng-model="text" ng-change="search(text)"  type="search" placeholder="Buscar">
         </label>
         <button ng-click="closeModalSearch()"class="button button-clear">
-          Cancel
+          Cancelar
         </button>
     </div>
 
     <div class="list">
-      <ion-item ng-click="setSelected(resto)"class="item resto-item item-avatar" ng-repeat="resto in restosSearch" ui-sref="tab.restos-detail({id :resto.id})">
-        <img ng-src="{{resto.image}}">  
+      <ion-item ng-click="goToResto(resto)" class="item resto-item item-avatar" ng-repeat="resto in restosSearch" ui-sref="tab.restos-detail({id :resto.id})">
+        <img ng-src="{{resto.image_url}}">  
         <h2>{{resto.name}}</h2>
         <p>{{resto.tipo}}</p>
         <div class="info-right">
           <div ng-if="resto.distance" class="distancia">
+            <i class="icon ion-ios7-location"></i>
             <p>{{resto.distance}} kms</p>
           </div>
-          <div class="hora">
-            <a class="llamar" href="tel:{{resto.telefono}}">Llamar</a>
-          </div>
         </div>
-        
-        <!-- <div class="atributos">
-          <p class="reservas" ng-if="resto.reservas">R</p>
-          <p class="fumadores" ng-if="resto.fumadores">F</p>
-          <p class="menuAtribute" ng-if="resto.menu">M</p>  
-          <p class="tickets" ng-if="resto.tickets">T</p>  
-          <p class="parking" ng-if="resto.parking">E</p> 
-          <p class="wifi" ng-if="resto.wifi">W</p>    
-        </div> -->
       </ion-item>
     </div>
+    <h4 class="not-found" ng-if="showNoData">
+      Ops! No hemos encontrado nada
+    </h4>
+    <h4 class="advice" ng-if="showGuideInfo">
+      Puedes buscar por Nombre o Tipo de Restaurant
+    </h4>
 
     </ion-content>
 

@@ -1,0 +1,33 @@
+.search-view {
+  .item-content {
+    img {
+      max-height: 50px !important;
+      max-width: 50px !important;
+      height: 100%;
+    }
+    h2,p{
+      margin-left: 10px;
+      text-transform: capitalize;
+    }
+  }
+  .bar {
+    background: #fd9a2a;
+    button {
+      color: #fff;
+    }
+    label {
+      background: #fff;
+    }
+  }
+  .hora {
+    text-align: center;
+  }
+  .llamar {
+    padding: 0.6em;
+    background: #f06d22;
+    border-radius: 13px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;  
+  }
+}

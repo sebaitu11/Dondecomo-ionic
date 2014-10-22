@@ -5,7 +5,7 @@ angular.module('restoApp.services')
   return {
     all:function(barrioId){
       var deferred = $q.defer()
-      $http({url : "http://192.168.0.13:3000/barrios/" + barrioId + "/restos.json",method: "GET",cache:true})
+      $http({url : "http://damp-sands-5383.herokuapp.com/barrios/" + barrioId + "/restos.json",method: "GET",cache:true})
           .success(function(response){
 
               deferred.resolve(response)
@@ -17,7 +17,8 @@ angular.module('restoApp.services')
     },
     getWithPosition:function(barrioId,position){
       var deferred = $q.defer()
-      $http({url : "http://192.168.0.13:3000/barrios/" + barrioId + "/restos.json",method: "GET",params: { lat: position[0], lng: position[1]},cache:true})
+      $http({url : "http://damp-sands-5383.herokuapp.com/barrios/" + barrioId + "/restos.json",method: "GET",params: { lat: position[0], lng: position[1]},cache:true})
+
           .success(function(response){
 
               deferred.resolve(response)
@@ -27,21 +28,10 @@ angular.module('restoApp.services')
           })
       return deferred.promise;
     },
-    getPremium:function(barrioId){
-      var deferred = $q.defer()
-      $http.get("http://192.168.0.13:3000/barrios/" + barrioId + "/restos/premium.json",{cache:true})
-          .success(function(response){
-              deferred.resolve(response)
-          })
-          .error(function(){
-              deferred.reject();
-          })
-      return deferred.promise;
-    },
-
-    get:function(restoId){
+    get:function(restoId,position){
      var deferred = $q.defer()
-      $http.get("http://192.168.0.13:3000/resto/" + restoId + "/info.json",{cache:true})
+      $http({url : "http://damp-sands-5383.herokuapp.com/resto/" + restoId + ".json",method: "GET",params: { lat: position[0], lng: position[1]},cache:true})
+
           .success(function(response){
               deferred.resolve(response)
           })
@@ -62,10 +52,10 @@ angular.module('restoApp.services')
        var data = [];
        
        _.each(filters,function(obj){
-        data.push(obj.name)
+        data.push(obj.data)
        })
 
-      $http({url : "http://192.168.0.13:3000/filters.json",method:"GET", params: {"data[]" : data,barrio_id: barrioId,lat: position[0], lng: position[1] },cache:true})
+      $http({url : "http://damp-sands-5383.herokuapp.com/filters.json",method:"GET", params: {"data[]" : data,barrio_id: barrioId,lat: position[0], lng: position[1] },cache:true})
           .success(function(response){
               deferred.resolve(response)
           })

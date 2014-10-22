@@ -1,18 +1,14 @@
-  <ion-modal-view>
+  <ion-modal-view class="filter-view">
     <ion-header-bar>
-      <h1 class="title">Mostrar Restos con</h1>
+      <h1 class="title">Mostrar Restos Tipo</h1>
       <div class="buttons">
-        <button class="button" ng-click="closeModal()">Done</button>
+        <button class="button" ng-click="closeModal()">{{close_or_filter}}</button>
       </div>
     </ion-header-bar>
     <ion-content>
-      
-      <ul class="list">
-        <ion-item class="item" ng-repeat="item in items">
-          <ion-checkbox ng-model="item.checked">{{item.name}}</ion-checkbox>
-        </ion-item>
-      </ul>     
-
+      <h4 class="advice" ng-if="showOneTime">Selecciona los tipos de restaurants que quieres ver</h4>
+      <div class="filter-item"ng-repeat="item in items">
+        <ion-checkbox ng-change="clicked()" ng-model="item.checked">{{item.name}}</ion-checkbox>
+      </div>
     </ion-content>
-
   </ion-modal-view>

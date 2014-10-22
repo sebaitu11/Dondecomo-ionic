@@ -16,9 +16,12 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   }
 
 .image-container-detail {
-  height: 186px;
+  height: 200px;
   overflow: hidden;
   position: relative;
+  img {
+    width: 100%;
+  }
   .overlay-top {
     position: absolute;
     top: 0;
@@ -130,27 +133,80 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   top: 1em;
   p {
     border-radius: 6px;
-    color: #fff;
+    color: #333;
     font-size: 0.7em;
     padding: 0.2em 0.5em;
     text-align: center;
     text-transform: capitalize;
   }
   .open {
-    background: #16a085;
+    border: 1px solid #16a085;
     width: 60px;
   }
   .close {
-    background: #e74c3c;
+    border: 1px solid #e74c3c;
     width: 60px;
   }
   .vermapa {
     background: #f06d22;
+    color: #fff;
     width: 60px;
   }
 }
 .modal-map {
   height: 100%;
+  .tiempo{
+    background: #fff;
+    border-radius : 0px 10px 10px 0px;
+    padding: 10px;
+    position: absolute;
+    top: 446px;
+    left: 0;
+    p {
+      margin: 0;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  .ruta {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    display: inline-flex;
+    padding: 7px;
+    position: absolute!important;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    .title-ruta {
+      width: 45%;
+      float: left;
+      p {
+        line-height: 30px;
+        margin: 0;
+      }
+    }
+    .selected {
+      background: #16a085 !important;
+      border: 1px solid #16a085 !important;
+      color: #fff !important;
+
+    }
+    .transport {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 0 10px 10px 0;
+      color: #333;
+      padding: 5px 7px;
+    }
+    .left {
+      border-radius: 10px 0 0 10px;
+    }
+  }
+  .info-window {
+    a {
+      font-size: 2em;
+    }
+  }
   .center {
     position: absolute;
     background: #333;
@@ -159,6 +215,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     padding: 1em;
     z-index: 10000000;
     bottom: 5.4em;
+  }
+  .walk {
+    bottom: 12em ;
   }
   .close-map {
     background: #f06d22;
@@ -173,7 +232,8 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   .map-container {
     height: 100%;
     #map {
-      height: 100%;
+      height: 93%;
+      top: 45px;
     }
   }
 }
@@ -207,9 +267,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .resto-info {
   background: #fd9627;
   width: 100%;
-  li:first-child {
-    border-top: none;
-  }
+  // li:first-child {
+  //   border-top: none;
+  // }
   li:last-child {
     border-bottom: none;
   }
@@ -221,7 +281,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   }
 }
 .attr-container {
-  float: left;
+  // float: left;
   text-align: center;
   width: 32%;
   p {
@@ -232,25 +292,31 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   }
 }
 .enabled {
-    background: #f06d22 !important;
+    // background: #f06d22 !important;
     opacity: 1 !important;
+    border: 1px solid #f06d22;
+    i {
+      color: #f06d22 !important;
+    }
   }
 .opacity {
   opacity: 1 !important;
 }
 .resto-attr {
-  background: #f1f1f1;
+  background: #fff;
   padding: 0.6em ;
   overflow: hidden;
+  display: -webkit-flex;
   .attr {
+    // background: #ccc;
     border-radius: 26px;
     padding: 0.5em;
     margin: 0 auto;
     text-align: center;
     opacity: 0.3;
-    width: 42px;
+    width: 44px;
     i {
-      color: #fff;
+      color: #ccc;
       font-size: 2em;
     }
   }

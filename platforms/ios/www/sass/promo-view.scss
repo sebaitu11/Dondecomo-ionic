@@ -19,3 +19,46 @@
   }
 
 }
+
+.promo-list {
+  .item {
+    p {
+      white-space: normal !important
+    }
+  }
+  .promo-item {
+    padding: 0 !important;
+    .price {
+      position: absolute;
+      right: 0;
+      top: 2em;
+      p {
+        background: #f06d22;
+        color: #fff;
+        font-size: 1.3em;
+        font-weight: 200;
+        padding: 0.2em 0.5em;
+      }
+    }
+    .image-container {
+      height: 150px;
+      span {
+        width: 100%;
+      }
+    }
+    .info-promo {
+      left: 0;
+      right: 0;
+      padding: 0.5em 1em;
+      position: absolute;
+      bottom: 8em;
+      h2 {
+        color: #fff;
+        font-size: 1.3em;
+        font-weight: bold;
+        text-shadow: 1px 1px 4px #333;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

@@ -1,16 +1,19 @@
-<div class="list menu-list">
+  <div class="list promo-list">
 
-  <div class="item menu-item" ng-repeat="promo in promos">
-    <div class="image-container">
-      <img class="full-image bttrlazyloading" imagepromo>
+    <div class="item promo-item" ng-repeat="promo in promos">
+      <div class="image-container">
+        <img class="full-image bttrlazyloading" imagepromo>
+      </div>
+      <div class="price">
+        <p>${{promo.price}}</p>
+      </div>
+      <div class="info-promo">
+        <h2>{{promo.name}}</h2>
+      </div>
+      <ion-item>
+        <h4>Descripción</h4>
+        <p>{{promo.description}}</p>
+      </ion-item>
     </div>
-    <div class="price">
-      <p>${{promo.price}}</p>
-    </div>
-    <div class="info-menu">
-      <h2>{{promo.name}}</h2>
-      <p>{{promo.description}}</p>
-    </div>
+
   </div>
-
-</div>

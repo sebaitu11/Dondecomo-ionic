@@ -3,6 +3,9 @@ angular.module('restoApp.services')
 .factory('LoadingService', function($ionicLoading) {
   return {
         show : function(param,message) {
+          if(!message){
+            message = "Cargando..."
+          }
           $ionicLoading.show({
               template: '<i class="icon ion-loading-c"></i><br />' + message,
               animation: 'fade-in',

@@ -1,2 +1,13 @@
-<ng-include src="'templates/partials/tab-menu/_list-menu.html'"></ng-include>
+<ion-view title="{{resto.name}}">
+  
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-left" ng-click="atras()">Atras</button>
+  </ion-nav-buttons>
+  
+  <ion-content>
+    <ng-include src="'templates/partials/tab-menu/_list-menu.html'"></ng-include>
+
+    <h4 class="not-found" ng-if="noData">No hay menu del dia disponible</h4>
+  </ion-content>
+</ion-view>
 

@@ -12,12 +12,17 @@ angular.module('restoApp.controllers')
   $scope.close_or_filter = "Cerrar"
 
   $scope.items = [
-    { name: "peruano" , checked: false},
-    { name: "coffee" , checked:false},
-    { name: "italiano", checked: false},
-    { name: "nacional", checked: false},
-    { name: "internacional", checked: false},
-    { name: "mexicano", checked: false}
+    { name: "peruano" , data:"peruano",checked: false},
+    { name: "indu" , data: "indu", checked:false},
+    { name: "arabe",data: "arabe" ,checked: false},
+    { name: "japonés",data: "japones" ,checked: false},
+    { name: "chino", data: "chino",checked: false},
+    { name: "cafe", data: "cafe",checked: false},
+    { name: "chileno", data: "chileno",checked: false},
+    { name: "bar-restaurante", data: "bar-restaurante",checked: false},
+    { name: "pastelería", data: "pasteleria",checked: false},
+    { name: "vegetariano",data: "vegetariano", checked: false},
+    { name: "español", data: "español",checked: false}
   ];
 
   $scope.showOneTime = true;

@@ -10,12 +10,17 @@
   
   <ion-content class="has-header" padding="false">
     
-    <ion-slide-box ng-if="dataIsThere" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <ion-slide-box ng-if="dataIsThere" show-pager="false" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
     
-      <ion-slide ng-repeat="prem in premRestos">  
-          <a  href="#/tab/resto/{{prem.id}}">
+      <ion-slide ng-click="setSelectedResto(prem)" ng-repeat="prem in premRestos">  
+          <a ui-sref="tab.restos-detail({id :prem.id})">
           <div class="image-container">
-            <img class="bttrlazyloading" ng-src="{{prem.image}}" imageResto>
+            <img ng-cache ng-src="{{prem.image_url}}" imageresto>
             <div class="restos-data">
               <div class="data">
                 <h2>{{prem.name}}</h2>
@@ -28,8 +33,8 @@
 
     </ion-slide-box>
 
-    <ion-list ng-if="dataIsThere">
-      <ion-item
+    <div class="list" ng-if="dataIsThere">
+      <li 
         class="resto-item item item-thumbnail-left"
         collection-repeat="resto in restos | orderBy:predicate"
         collection-item-width="'100%'"
@@ -38,23 +43,20 @@
         ng-click="setSelectedResto(resto)"
         ui-sref="tab.restos-detail({id :resto.id})">
         
-        <img ng-src="{{resto.avatar}}">  
+        <div class="avatar-container">
+          <img ng-src="{{resto.image_url_small}}">  
+        </div>
         <h2>{{resto.name}}</h2>
         <div class="tipo">
           <p>{{resto.tipo}}</p>
-        </div>
-        <div class="info-right">
+              <div class="info-right">
           <div ng-if="resto.distance" class="distancia">
+            <i class="icon ion-ios7-location"></i>
             <p>{{resto.distance}} kms</p>
           </div>
-          <div class="hora">
-            <p class="open" ng-if="resto.open < current_time && resto.close > current_time">abierto</p>
-            <p class="close" ng-if="resto.close <= current_time">cerrado</p>
-          </div>
         </div>
-
-      </ion-item>
-    </ion-list>
+      </li>
+    </div>
 
     </ion-content >
 </ion-view>

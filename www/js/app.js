@@ -1,7 +1,11 @@
 
-angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','restoApp.controllers', 'restoApp.services', 'restoApp.directives'])
+angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','restoApp.controllers', 'restoApp.services', 'restoApp.directives','ngImgCache'])
 
 .run(function($ionicPlatform,DSCacheFactory,$http,$cordovaGeolocation,$rootScope) {
+  
+  ImgCache.options.debug = false;
+  ImgCache.options.chromeQuota = 50*1024*1024;        
+  
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -12,6 +16,12 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
   }, function(error) {
     console.log("error")
   })
+
+  ImgCache.init(function() {
+      console.log('ImgCache init: success!');
+  }, function(){
+      console.log('ImgCache init: error! Check the log for errors');
+  });
   
   DSCacheFactory('defaultCache', {
         maxAge: 200000, // Items added to this cache expire after 15 minutes.
