@@ -41,7 +41,7 @@ angular.module('restoApp.controllers')
   window.initialize = initialize;
   
   window.loadScript = function() {
-    LoadingService.show();
+    LoadingService.show(true,"Cargando Mapa..");
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +

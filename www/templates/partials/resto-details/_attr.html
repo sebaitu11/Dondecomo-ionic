@@ -1,0 +1,32 @@
+<ion-modal-view modal-opacity class="my-overlay attr">
+  <h2>Atributos</h2>
+  <div class="list attr-list">
+    <li ng-if="resto.hasWifi" class="item item-icon-right">
+      Wifi
+      <i class="icon ion-wifi"></i>
+    </li>
+    <li ng-if="resto.hasFumadores" class="item item-icon-right">
+      Fumadores
+      <i class="icon ion-no-smoking"></i>
+    </li>
+    <li ng-if="resto.hasParking" class="item item-icon-right">
+      Estacionamiento
+      <i class="icon ion-model-s"></i>
+    </li>
+    <li ng-if="resto.hasTickets" class="item item-icon-right">
+      Cheq.Restaurante
+      <i class="icon ion-pricetags"></i>
+    </li>
+    <li ng-if="resto.hasMenu" class="item item-icon-right" >
+      Menu del Día
+      <i class="icon ion-fork"></i>
+    </li>
+    <li ng-if="resto.hasReservas" class="item item-icon-right" >
+      Reservas
+      <i class="icon ion-ios7-bookmarks"></i>
+    </li>
+  </div>
+  <div class="close" ng-click="closeModalAttr()">
+    <i class="icon ion-ios7-close-empty"></i>
+  </div>
+</ion-modal-view>

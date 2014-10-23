@@ -1,6 +1,41 @@
 button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   color: #fff;
 }
+.my-overlay {
+   background-color: #222;
+   opacity: 1;
+   padding: 7em 0px;
+   h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+   }
+   .attr-list {
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    width: 80%;
+    li{
+      border: none;
+      background: none;
+      border-width: 0;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+    }
+   }
+   .close {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      width: 80px;
+      margin: 1em auto;
+      i {
+        color: #fff;
+        font-size: 3em;
+      }
+   }
+}
   .atras-container {
     margin: 1.2em 0.5em;
     position: absolute;
@@ -270,6 +305,16 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   // li:first-child {
   //   border-top: none;
   // }
+  .tags {
+    p:before {
+      content: "\2022";
+      margin-right: 3px;
+    }
+    p {
+      float: left;
+      margin-right: 7px;
+    }
+  }
   li:last-child {
     border-bottom: none;
   }
@@ -294,7 +339,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .enabled {
     // background: #f06d22 !important;
     opacity: 1 !important;
-    border: 1px solid #f06d22;
+    border: 1px solid #f06d22 !important;
     i {
       color: #f06d22 !important;
     }
@@ -303,17 +348,17 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   opacity: 1 !important;
 }
 .resto-attr {
-  background: #fff;
+  background: #f1f1f1;
   padding: 0.6em ;
   overflow: hidden;
   display: -webkit-flex;
   .attr {
-    // background: #ccc;
+    border: 1px solid #ccc;
     border-radius: 26px;
     padding: 0.5em;
     margin: 0 auto;
     text-align: center;
-    opacity: 0.3;
+    opacity: 0.6;
     width: 44px;
     i {
       color: #ccc;

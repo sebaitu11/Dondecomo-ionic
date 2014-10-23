@@ -148,10 +148,9 @@
   .filter-item {
     .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
       background: #f06d22;
-      border-color: #fff;
     }
     .checkbox input:before, .checkbox .checkbox-icon:before {
-      border-color: #fd9a2a;
+      border-color: #f06d22;
     }
     .checkbox input:after, .checkbox-icon:after {
       border-color: #fff;

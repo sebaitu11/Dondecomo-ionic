@@ -3,7 +3,7 @@ angular.module('restoApp.controllers')
 .controller('PromosCtrl', function($scope,Promos,Barrios,Restos,$state,LoadingService,$ionicNavBarDelegate) {
   
   $scope.dataIsThere = false;
-  LoadingService.show(false);
+  LoadingService.show(false,"Cargando Promos..");
   $scope.barrio = Barrios.getSelectedBarrio()
   $scope.resto = Restos.getSelectedResto();
 

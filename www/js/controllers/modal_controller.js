@@ -21,3 +21,5 @@ angular.module('restoApp.controllers')
     $scope.modalSearch.remove();
     console.log("destroy")
   });
+
+});

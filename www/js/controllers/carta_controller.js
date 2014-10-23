@@ -2,7 +2,7 @@ angular.module('restoApp.controllers')
 
 .controller('CartaCtrl', function($scope,Carta,Barrios,Restos,$state,LoadingService,$ionicNavBarDelegate) {
   
-  LoadingService.show(false);
+  LoadingService.show(false,"Cargando Carta..");
   $scope.barrio = Barrios.getSelectedBarrio()
   $scope.resto = Restos.getSelectedResto();
   $scope.cartaisHere = false;
