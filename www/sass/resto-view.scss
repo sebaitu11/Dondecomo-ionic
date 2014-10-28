@@ -7,6 +7,26 @@
       width: 100%;
     }
 }
+.here {
+  background: #27ae60 !important;
+  border-top: none;
+  h2 {
+    color: #fff !important;
+  }
+  .tipo {
+    p {
+      color: #fff!important;
+    }
+  }
+  .distancia {
+    i {
+      color: #fff !important;
+    }
+    p {
+      color: #fff !important;
+    }
+  }
+}
 .avatar-container {
   position: absolute;
   top: 10px;

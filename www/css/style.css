@@ -6,6 +6,18 @@
   .resto-slides img {
     width: 100%; }
 
+.here {
+  background: #27ae60 !important;
+  border-top: none; }
+  .here h2 {
+    color: #fff !important; }
+  .here .tipo p {
+    color: white !important; }
+  .here .distancia i {
+    color: #fff !important; }
+  .here .distancia p {
+    color: #fff !important; }
+
 .avatar-container {
   position: absolute;
   top: 10px;
@@ -172,9 +184,12 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   color: #fff; }
 
 .my-overlay {
-  background-color: #222;
+  background-color: #000;
   opacity: 1;
   padding: 7em 0px; }
+  .my-overlay .smoke-image {
+    height: 35px !important;
+    width: 35px; }
   .my-overlay h2 {
     text-align: center;
     color: #fff;
@@ -251,7 +266,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
       width: 100%; }
   .image-container-detail .llamar {
     bottom: 11px;
-    background: #16a085;
+    background: #27ae60;
     border-radius: 33px;
     color: #fff;
     margin: 0 auto;
@@ -269,6 +284,12 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 44px;
     bottom: 101px;
     text-align: center; }
+    .image-container-detail .direccion .pin-here {
+      color: #27ae60 !important; }
+    .image-container-detail .direccion .estas-aqui {
+      font-size: 11px !important;
+      line-height: 13px !important;
+      bottom: -8px !important; }
     .image-container-detail .direccion .blank-point {
       height: 18px;
       width: 16px;
@@ -322,7 +343,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     text-align: center;
     text-transform: capitalize; }
   .right-data .open {
-    border: 1px solid #16a085;
+    border: 1px solid #27ae60;
     width: 60px; }
   .right-data .close {
     border: 1px solid #e74c3c;
@@ -335,13 +356,14 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .modal-map {
   height: 100%; }
   .modal-map .tiempo {
-    background: #fff;
+    background: #333;
     border-radius: 0px 10px 10px 0px;
     padding: 10px;
     position: absolute;
-    top: 446px;
+    top: 432px;
     left: 0; }
     .modal-map .tiempo p {
+      color: #fff;
       margin: 0;
       font-size: 12px;
       text-align: center; }
@@ -355,8 +377,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 100%;
     margin: 0; }
     .modal-map .ruta .title-ruta {
+      float: left;
       width: 45%;
-      float: left; }
+      padding-left: 12px; }
       .modal-map .ruta .title-ruta p {
         line-height: 30px;
         margin: 0; }
@@ -469,6 +492,8 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     text-align: center;
     opacity: 0.6;
     width: 44px; }
+    .resto-attr .attr .smoke-image {
+      width: 24px; }
     .resto-attr .attr i {
       color: #ccc;
       font-size: 2em; }
@@ -572,12 +597,12 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     right: 0;
     padding: 0.5em 1em;
     position: absolute;
-    bottom: 3em; }
+    bottom: 0em; }
     .menu-list .menu-item .info-menu h2 {
       color: #fff;
       font-size: 1.3em;
       font-weight: bold;
-      text-shadow: 1px 1px 4px #333;
+      text-shadow: 1px 1px 2px #333;
       text-transform: capitalize; }
 
 .promo-card {

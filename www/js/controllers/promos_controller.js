@@ -18,7 +18,7 @@ angular.module('restoApp.controllers')
   })   
 
   $scope.atras = function(){
-    $ionicNavBarDelegate.back();
+    $state.go("tab.restos-detail",{id: $scope.resto.id})
   }
   
 })

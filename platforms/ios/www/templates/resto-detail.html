@@ -1,6 +1,6 @@
 <ion-view hide-nav-bar="true" hide-back-button="true">
 
-  <ion-content scroll="true" class="resto-detail-view" has-header="true">
+  <ion-content scrollbar-y="false" scroll="true" class="resto-detail-view" has-header="true">
     
     <ion-refresher
       pulling-text="Pull to refresh..."
@@ -20,57 +20,53 @@
       <a class="llamar" href="tel:{{info.telefono}}">
         <i class="ion-ios7-telephone"></i>
       </a>
-      <a ng-if="resto.distance" class="direccion">
-        <i class="icon ion-ios7-location"></i>
-        <div class="blank-point"></div>
-        <p>{{resto.distance}}</p>
-        <p class="kms">kms</p>
+      <a class="direccion">
+        <i class="icon ion-ios7-location" ng-class="{'pin-here' : resto.distance == 0 }"></i>
+        <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
+        <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p>
+        <p ng-if="resto.distance">{{resto.distance}}</p>
+        <p ng-if="resto.distance" class="kms">kms</p>
       </a>
     </div>
 
     <div class="resto-details">
       <p>"{{resto.details}}"</p>
     </div>
-    <div class="resto-attr">
+    <div class="resto-attr" ng-controller="attrCtrl">
       
-      <div class="attr-container">
+      <div class="attr-container" ng-click="openModalAttr()">
         <div class="attr" ng-class="{ 'enabled' : resto.hasWifi }">
           <i class="icon ion-wifi"></i>
         </div>
-        <!-- <p ng-class="{ 'opacity' : resto.hasWifi }">Wifi</p> -->
       </div>
 
-      <div class="attr-container">
+      <div class="attr-container" ng-click="openModalAttr()">
         <div class="attr" ng-class="{ 'enabled' : resto.hasFumadores }">
-          <i class="icon ion-no-smoking"></i>
+          <img ng-if="resto.hasFumadores" class="smoke-image"ng-src="img/smokeN.png">
+          <img ng-if="resto.hasFumadores == false" class="smoke-image" ng-src="img/smokeDisabled.png">
         </div>
-        <!-- <p ng-class="{ 'opacity' : resto.hasFumadores }">Fumadores</p> -->
       </div>
 
-      <div class="attr-container">
+      <div class="attr-container" ng-click="openModalAttr()">
         <div class="attr"  ng-class="{ 'enabled' : resto.hasParking }">
           <i class="icon ion-model-s"></i>
         </div>
-        <!-- <p ng-class="{ 'opacity' : resto.hasParking }">Estacionamiento</p> -->
       </div>
 
-      <div class="attr-container">
+      <div class="attr-container" ng-click="openModalAttr()">
         <div class="attr" ng-class="{ 'enabled' : resto.hasTickets }">
           <i class="icon ion-pricetags"></i>
         </div>
-        <!-- <p ng-class="{ 'opacity' : resto.hasTickets }">Chq. Restaurant</p> -->
       </div>
-      <div class="attr-container">
+      <div class="attr-container" ng-click="openModalAttr()">
         <div class="attr" ng-class="{ 'enabled' : resto.hasMenu }">
           <i class="icon ion-fork"></i>
         </div>
-        <!-- <p ng-class="{ 'opacity' : resto.hasMenu }">Menu del Día</p> -->
       </div>
-      <div class="attr-container">
+      <div class="attr-container" ng-click="openModalAttr()">
         <div class="attr" ng-class="{ 'enabled' : resto.hasReservas }">
           <i class="icon ion-ios7-bookmarks"></i>
         </div>
-        <!-- <p ng-class="{ 'opacity' : resto.hasReservas }">Reservas</p> -->
       </div>
     </div>
 
@@ -80,8 +76,8 @@
         <h4>Horario</h4>
         <p>{{resto.open}}:00hrs a {{resto.close}}:00hrs</p>
         <div class="right-data">
-          <p class="open" ng-if="resto.open < current_time && resto.close > current_time">abierto</p>
-          <p class="close" ng-if="resto.close <= current_time">cerrado</p>
+          <p class="open" ng-if="current_time >= resto.open && current_time < resto.close">abierto</p>
+          <p class="close" ng-if="current_time > resto.close || current_time < resto.open">cerrado</p>
         </div>
       </li>
       <li class="item">
@@ -90,6 +86,10 @@
         <div ng-controller= "ModalMapCtrl" ng-click="open()" class="right-data">
           <p class="vermapa">Ver Mapa</p>
         </div>
+      </li>
+      <li class="item tags">
+        <h4>Especialidades</h4>
+        <p ng-repeat="tag in resto.tags">{{tag}}</p>
       </li>
     </ul>
   </div>

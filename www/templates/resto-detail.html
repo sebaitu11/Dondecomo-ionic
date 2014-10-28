@@ -20,11 +20,12 @@
       <a class="llamar" href="tel:{{info.telefono}}">
         <i class="ion-ios7-telephone"></i>
       </a>
-      <a ng-if="resto.distance" class="direccion">
-        <i class="icon ion-ios7-location"></i>
-        <div class="blank-point"></div>
-        <p>{{resto.distance}}</p>
-        <p class="kms">kms</p>
+      <a class="direccion">
+        <i class="icon ion-ios7-location" ng-class="{'pin-here' : resto.distance == 0 }"></i>
+        <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
+        <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p>
+        <p ng-if="resto.distance">{{resto.distance}}</p>
+        <p ng-if="resto.distance" class="kms">kms</p>
       </a>
     </div>
 
@@ -41,7 +42,8 @@
 
       <div class="attr-container" ng-click="openModalAttr()">
         <div class="attr" ng-class="{ 'enabled' : resto.hasFumadores }">
-          <i class="icon ion-no-smoking"></i>
+          <img ng-if="resto.hasFumadores" class="smoke-image"ng-src="img/smokeN.png">
+          <img ng-if="resto.hasFumadores == false" class="smoke-image" ng-src="img/smokeDisabled.png">
         </div>
       </div>
 
@@ -74,8 +76,8 @@
         <h4>Horario</h4>
         <p>{{resto.open}}:00hrs a {{resto.close}}:00hrs</p>
         <div class="right-data">
-          <p class="open" ng-if="resto.open < current_time && resto.close > current_time">abierto</p>
-          <p class="close" ng-if="resto.close <= current_time">cerrado</p>
+          <p class="open" ng-if="current_time >= resto.open && current_time < resto.close">abierto</p>
+          <p class="close" ng-if="current_time > resto.close || current_time < resto.open">cerrado</p>
         </div>
       </li>
       <li class="item">

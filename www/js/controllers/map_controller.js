@@ -92,8 +92,6 @@ angular.module('restoApp.controllers')
           $scope.$apply();
         }
     });
-
-
     }, function(error) {
       alert('Unable to get location: ' + error.message);
     });

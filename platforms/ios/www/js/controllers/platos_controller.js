@@ -3,7 +3,7 @@ angular.module('restoApp.controllers')
 .controller('PlatosCtrl', function($scope,Platos,$stateParams,$state,Carta,LoadingService) {
   
   $scope.categoria = Carta.getSelectedCategory($stateParams.categoryId)
-  LoadingService.show(false)
+  LoadingService.show(false,"Cargando Platos...")
   $scope.platosisHere = false;
 
   Platos.all($stateParams.categoryId).then(function(response){

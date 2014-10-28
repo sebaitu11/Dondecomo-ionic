@@ -30,6 +30,14 @@ angular.module('restoApp.directives')
         }
     };
 })
+.directive('modalOpacity', function($rootScope) {
+    return {
+        restrict: 'A',
+        link: function($scope, $el,$getScrollPosition) {
+            $el.parent().css("opacity","0.8")
+        }
+    };
+})
 
 .directive('imageresto', function($rootScope) {
     return {

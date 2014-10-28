@@ -1,6 +1,45 @@
 button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   color: #fff;
 }
+.my-overlay {
+   background-color: #000;
+   opacity: 1;
+   padding: 7em 0px;
+   .smoke-image {
+      height: 35px !important;
+      width: 35px;
+   }
+   h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+   }
+   .attr-list {
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    width: 80%;
+    li{
+      border: none;
+      background: none;
+      border-width: 0;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+    }
+   }
+   .close {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      width: 80px;
+      margin: 1em auto;
+      i {
+        color: #fff;
+        font-size: 3em;
+      }
+   }
+}
   .atras-container {
     margin: 1.2em 0.5em;
     position: absolute;
@@ -16,7 +55,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   }
 
 .image-container-detail {
-  height: 205px;
+  height: 200px;
   overflow: hidden;
   position: relative;
   img {
@@ -61,7 +100,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   }
   .llamar {
     bottom: 11px;
-    background: #16a085;
+    background: #27ae60;
     border-radius: 33px;
     color: #fff;
     margin : 0 auto;
@@ -81,6 +120,14 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
       width: 44px;
       bottom: 101px;
       text-align: center;
+    .pin-here {
+      color: #27ae60 !important;
+    }
+    .estas-aqui {
+      font-size: 11px !important;
+      line-height: 13px !important;
+      bottom: -8px !important;
+    }
     .blank-point {
       height: 18px;
       width: 16px;
@@ -140,7 +187,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     text-transform: capitalize;
   }
   .open {
-    border: 1px solid #16a085;
+    border: 1px solid #27ae60;
     width: 60px;
   }
   .close {
@@ -156,13 +203,14 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .modal-map {
   height: 100%;
   .tiempo{
-    background: #fff;
+    background: #333;
     border-radius : 0px 10px 10px 0px;
     padding: 10px;
     position: absolute;
-    top: 446px;
+    top: 432px;
     left: 0;
     p {
+      color: #fff;
       margin: 0;
       font-size: 12px;
       text-align: center;
@@ -178,8 +226,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 100%;
     margin: 0;
     .title-ruta {
-      width: 45%;
       float: left;
+      width: 45%;
+      padding-left: 12px;
       p {
         line-height: 30px;
         margin: 0;
@@ -270,6 +319,16 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   // li:first-child {
   //   border-top: none;
   // }
+  .tags {
+    p:before {
+      content: "\2022";
+      margin-right: 3px;
+    }
+    p {
+      float: left;
+      margin-right: 7px;
+    }
+  }
   li:last-child {
     border-bottom: none;
   }
@@ -294,7 +353,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .enabled {
     // background: #f06d22 !important;
     opacity: 1 !important;
-    border: 1px solid #f06d22;
+    border: 1px solid #f06d22 !important;
     i {
       color: #f06d22 !important;
     }
@@ -303,18 +362,21 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   opacity: 1 !important;
 }
 .resto-attr {
-  background: #fff;
+  background: #f1f1f1;
   padding: 0.6em ;
   overflow: hidden;
   display: -webkit-flex;
   .attr {
-    // background: #ccc;
+    border: 1px solid #ccc;
     border-radius: 26px;
     padding: 0.5em;
     margin: 0 auto;
     text-align: center;
-    opacity: 0.3;
+    opacity: 0.6;
     width: 44px;
+    .smoke-image {
+      width: 24px;
+    }
     i {
       color: #ccc;
       font-size: 2em;

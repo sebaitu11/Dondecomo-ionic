@@ -2,7 +2,7 @@ angular.module('restoApp.controllers')
 
 .controller('MenuCtrl', function($scope,Menus,Barrios,Restos,$state,LoadingService,$ionicNavBarDelegate) {
   
-  LoadingService.show(false);
+  LoadingService.show(false,"Cargando Menu..");
 
   $scope.barrio = Barrios.getSelectedBarrio();
   $scope.resto = Restos.getSelectedResto();
@@ -19,7 +19,7 @@ angular.module('restoApp.controllers')
   })  
 
   $scope.atras = function(){
-    $ionicNavBarDelegate.back();
+    $state.go("tab.restos-detail",{id: $scope.resto.id})
   }
   
 })

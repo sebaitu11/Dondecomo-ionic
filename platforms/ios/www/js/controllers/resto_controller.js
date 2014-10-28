@@ -1,6 +1,6 @@
 angular.module('restoApp.controllers')
 
-.controller('RestoDetailCtrl', function($scope,Restos,Barrios,$stateParams,$state,$rootScope) {
+.controller('RestoDetailCtrl', function($scope,Restos,Barrios,$stateParams,$state,$rootScope,$cordovaGeolocation) {
 
   $scope.$root.tabsHidden = true;
   $scope.resto = Restos.getSelectedResto()

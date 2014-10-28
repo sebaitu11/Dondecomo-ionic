@@ -6,6 +6,18 @@
   .resto-slides img {
     width: 100%; }
 
+.here {
+  background: #27ae60 !important;
+  border-top: none; }
+  .here h2 {
+    color: #fff !important; }
+  .here .tipo p {
+    color: white !important; }
+  .here .distancia i {
+    color: #fff !important; }
+  .here .distancia p {
+    color: #fff !important; }
+
 .avatar-container {
   position: absolute;
   top: 10px;
@@ -112,7 +124,7 @@
 .filter-view {
   background: #fff; }
   .filter-view .bar {
-    background: #fd9a2a; }
+    background: #f06d22; }
     .filter-view .bar h1 {
       color: #fff; }
   .filter-view .button {
@@ -121,10 +133,9 @@
     background: #f06d22;
     color: #fff; }
   .filter-view .filter-item .checkbox input:checked:before, .filter-view .filter-item .checkbox input:checked + .checkbox-icon:before {
-    background: #fd9a2a;
-    border-color: #fff; }
+    background: #f06d22; }
   .filter-view .filter-item .checkbox input:before, .filter-view .filter-item .checkbox .checkbox-icon:before {
-    border-color: #fd9a2a; }
+    border-color: #f06d22; }
   .filter-view .filter-item .checkbox input:after, .filter-view .filter-item .checkbox-icon:after {
     border-color: #fff; }
   .filter-view .filter-item label {
@@ -172,6 +183,39 @@
 button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   color: #fff; }
 
+.my-overlay {
+  background-color: #000;
+  opacity: 1;
+  padding: 7em 0px; }
+  .my-overlay .smoke-image {
+    height: 35px !important;
+    width: 35px; }
+  .my-overlay h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px; }
+  .my-overlay .attr-list {
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    width: 80%; }
+    .my-overlay .attr-list li {
+      border: none;
+      background: none;
+      border-width: 0;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none; }
+  .my-overlay .close {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 80px;
+    margin: 1em auto; }
+    .my-overlay .close i {
+      color: #fff;
+      font-size: 3em; }
+
 .atras-container {
   margin: 1.2em 0.5em;
   position: absolute;
@@ -185,7 +229,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   margin: 0.9em 0.2em !important; }
 
 .image-container-detail {
-  height: 205px;
+  height: 200px;
   overflow: hidden;
   position: relative; }
   .image-container-detail img {
@@ -222,7 +266,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
       width: 100%; }
   .image-container-detail .llamar {
     bottom: 11px;
-    background: #16a085;
+    background: #27ae60;
     border-radius: 33px;
     color: #fff;
     margin: 0 auto;
@@ -240,6 +284,12 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 44px;
     bottom: 101px;
     text-align: center; }
+    .image-container-detail .direccion .pin-here {
+      color: #27ae60 !important; }
+    .image-container-detail .direccion .estas-aqui {
+      font-size: 11px !important;
+      line-height: 13px !important;
+      bottom: -8px !important; }
     .image-container-detail .direccion .blank-point {
       height: 18px;
       width: 16px;
@@ -293,7 +343,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     text-align: center;
     text-transform: capitalize; }
   .right-data .open {
-    border: 1px solid #16a085;
+    border: 1px solid #27ae60;
     width: 60px; }
   .right-data .close {
     border: 1px solid #e74c3c;
@@ -306,13 +356,14 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .modal-map {
   height: 100%; }
   .modal-map .tiempo {
-    background: #fff;
+    background: #333;
     border-radius: 0px 10px 10px 0px;
     padding: 10px;
     position: absolute;
-    top: 446px;
+    top: 432px;
     left: 0; }
     .modal-map .tiempo p {
+      color: #fff;
       margin: 0;
       font-size: 12px;
       text-align: center; }
@@ -326,8 +377,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 100%;
     margin: 0; }
     .modal-map .ruta .title-ruta {
+      float: left;
       width: 45%;
-      float: left; }
+      padding-left: 12px; }
       .modal-map .ruta .title-ruta p {
         line-height: 30px;
         margin: 0; }
@@ -396,6 +448,12 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .resto-info {
   background: #fd9627;
   width: 100%; }
+  .resto-info .tags p:before {
+    content: "\2022";
+    margin-right: 3px; }
+  .resto-info .tags p {
+    float: left;
+    margin-right: 7px; }
   .resto-info li:last-child {
     border-bottom: none; }
   .resto-info li {
@@ -414,7 +472,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 
 .enabled {
   opacity: 1 !important;
-  border: 1px solid #f06d22; }
+  border: 1px solid #f06d22 !important; }
   .enabled i {
     color: #f06d22 !important; }
 
@@ -422,17 +480,20 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   opacity: 1 !important; }
 
 .resto-attr {
-  background: #fff;
+  background: #f1f1f1;
   padding: 0.6em;
   overflow: hidden;
   display: -webkit-flex; }
   .resto-attr .attr {
+    border: 1px solid #ccc;
     border-radius: 26px;
     padding: 0.5em;
     margin: 0 auto;
     text-align: center;
-    opacity: 0.3;
+    opacity: 0.6;
     width: 44px; }
+    .resto-attr .attr .smoke-image {
+      width: 24px; }
     .resto-attr .attr i {
       color: #ccc;
       font-size: 2em; }
@@ -536,12 +597,12 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     right: 0;
     padding: 0.5em 1em;
     position: absolute;
-    bottom: 3em; }
+    bottom: 0em; }
     .menu-list .menu-item .info-menu h2 {
       color: #fff;
       font-size: 1.3em;
       font-weight: bold;
-      text-shadow: 1px 1px 4px #333;
+      text-shadow: 1px 1px 2px #333;
       text-transform: capitalize; }
 
 .promo-card {
@@ -594,7 +655,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   margin-left: 10px;
   text-transform: capitalize; }
 .search-view .bar {
-  background: #fd9a2a; }
+  background: #f06d22; }
   .search-view .bar button {
     color: #fff; }
   .search-view .bar label {
@@ -618,9 +679,11 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   .bar-stable .button {
     color: #fff !important; }
 
+.tabs {
+  background-color: #f1f1f1; }
+
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
-  background: #16a085;
-  color: #fff; }
+  color: #f06d22; }
 
 .tabs-icon-top > .tabs .tab-item {
   font-size: 11px !important;

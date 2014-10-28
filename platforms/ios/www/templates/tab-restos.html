@@ -1,17 +1,14 @@
 <ion-view title="{{barrio.name}}">
- 
-  <ion-nav-buttons side="right" ng-controller="FilterCtrl">
+<!--   <ion-nav-buttons side="right" ng-controller="FilterCtrl">
       <button class="button button-icon icon ion-ios7-settings" ng-click="openModal()"></button>
-  </ion-nav-buttons>
+  </ion-nav-buttons> -->
 
   <ion-nav-buttons side="right" ng-controller="SearchCtrl">
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
   </ion-nav-buttons>
-  
   <ion-content class="has-header" padding="false">
     
-    <ion-refresher
-      pulling-text="Pull to refresh..."
+    <ion-refresher  
       on-refresh="doRefresh()">
     </ion-refresher>
 
@@ -41,8 +38,8 @@
         collection-item-height="100"
         ng-style="{height: 100}"
         ng-click="setSelectedResto(resto)"
+        ng-class="{'here' : resto.distance == 0}"
         ui-sref="tab.restos-detail({id :resto.id})">
-        
         <div class="avatar-container">
           <img ng-src="{{resto.image_url_small}}">  
         </div>
@@ -50,9 +47,11 @@
         <div class="tipo">
           <p>{{resto.tipo}}</p>
               <div class="info-right">
-          <div ng-if="resto.distance" class="distancia">
-            <i class="icon ion-ios7-location"></i>
-            <p>{{resto.distance}} kms</p>
+          <div class="distancia">
+            <i ng-if="resto.distance"class="icon ion-ios7-location"></i>
+            <i ng-if="resto.distance == 0" class="icon ion-ios7-location"></i>
+            <p ng-if="resto.distance">{{resto.distance}} kms</p>
+            <p ng-if="resto.distance == 0">Estas Aqui!</p>
           </div>
         </div>
       </li>
