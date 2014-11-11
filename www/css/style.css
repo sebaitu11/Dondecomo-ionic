@@ -30,12 +30,14 @@
   .avatar-container img {
     height: 80px; }
 
-.resto-item:nth-child(odd) {
-  background: #f1f1f1; }
-
 .resto-item {
+  border-width: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  padding: 0 !important; }
+  .resto-item .image-container {
+    height: 180px;
+    overflow: hidden; }
   .resto-item h2 {
     color: #f06d22;
     white-space: normal; }
@@ -43,9 +45,8 @@
     color: #16a085 !important;
     opacity: 1 !important; }
   .resto-item .tipo {
-    text-transform: capitalize; }
-    .resto-item .tipo p {
-      color: #333; }
+    text-transform: capitalize;
+    padding: 10px 1em; }
     .resto-item .tipo .mini-attr {
       float: left;
       margin: 0 2px;
@@ -75,17 +76,16 @@
 
 .info-right {
   position: absolute;
-  top: 17px;
-  right: 10px; }
+  bottom: -5px;
+  left: 10px; }
   .info-right i {
     color: #f06d22;
     font-size: 1.7em; }
 
-.distancia {
-  margin-bottom: 0.5em;
-  text-align: center; }
-  .distancia p {
-    font-size: 0.8em; }
+.direccion-restos {
+  bottom: 32px !important; }
+  .direccion-restos .blank-point {
+    border: 1px solid #fff; }
 
 .restos-data {
   background: rgba(0, 0, 0, 0.5);
@@ -183,6 +183,60 @@
 button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   color: #fff; }
 
+.direccion-detail {
+  bottom: 10px !important; }
+
+.direccion {
+  right: 1em;
+  position: absolute;
+  width: 50px;
+  bottom: 52px;
+  text-align: center; }
+  .direccion .pin-here {
+    color: #27ae60 !important; }
+  .direccion .estas-aqui {
+    font-size: 11px !important;
+    line-height: 13px !important;
+    bottom: -8px !important; }
+  .direccion .blank-point {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    background: #f06d22;
+    right: 0;
+    border-radius: 50px;
+    z-index: 1; }
+  .direccion i {
+    font-size: 6em;
+    position: absolute;
+    top: -35px;
+    right: 1px;
+    margin: 0em;
+    bottom: 0em;
+    color: #f06d22;
+    z-index: 2; }
+  .direccion .kms {
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    font-size: 0.6em;
+    right: 2px;
+    width: 23px;
+    font-weight: 400; }
+  .direccion p {
+    margin: 0;
+    right: 0;
+    line-height: 21px;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 1000000;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 18px; }
+
 .my-overlay {
   background-color: #000;
   opacity: 1;
@@ -278,58 +332,6 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 44px; }
     .image-container-detail .llamar i {
       font-size: 2em; }
-  .image-container-detail .direccion {
-    right: 1em;
-    position: absolute;
-    width: 44px;
-    bottom: 101px;
-    text-align: center; }
-    .image-container-detail .direccion .pin-here {
-      color: #27ae60 !important; }
-    .image-container-detail .direccion .estas-aqui {
-      font-size: 11px !important;
-      line-height: 13px !important;
-      bottom: -8px !important; }
-    .image-container-detail .direccion .blank-point {
-      height: 18px;
-      width: 16px;
-      position: absolute;
-      background: #f06d22;
-      right: 0;
-      left: 13px;
-      top: -18px;
-      border-radius: 20px;
-      z-index: 1; }
-    .image-container-detail .direccion i {
-      font-size: 6em;
-      position: absolute;
-      top: -35px;
-      right: 1px;
-      margin: 0em;
-      bottom: 0em;
-      color: #f06d22;
-      z-index: 2; }
-    .image-container-detail .direccion .kms {
-      margin: 0 auto;
-      padding: 0;
-      position: absolute;
-      bottom: -14px;
-      left: 0;
-      font-size: 0.7em;
-      right: 2px;
-      width: 20px;
-      font-weight: 400; }
-    .image-container-detail .direccion p {
-      margin: 0;
-      right: 2px;
-      line-height: 21px;
-      font-weight: bold;
-      font-size: 16px;
-      z-index: 1000000;
-      color: #fff;
-      position: absolute;
-      left: 0;
-      bottom: -1px; }
 
 .right-data {
   right: 0.5em;
@@ -427,20 +429,18 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   top: 44px;
   z-index: 1000000; }
 
-.resto-detail-view {
-  bottom: 44px; }
-  .resto-detail-view .button {
-    font-size: 11px;
-    padding: 0 2px; }
+.resto-detail-view .button {
+  font-size: 11px;
+  padding: 0 2px; }
 
 .resto-details {
-  background: #f06d22;
+  background: #fff;
   padding: 0.2em 0;
   overflow: hidden; }
   .resto-details p {
-    color: #fff;
-    font-size: 1em;
-    font-weight: inherit;
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
     margin: 0;
     padding: 0.7em;
     text-align: center; }
@@ -456,6 +456,8 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     margin-right: 7px; }
   .resto-info li:last-child {
     border-bottom: none; }
+  .resto-info li:first-child {
+    border-top: none; }
   .resto-info li {
     padding: 10px 16px; }
     .resto-info li p {
@@ -483,7 +485,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   background: #f1f1f1;
   padding: 0.6em;
   overflow: hidden;
-  display: -webkit-flex; }
+  display: none; }
   .resto-attr .attr {
     border: 1px solid #ccc;
     border-radius: 26px;
@@ -592,6 +594,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     height: 150px; }
     .menu-list .menu-item .image-container span {
       width: 100%; }
+    .menu-list .menu-item .image-container img {
+      position: absolute;
+      top: -26px; }
   .menu-list .menu-item .info-menu {
     left: 0;
     right: 0;
@@ -671,16 +676,19 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   font-size: 14px; }
 
 .bar-stable {
-  background: #f06d22 !important; }
+  background: #fff !important; }
   .bar-stable .title {
-    color: #fff !important;
+    color: #6a6a6a !important;
     left: 0 !important;
     right: 0 !important; }
   .bar-stable .button {
-    color: #fff !important; }
+    color: #f06d22 !important; }
 
 .tabs {
   background-color: #f1f1f1; }
+
+.pane {
+  background-color: #f1f1f1 !important; }
 
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
   color: #f06d22; }

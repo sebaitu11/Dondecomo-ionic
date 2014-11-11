@@ -89,25 +89,25 @@
     },
     "installed_plugins": {
         "org.apache.cordova.splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.restoapp637949"
+            "PACKAGE_NAME": "DondeComo.DondeComo"
         },
         "org.apache.cordova.geolocation": {
-            "PACKAGE_NAME": "com.ionicframework.restoapp637949"
+            "PACKAGE_NAME": "DondeComo.DondeComo"
         },
         "org.apache.cordova.file": {
-            "PACKAGE_NAME": "com.ionicframework.restoapp637949"
+            "PACKAGE_NAME": "DondeComo.DondeComo"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ionicframework.restoapp637949"
+            "PACKAGE_NAME": "DondeComo.DondeComo"
         },
         "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.ionicframework.restoapp637949"
+            "PACKAGE_NAME": "DondeComo.DondeComo"
         },
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.restoapp637949"
+            "PACKAGE_NAME": "DondeComo.DondeComo"
         },
         "org.apache.cordova.statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.restoapp637949"
+            "PACKAGE_NAME": "DondeComo.DondeComo"
         }
     },
     "dependent_plugins": {}

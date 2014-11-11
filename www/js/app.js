@@ -37,7 +37,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
     }
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.style(1);
+      StatusBar.styleDefault();
     }
   })
 })
@@ -51,15 +51,15 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
   $stateProvider
 
     // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
-    })
+    // .state('tab', {
+    //   url: "/tab",
+    //   abstract: true,
+    //   templateUrl: "templates/tabs.html"
+    // })
 
     // Each tab has its own nav history stack:
 
-    .state('tab.barrios', {
+    .state('barrios', {
       url: '/barrios',
       views: {
         'tab-restos': {
@@ -68,7 +68,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
         }
       }
     })
-    .state('tab.restos', {
+    .state('restos', {
       url: '/barrio/:barrioId',
       views: {
         'tab-restos': {
@@ -77,7 +77,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
         }
       }
     })
-    .state('tab.restos-detail', {
+    .state('restos-detail', {
       url: '/resto/:id',
       views: {
         'tab-restos': {
@@ -124,7 +124,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
     })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/barrios');
+  $urlRouterProvider.otherwise('/barrios');
 
 });
 

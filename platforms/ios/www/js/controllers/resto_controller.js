@@ -6,6 +6,7 @@ angular.module('restoApp.controllers')
   $scope.resto = Restos.getSelectedResto()
   $scope.barrio = Barrios.getSelectedBarrio()
   $scope.current_time = new Date().getHours()
+  $scope.$root.tabsHidden = "tabs-item-hide";
 
   $scope.atras = function(){
     $state.go('tab.restos',{barrioId: $scope.barrio.id});

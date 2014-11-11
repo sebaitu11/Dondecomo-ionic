@@ -6,7 +6,8 @@
   <ion-nav-buttons side="right" ng-controller="SearchCtrl">
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header" padding="false">
+
+  <ion-content scrollbar-y="false" class="has-header" padding="false">
     
     <ion-refresher  
       on-refresh="doRefresh()">
@@ -15,7 +16,7 @@
     <ion-slide-box ng-if="dataIsThere" show-pager="false" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
     
       <ion-slide ng-click="setSelectedResto(prem)" ng-repeat="prem in premRestos">  
-          <a ui-sref="tab.restos-detail({id :prem.id})">
+          <a ui-sref="restos-detail({id :prem.id})">
           <div class="image-container">
             <img ng-cache ng-src="{{prem.image_url}}" imageresto>
             <div class="restos-data">
@@ -32,27 +33,26 @@
 
     <div class="list" ng-if="dataIsThere">
       <li 
-        class="resto-item item item-thumbnail-left"
+        class="resto-item item"
         collection-repeat="resto in restos | orderBy:predicate"
         collection-item-width="'100%'"
-        collection-item-height="100"
-        ng-style="{height: 100}"
+        collection-item-height="245"
+        ng-style="{height: 245}"
         ng-click="setSelectedResto(resto)"
         ng-class="{'here' : resto.distance == 0}"
-        ui-sref="tab.restos-detail({id :resto.id})">
-        <div class="avatar-container">
-          <img ng-src="{{resto.image_url_small}}">  
+        ui-sref="restos-detail({id :resto.id})">
+        <div class="image-container">
+          <img ng-src="{{resto.image_url}}">  
         </div>
-        <h2>{{resto.name}}</h2>
+        <a class="direccion direccion-restos">
+          <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
+          <!-- <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p> -->
+          <p ng-if="resto.distance">{{resto.distance}}</p>
+          <p ng-if="resto.distance" class="kms">kms</p>
+        </a>
         <div class="tipo">
+          <h2>{{resto.name}}</h2>
           <p>{{resto.tipo}}</p>
-              <div class="info-right">
-          <div class="distancia">
-            <i ng-if="resto.distance"class="icon ion-ios7-location"></i>
-            <i ng-if="resto.distance == 0" class="icon ion-ios7-location"></i>
-            <p ng-if="resto.distance">{{resto.distance}} kms</p>
-            <p ng-if="resto.distance == 0">Estas Aqui!</p>
-          </div>
         </div>
       </li>
     </div>

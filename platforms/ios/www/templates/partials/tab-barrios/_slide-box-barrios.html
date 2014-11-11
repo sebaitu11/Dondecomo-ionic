@@ -1,14 +1,14 @@
 <ion-slide-box ng-if="dataIsThere" class="barrio-slides" does-continue="true" on-slide-changed="slideHasChanged($index)">
     
     <ion-slide ng-repeat="barrio in barrios">  
-        <a ui-sref="tab.restos({ barrioId: barrio.id})">
+        <a ui-sref="restos({ barrioId: barrio.id})">
         <div class="image-container">
           <img ng-src="img/barrio{{barrio.id}}.jpg">
           <div class="barrio-data">
             <div class="data">
               <h2>{{barrio.name}}</h2>
               <p>{{barrio.details}}</p>
-              <p>{{barrio.restosCount}} Restaurants en este Barrio</p>
+              <p>{{barrio.cantidad_restos}} Restaurantes en este Barrio</p>
             </div>
           </div>
         </div>

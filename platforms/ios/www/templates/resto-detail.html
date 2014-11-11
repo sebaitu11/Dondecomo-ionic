@@ -1,4 +1,8 @@
-<ion-view hide-nav-bar="true" hide-back-button="true">
+<ion-view title="{{resto.name}}">
+  <p>hla</p>  
+  <ion-nav-buttons side="right" >
+      <button class="button button-icon icon ion-ios7-location-outline"></button>
+  </ion-nav-buttons>
 
   <ion-content scrollbar-y="false" scroll="true" class="resto-detail-view" has-header="true">
     
@@ -9,21 +13,20 @@
     
     <div class="image-container-detail">
       <img ng-cache class="resto-image" ng-src="{{resto.image_url}}" imageresto>  
-      <div class="overlay-top"></div>
-      <div class="overlay"></div>
-      <div ng-click="atras()" class="atras-container">
+<!--       <div class="overlay-top"></div>
+      <div class="overlay"></div> -->
+      <!-- <div ng-click="atras()" class="atras-container">
         <button class="button-icon icon ion-ios7-arrow-back button back-button"></button>
-      </div>
-      <div class="resto-name">
+      </div> -->
+<!--       <div class="resto-name">
         <h2>{{resto.name}}</h2>
-      </div>
-      <a class="llamar" href="tel:{{info.telefono}}">
+      </div> -->
+<!--       <a class="llamar" href="tel:{{info.telefono}}">
         <i class="ion-ios7-telephone"></i>
-      </a>
-      <a class="direccion">
-        <i class="icon ion-ios7-location" ng-class="{'pin-here' : resto.distance == 0 }"></i>
+      </a> -->
+      <a class="direccion direccion-detail">
         <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
-        <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p>
+        <!-- <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p> -->
         <p ng-if="resto.distance">{{resto.distance}}</p>
         <p ng-if="resto.distance" class="kms">kms</p>
       </a>
@@ -77,7 +80,7 @@
         <p>{{resto.open}}:00hrs a {{resto.close}}:00hrs</p>
         <div class="right-data">
           <p class="open" ng-if="current_time >= resto.open && current_time < resto.close">abierto</p>
-          <p class="close" ng-if="current_time > resto.close || current_time < resto.open">cerrado</p>
+          <p class="close" ng-if="current_time >= resto.close || current_time < resto.open">cerrado</p>
         </div>
       </li>
       <li class="item">

@@ -40,12 +40,19 @@
     height: 80px;
   }
 }
-.resto-item:nth-child(odd) {
-    background: #f1f1f1;
-  }
+// .resto-item:nth-child(odd) {
+//     background: #f1f1f1;
+//   }
 .resto-item {
+  // border-color: #f1f1f1;
+  border-width: 0;
   left: 0;
   right: 0;
+  padding: 0 !important;
+  .image-container {
+    height: 180px;
+    overflow: hidden;
+  }
   h2{
     color: #f06d22;
     white-space: normal;
@@ -56,9 +63,7 @@
   }
   .tipo {
     text-transform: capitalize;
-    p {
-      color: #333;
-    }
+    padding: 10px 1em;
     .mini-attr {
       float: left;
       margin: 0 2px;
@@ -96,18 +101,17 @@
 }
 .info-right {
   position: absolute;
-  top: 17px;
-  right: 10px;
+  bottom: -5px;
+  left: 10px;
   i {
     color: #f06d22;
     font-size: 1.7em;
   }
 }
-.distancia {
-  margin-bottom: 0.5em;
-  text-align: center;
-  p {
-  font-size: 0.8em;
+.direccion-restos {
+  bottom: 32px !important;
+  .blank-point {
+    border: 1px solid #fff;
   }
 }
 .restos-data{

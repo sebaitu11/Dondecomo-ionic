@@ -7,20 +7,23 @@
 @import  "search-view";
 
 .bar-stable {
-  background: #f06d22 !important;
+  background: #fff !important;
   .title {
-    color: #fff !important;
+    color: #6a6a6a !important;
     left: 0 !important;
     right: 0 !important;
   }
   .button {
-    color: #fff !important;
+    color: #f06d22 !important;
   }
 }
 .tabs {
   background-color: #f1f1f1;
   // color: #fff;
   // padding-top: 0px;
+}
+.pane {
+  background-color: #f1f1f1 !important;
 }
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
   // background: #16a085;
@@ -63,3 +66,4 @@
   text-align: center;
   padding : 1em; 
 }
+

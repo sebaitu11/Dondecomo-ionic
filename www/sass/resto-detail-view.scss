@@ -1,6 +1,68 @@
 button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   color: #fff;
 }
+.direccion-detail {
+  bottom: 10px !important;
+}
+.direccion{
+      right: 1em;
+      position: absolute;
+      width: 50px;
+      bottom: 52px;
+      text-align: center;
+    .pin-here {
+      color: #27ae60 !important;
+    }
+    .estas-aqui {
+      font-size: 11px !important;
+      line-height: 13px !important;
+      bottom: -8px !important;
+    }
+    .blank-point {
+      height: 50px;
+      width: 50px;
+      position: relative;
+      background: #f06d22;
+      right: 0;
+      border-radius: 50px;
+      z-index: 1;
+    }
+    i {
+      font-size: 6em;
+      position: absolute;
+      top: -35px;
+      right: 1px;
+      margin: 0em;
+      bottom: 0em;
+      color: #f06d22;
+      z-index: 2;
+    }
+    .kms {
+      margin: 0 auto;
+      padding: 0;
+      position: absolute;
+      bottom: 5px;
+      left: 2px;
+      font-size: 0.6em;
+      right: 2px;
+      width: 23px;
+      font-weight: 400
+    }
+    p {
+      margin: 0;
+      right: 0;
+      line-height: 21px;
+      font-weight: bold;
+      font-size: 16px;
+      z-index: 1000000;
+      color: #fff;
+      position: absolute;
+      left: 0;
+      bottom: 18px;
+    }
+  }
+
+
 .my-overlay {
    background-color: #000;
    opacity: 1;
@@ -112,65 +174,6 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 44px;
     i {
       font-size: 2em;
-    }
-  }
-  .direccion{
-      right: 1em;
-      position: absolute;
-      width: 44px;
-      bottom: 101px;
-      text-align: center;
-    .pin-here {
-      color: #27ae60 !important;
-    }
-    .estas-aqui {
-      font-size: 11px !important;
-      line-height: 13px !important;
-      bottom: -8px !important;
-    }
-    .blank-point {
-      height: 18px;
-      width: 16px;
-      position: absolute;
-      background: #f06d22;
-      right: 0;
-      left: 13px;
-      top: -18px;
-      border-radius: 20px;
-      z-index: 1;
-    }
-    i {
-      font-size: 6em;
-      position: absolute;
-      top: -35px;
-      right: 1px;
-      margin: 0em;
-      bottom: 0em;
-      color: #f06d22;
-      z-index: 2;
-    }
-    .kms {
-      margin: 0 auto;
-      padding: 0;
-      position: absolute;
-      bottom: -14px;
-      left: 0;
-      font-size: 0.7em;
-      right: 2px;
-      width: 20px;
-      font-weight: 400
-    }
-    p {
-      margin: 0;
-      right: 2px;
-      line-height: 21px;
-      font-weight: bold;
-      font-size: 16px;
-      z-index: 1000000;
-      color: #fff;
-      position: absolute;
-      left: 0;
-      bottom: -1px;
     }
   }
 }
@@ -293,7 +296,6 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 }
 
 .resto-detail-view{
-  bottom: 44px;
   .button {
     font-size: 11px;
     padding: 0 2px;
@@ -301,13 +303,13 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 }
 
 .resto-details {
-  background: #f06d22;
+  background: #fff;
   padding: 0.2em 0;
   overflow: hidden;
   p {
-    color: #fff;
-    font-size: 1em;
-    font-weight: inherit;
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
     margin: 0;
     padding: 0.7em;
     text-align: center;
@@ -331,6 +333,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   }
   li:last-child {
     border-bottom: none;
+  }
+  li:first-child {
+    border-top: none;
   }
   li {
     padding: 10px 16px;
@@ -365,7 +370,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   background: #f1f1f1;
   padding: 0.6em ;
   overflow: hidden;
-  display: -webkit-flex;
+  display: none;
   .attr {
     border: 1px solid #ccc;
     border-radius: 26px;
