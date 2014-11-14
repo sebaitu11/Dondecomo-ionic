@@ -2436,7 +2436,7 @@ ion-infinite-scroll {
     font-size: 30px;
     color: #666666; }
   ion-infinite-scroll.active {
-    opacity: 1; }
+    opacity: 0; }
 
 .overflow-scroll {
   overflow-x: hidden;

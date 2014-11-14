@@ -67,3 +67,12 @@
   padding : 1em; 
 }
 
+.loading {
+  background-color: #fff !important;
+  i,span {
+    color: #333;
+  }
+  i {
+    font-size: 2em;
+  }
+}

@@ -8,6 +8,7 @@ angular.module('restoApp.controllers')
   Barrios.all().then(function(response){
     LoadingService.hide();
     $scope.barrios = response;
+    $scope.$root.barriosLoaded = true;
     $cordovaSplashscreen.hide();
     $scope.dataIsThere = true;
   })

@@ -1,18 +1,20 @@
-<ion-slide-box ng-if="dataIsThere" class="barrio-slides" does-continue="true" on-slide-changed="slideHasChanged($index)">
-    
-    <ion-slide ng-repeat="barrio in barrios">  
-        <a ui-sref="restos({ barrioId: barrio.id})">
-        <div class="image-container">
-          <img ng-src="img/barrio{{barrio.id}}.jpg">
-          <div class="barrio-data">
-            <div class="data">
-              <h2>{{barrio.name}}</h2>
-              <p>{{barrio.details}}</p>
-              <p>{{barrio.cantidad_restos}} Restaurantes en este Barrio</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </ion-slide>
+<ion-list class="barrios">
+  <ion-item 
+    class="barrio-item item"
+    collection-repeat="barrio in barrios"
+    collection-item-width="'100%'"
+    collection-item-height="220"
+    ng-style="{height: 220}"
+    ui-sref="restos({barrioId :barrio.id})">
 
-</ion-slide-box>
+    <div class="image-container" >
+      <img ng-src="img/barrio{{barrio.id}}.jpg" image-barrio/>
+    </div>
+    <div class="barrio-data">
+      <div class="data">
+        <h2>{{barrio.name}}</h2>
+        <p>{{barrio.cantidad_restos}} Restaurantes en este Barrio</p>
+      </div>
+    </div>
+  </ion-item>
+</ion-list>

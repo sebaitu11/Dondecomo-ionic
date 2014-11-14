@@ -7,7 +7,7 @@ angular.module('restoApp.services')
             message = "Cargando..."
           }
           $ionicLoading.show({
-              template: '<i class="icon ion-loading-c"></i><br />' + message,
+              template: '<i class="icon ion-ios7-reloading"></i><br />' + message,
               animation: 'fade-in',
               showBackdrop: param,
               maxWidth: 300,

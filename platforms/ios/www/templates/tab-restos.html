@@ -7,18 +7,18 @@
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
   </ion-nav-buttons>
 
-  <ion-content scrollbar-y="false" class="has-header" padding="false">
+  <ion-content paging="true" scrollbar-y="false" class="has-header" padding="false">
     
-    <ion-refresher  
+    <!-- <ion-refresher  
       on-refresh="doRefresh()">
-    </ion-refresher>
+    </ion-refresher> -->
 
     <ion-slide-box ng-if="dataIsThere" show-pager="false" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
     
       <ion-slide ng-click="setSelectedResto(prem)" ng-repeat="prem in premRestos">  
           <a ui-sref="restos-detail({id :prem.id})">
           <div class="image-container">
-            <img ng-cache ng-src="{{prem.image_url}}" imageresto>
+            <img ng-cache ng-src="{{prem.image_url}}" image-resto>
             <div class="restos-data">
               <div class="data">
                 <h2>{{prem.name}}</h2>
@@ -31,8 +31,8 @@
 
     </ion-slide-box>
 
-    <div class="list" ng-if="dataIsThere">
-      <li 
+    <ion-list>
+      <ion-item 
         class="resto-item item"
         collection-repeat="resto in restos | orderBy:predicate"
         collection-item-width="'100%'"
@@ -41,8 +41,9 @@
         ng-click="setSelectedResto(resto)"
         ng-class="{'here' : resto.distance == 0}"
         ui-sref="restos-detail({id :resto.id})">
-        <div class="image-container">
-          <img ng-src="{{resto.image_url}}">  
+
+        <div class="image-container" >
+          <img ng-src="{{resto.image_url}}" image-resto/>
         </div>
         <a class="direccion direccion-restos">
           <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
@@ -51,11 +52,17 @@
           <p ng-if="resto.distance" class="kms">kms</p>
         </a>
         <div class="tipo">
-          <h2>{{resto.name}}</h2>
-          <p>{{resto.tipo}}</p>
+          <h2>{{resto.name}}</h2><span>| {{resto.tipo}}</span>
+          <p>{{resto.details}}</p>
         </div>
-      </li>
-    </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll
+      icon="ion-loading-c"
+      on-infinite="loadMore()"
+      distance = "20%">
+    </ion-infinite-scroll>
 
     </ion-content >
 </ion-view>

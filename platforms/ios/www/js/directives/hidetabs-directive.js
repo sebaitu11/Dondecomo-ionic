@@ -39,19 +39,30 @@ angular.module('restoApp.directives')
     };
 })
 
-.directive('imageresto', function($rootScope) {
+.directive('imageResto', function($rootScope,$timeout) {
     return {
         restrict: 'A',
-        link: function($scope, $el,$getScrollPosition) {
-            $($el).bttrlazyloading({
-                backgroundcolor: '#c0392b',
-                sm: {
-                    src: $scope.image_url,
-                    width: 350,
-                    height: 190
-                }
-            });
-            $($el).trigger("bttrlazyloading.load")
+        link: function($scope, element,attrs) {
+          if(!$rootScope.restosLoaded){
+              element.css("opacity",0);
+              element.bind("load",function (arg) {
+                arg.target.style.opacity = 1;
+              })
+          }
         }
     };
-});
+})
+
+.directive('imageBarrio', function($rootScope,$timeout) {
+    return {
+        restrict: 'A',
+        link: function($scope, element,attrs) {
+          if(!$rootScope.barriosLoaded){
+              element.css("opacity",0);
+              element.bind("load",function (arg) {
+                arg.target.style.opacity = 1;
+              })
+          }
+        }
+    };
+})
