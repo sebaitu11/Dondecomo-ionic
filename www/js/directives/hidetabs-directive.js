@@ -52,7 +52,6 @@ angular.module('restoApp.directives')
         }
     };
 })
-
 .directive('imageBarrio', function($rootScope,$timeout) {
     return {
         restrict: 'A',

@@ -1,0 +1,18 @@
+<ion-modal-view class="my-overlay menu-modal">
+  <ion-content class="padding-top has-footer">    
+    <div class="data-modal">
+      <h3>{{selectedPromo.name}}</h3>
+      <div class="image">
+        <img ng-src="{{selectedPromo.image_url}}">
+      </div>
+      <div class="info-menu">
+        <h2>Descripción</h2>
+        <p>{{selectedPromo.description}}</p>
+      </div>
+    
+    </div>
+  </ion-content>
+  <div class="bar bar-footer close" ng-click="closeModalPromo()">
+    <div class="title">Cerrar</div>
+  </div>
+</ion-modal-view>

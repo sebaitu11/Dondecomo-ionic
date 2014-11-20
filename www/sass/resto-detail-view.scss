@@ -64,13 +64,16 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 
 
 .my-overlay {
-   background-color: #000;
+   background-color: rgba(0,0,0,0.8);
    opacity: 1;
    padding: 7em 0px;
    .smoke-image {
       height: 35px !important;
       width: 35px;
    }
+   .title {
+    color: #fff;
+  }
    h2 {
     text-align: center;
     color: #fff;
@@ -90,12 +93,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     }
    }
    .close {
-      position: absolute;
-      left: 0;
-      right: 0;
+      background: #f06d22;
       text-align: center;
-      width: 80px;
-      margin: 1em auto;
+      width: 100%;
       i {
         color: #fff;
         font-size: 3em;
@@ -321,15 +321,18 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   // li:first-child {
   //   border-top: none;
   // }
-  .tags {
-    p:before {
-      content: "\2022";
-      margin-right: 3px;
+  .menu-item {
+    img {
+      border-radius: 15px;
+      height: 100%;
     }
-    p {
-      float: left;
-      margin-right: 7px;
-    }
+  }
+  .title {
+    background: #f1f1f1;
+    color: #555;
+    margin: 0;
+    font-size: 16px;
+    padding: 0.7em 1em;
   }
   li:last-child {
     border-bottom: none;
@@ -367,10 +370,10 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   opacity: 1 !important;
 }
 .resto-attr {
-  background: #f1f1f1;
+  background: #fff;
+  display: -webkit-flex;
   padding: 0.6em ;
   overflow: hidden;
-  display: none;
   .attr {
     border: 1px solid #ccc;
     border-radius: 26px;

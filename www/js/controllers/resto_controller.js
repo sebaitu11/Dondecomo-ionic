@@ -1,6 +1,6 @@
 angular.module('restoApp.controllers')
 
-.controller('RestoDetailCtrl', function($scope,Restos,Barrios,$ionicScrollDelegate,$stateParams,$state,$rootScope,$cordovaGeolocation) {
+.controller('RestoDetailCtrl', function($scope,Restos,Barrios,Menus,Promos,LoadingService,$ionicScrollDelegate,$stateParams,$state,$rootScope,$cordovaGeolocation) {
 
   $scope.$root.tabsHidden = true;
   $scope.resto = Restos.getSelectedResto()
@@ -19,6 +19,23 @@ angular.module('restoApp.controllers')
       $scope.resto.distance = response
     })
   }
+
+  $scope.getMenus = function(){
+    LoadingService.show(true,"Cargando..");
+    Menus.all($scope.resto.id).then(function(response){
+      LoadingService.hide();
+      $scope.menus = response
+    })
+  }
+
+  $scope.getPromos = function(){
+    Promos.all($scope.resto.id).then(function(response){
+      $scope.promos = response
+    })
+  }  
+
+  $scope.getMenus();
+  $scope.getPromos();
 
   $scope.doRefresh = function(){
     $scope.getResto($scope.resto.id);

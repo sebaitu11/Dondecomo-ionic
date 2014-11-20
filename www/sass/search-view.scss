@@ -1,33 +1,36 @@
 .search-view {
-  .item-content {
-    img {
-      max-height: 50px !important;
-      max-width: 50px !important;
-      height: 100%;
+  .info-right-search {
+    position: absolute;
+    bottom: 54px;
+    right: 10px;
+    i {
+      color: #f06d22;
+      font-size: 2em;
     }
-    h2,p{
-      margin-left: 10px;
+  }
+  .item {
+    padding-top: 27px !important;
+  }
+  .resto-search {
+    .kms {
+      color: #f06d22;
+    }
+    h2 {
+      float: left;
+    }
+    span {
+      float: left;
+      margin-left: 6px;
       text-transform: capitalize;
     }
-  }
-  .bar {
-    background: #f06d22;
-    button {
-      color: #fff;
+    p {
+      margin: 0;
+      width: 100%;
     }
-    label {
-      background: #fff;
+    img {
+      border-radius: 40px;
+      height: 100%;
+      width: 100%;
     }
-  }
-  .hora {
-    text-align: center;
-  }
-  .llamar {
-    padding: 0.6em;
-    background: #f06d22;
-    border-radius: 13px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;  
   }
 }

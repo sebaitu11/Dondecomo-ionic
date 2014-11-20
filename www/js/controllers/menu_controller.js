@@ -1,25 +1,28 @@
 angular.module('restoApp.controllers')
 
-.controller('MenuCtrl', function($scope,Menus,Barrios,Restos,$state,LoadingService,$ionicNavBarDelegate) {
+.controller('MenuCtrl', function($scope,$ionicModal) {
   
-  LoadingService.show(false,"Cargando Menu..");
+  $ionicModal.fromTemplateUrl('templates/partials/resto-details/menu-modal.html', {
+    scope: $scope,
+    animation: 'fade-in'
+    }).then(function(modal) {
+      $scope.menuModal = modal;
+    });
 
-  $scope.barrio = Barrios.getSelectedBarrio();
-  $scope.resto = Restos.getSelectedResto();
-  $scope.menuisHere = false;
+  $scope.openModalMenu = function(menu) {
+    $scope.menuModal.show();
+    $scope.selectedMenu = menu;
+  };
 
-  Menus.all($scope.resto.id).then(function(response){
-    $scope.menus = response
-    if(response.length > 0){
-      $scope.menuisHere = true;
-    }else {
-      $scope.noData = true;
-    }
-    LoadingService.hide();
-  })  
+  $scope.closeModalMenu = function() {
+    $scope.menuModal.hide();
+  };
 
-  $scope.atras = function(){
-    $state.go("tab.restos-detail",{id: $scope.resto.id})
-  }
+  $scope.$on('$destroy', function() {
+    $scope.menuModal.remove();
+    console.log("destroy")
+  });
+
+
   
 })

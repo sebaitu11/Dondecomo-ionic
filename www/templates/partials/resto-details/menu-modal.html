@@ -1,0 +1,25 @@
+<ion-modal-view class="my-overlay menu-modal">
+  <ion-content class="padding-top has-footer">    
+    <div class="data-modal">
+      <h3>{{selectedMenu.name}}</h3>
+      <div class="image">
+        <img ng-src="{{selectedMenu.image_url}}">
+        <p>${{selectedMenu.price}}</p>
+      </div>
+      <div class="info-menu">
+        <h2>Entrada</h2>
+        <p>{{selectedMenu.entrada}}</p>
+        <h2>Fondo</h2>
+        <p>{{selectedMenu.fondo}}</p>
+        <h2>Postre</h2>
+        <p>{{selectedMenu.postre}}</p>
+        <h2>Bebidas</h2>
+        <p>{{selectedMenu.bebestible}}</p>
+      </div>
+    
+    </div>
+  </ion-content>
+  <div class="bar bar-footer close" ng-click="closeModalMenu()">
+    <div class="title">Cerrar</div>
+  </div>
+</ion-modal-view>

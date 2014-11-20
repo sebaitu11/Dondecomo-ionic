@@ -12,17 +12,13 @@
     </div>
 
     <div class="list">
-      <ion-item ng-click="goToResto(resto)" class="item resto-item item-avatar" ng-repeat="resto in restosSearch" ui-sref="tab.restos-detail({id :resto.id})">
+      <a ng-click="goToResto(resto)" class="item resto-search item-thumbnail-left" ng-repeat="resto in restosSearch" ui-sref="restos-detail({id :resto.id})">
         <img ng-src="{{resto.image_url}}">  
         <h2>{{resto.name}}</h2>
-        <p>{{resto.tipo}}</p>
-        <div class="info-right">
-          <div ng-if="resto.distance" class="distancia">
-            <i class="icon ion-ios7-location"></i>
-            <p>{{resto.distance}} kms</p>
-          </div>
-        </div>
-      </ion-item>
+        <span>| {{resto.tipo}}</span>
+        <p>{{resto.details}}</p>
+        <p class="kms">{{resto.distance}} kms</p>
+      </a>
     </div>
     <h4 class="not-found" ng-if="showNoData">
       Ops! No hemos encontrado nada

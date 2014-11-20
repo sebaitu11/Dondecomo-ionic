@@ -249,12 +249,14 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     bottom: 18px; }
 
 .my-overlay {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
   padding: 7em 0px; }
   .my-overlay .smoke-image {
     height: 35px !important;
     width: 35px; }
+  .my-overlay .title {
+    color: #fff; }
   .my-overlay h2 {
     text-align: center;
     color: #fff;
@@ -271,12 +273,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
       font-weight: 500;
       text-decoration: none; }
   .my-overlay .close {
-    position: absolute;
-    left: 0;
-    right: 0;
+    background: #f06d22;
     text-align: center;
-    width: 80px;
-    margin: 1em auto; }
+    width: 100%; }
     .my-overlay .close i {
       color: #fff;
       font-size: 3em; }
@@ -459,12 +458,15 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .resto-info {
   background: #fd9627;
   width: 100%; }
-  .resto-info .tags p:before {
-    content: "\2022";
-    margin-right: 3px; }
-  .resto-info .tags p {
-    float: left;
-    margin-right: 7px; }
+  .resto-info .menu-item img {
+    border-radius: 15px;
+    height: 100%; }
+  .resto-info .title {
+    background: #f1f1f1;
+    color: #555;
+    margin: 0;
+    font-size: 16px;
+    padding: 0.7em 1em; }
   .resto-info li:last-child {
     border-bottom: none; }
   .resto-info li:first-child {
@@ -493,10 +495,10 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   opacity: 1 !important; }
 
 .resto-attr {
-  background: #f1f1f1;
+  background: #fff;
+  display: -webkit-flex;
   padding: 0.6em;
-  overflow: hidden;
-  display: none; }
+  overflow: hidden; }
   .resto-attr .attr {
     border: 1px solid #ccc;
     border-radius: 26px;
@@ -568,58 +570,44 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     font-weight: 200;
     text-transform: capitalize; }
 
-.list .item.item-accordion {
-  line-height: 21px;
-  padding-top: 0.8em;
-  padding-bottom: 0.5em;
-  transition: 0.09s all linear; }
-  .list .item.item-accordion p {
-    font-size: 13px;
-    font-weight: inherit;
-    margin: 0;
-    white-space: pre;
-    text-align: left; }
-
-.list .item.item-accordion.ng-hide {
-  line-height: 0px; }
-
-.list .item.item-accordion.ng-hide-add,
-.list .item.item-accordion.ng-hide-remove {
-  display: block !important; }
-
-.menu-list .item p {
-  white-space: normal !important; }
-.menu-list .menu-item {
-  padding: 0 !important; }
-  .menu-list .menu-item .price {
-    position: absolute;
-    right: 0;
-    top: 2em; }
-    .menu-list .menu-item .price p {
-      background: #f06d22;
+.menu-modal {
+  padding: 2em 0 !important; }
+  .menu-modal .padding-top {
+    padding: 2em 0 !important; }
+  .menu-modal h3 {
+    color: #fff;
+    text-align: center; }
+  .menu-modal .info-menu {
+    padding: 0 2em; }
+    .menu-modal .info-menu h2 {
       color: #fff;
-      font-size: 1.3em;
-      font-weight: 200;
-      padding: 0.2em 0.5em; }
-  .menu-list .menu-item .image-container {
-    height: 150px; }
-    .menu-list .menu-item .image-container span {
+      font-size: 20px;
+      margin: 10px 0;
+      text-align: left; }
+    .menu-modal .info-menu p {
+      border-bottom: 1px solid #444;
+      color: #fff;
+      margin: 0; }
+  .menu-modal .image {
+    position: relative;
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+    height: 160px;
+    overflow: hidden; }
+    .menu-modal .image img {
+      height: 100%;
       width: 100%; }
-    .menu-list .menu-item .image-container img {
+    .menu-modal .image p {
       position: absolute;
-      top: -26px; }
-  .menu-list .menu-item .info-menu {
-    left: 0;
-    right: 0;
-    padding: 0.5em 1em;
-    position: absolute;
-    bottom: 0em; }
-    .menu-list .menu-item .info-menu h2 {
-      color: #fff;
-      font-size: 1.3em;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #333;
-      text-transform: capitalize; }
+      bottom: 0.6em;
+      font-size: 1.6em;
+      left: 0;
+      background: #f06d22;
+      margin: 0;
+      padding: 10px; }
+  .menu-modal p {
+    color: #fff; }
 
 .promo-card {
   margin-top: 8px !important; }
@@ -663,28 +651,30 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
       text-shadow: 1px 1px 4px #333;
       text-transform: capitalize; }
 
-.search-view .item-content img {
-  max-height: 50px !important;
-  max-width: 50px !important;
-  height: 100%; }
-.search-view .item-content h2, .search-view .item-content p {
-  margin-left: 10px;
+.search-view .info-right-search {
+  position: absolute;
+  bottom: 54px;
+  right: 10px; }
+  .search-view .info-right-search i {
+    color: #f06d22;
+    font-size: 2em; }
+.search-view .item {
+  padding-top: 27px !important; }
+.search-view .resto-search .kms {
+  color: #f06d22; }
+.search-view .resto-search h2 {
+  float: left; }
+.search-view .resto-search span {
+  float: left;
+  margin-left: 6px;
   text-transform: capitalize; }
-.search-view .bar {
-  background: #f06d22; }
-  .search-view .bar button {
-    color: #fff; }
-  .search-view .bar label {
-    background: #fff; }
-.search-view .hora {
-  text-align: center; }
-.search-view .llamar {
-  padding: 0.6em;
-  background: #f06d22;
-  border-radius: 13px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px; }
+.search-view .resto-search p {
+  margin: 0;
+  width: 100%; }
+.search-view .resto-search img {
+  border-radius: 40px;
+  height: 100%;
+  width: 100%; }
 
 .bar-stable {
   background: #fff !important; }
