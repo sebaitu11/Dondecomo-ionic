@@ -29,7 +29,7 @@ angular.module('restoApp.services')
   Restos.all = function(barrioId,page){
     var deferred = $q.defer()
     self = this;
-    $http({url : "http://192.168.0.11:3000/barrios/" + barrioId + "/restos.json",method: "GET",params: {page : page},cache:true})
+    $http({url : "http://dondecomo.herokuapp.com/barrios/" + barrioId + "/restos.json",method: "GET",params: {page : page},cache:true})
         .success(function(response){
 
             deferred.resolve(response)
@@ -42,7 +42,7 @@ angular.module('restoApp.services')
   },
   Restos.getPremium = function(barrioId){
     var deferred = $q.defer()
-    $http({url : "http://192.168.0.11:3000/barrios/" + barrioId + "/restos/premium.json",method: "GET",cache:true})
+    $http({url : "http://dondecomo.herokuapp.com/barrios/" + barrioId + "/restos/premium.json",method: "GET",cache:true})
 
         .success(function(response){
 
@@ -56,7 +56,7 @@ angular.module('restoApp.services')
   Restos.getWithPosition = function(barrioId,position,page){
     var deferred = $q.defer()
     self = this;
-    $http({url : "http://192.168.0.11:3000/barrios/" + barrioId + "/restos.json",method: "GET",params: { lat: position[0], lng: position[1],page : page},cache:true})
+    $http({url : "http://dondecomo.herokuapp.com/barrios/" + barrioId + "/restos.json",method: "GET",params: { lat: position[0], lng: position[1],page : page},cache:true})
 
         .success(function(response){
 
@@ -70,7 +70,7 @@ angular.module('restoApp.services')
   },
   Restos.get = function(restoId,position){
    var deferred = $q.defer()
-    $http({url : "http://192.168.0.11:3000/resto/" + restoId + ".json",method: "GET",params: { lat: position[0], lng: position[1]},cache:true})
+    $http({url : "http://dondecomo.herokuapp.com/resto/" + restoId + ".json",method: "GET",params: { lat: position[0], lng: position[1]},cache:true})
 
         .success(function(response){
             deferred.resolve(response)
@@ -95,7 +95,7 @@ angular.module('restoApp.services')
       data.push(obj.data)
      })
 
-    $http({url : "http://192.168.0.11:3000/filters.json",method:"GET", params: {"data[]" : data,barrio_id: barrioId,lat: position[0], lng: position[1] },cache:true})
+    $http({url : "http://dondecomo.herokuapp.com/filters.json",method:"GET", params: {"data[]" : data,barrio_id: barrioId,lat: position[0], lng: position[1] },cache:true})
         .success(function(response){
             deferred.resolve(response)
         })

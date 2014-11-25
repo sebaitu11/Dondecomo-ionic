@@ -7,7 +7,8 @@ angular.module('restoApp.controllers')
   $scope.barrio = Barrios.getSelectedBarrio()
   $scope.restos = [];
   $scope.page = PageState.getState();
-  if(!$scope.page){
+  
+	if(!$scope.page){
     $scope.page = PageState.initialize();
   }else {
     $scope.page = PageState.getState();
@@ -24,8 +25,8 @@ angular.module('restoApp.controllers')
     })
   }
 
-  if(_.isEmpty($scope.restos) && Restos.getCacheRestos().length > 0 ){
-    $scope.restos = Restos.getCacheRestos();
+  if(_.isEmpty($scope.restos) && Restos.getCacheRestos($scope.barrio.id).length > 0 ){
+    $scope.restos = Restos.getCacheRestos($scope.barrio.id);
   }
 
   $scope.getPremiums();

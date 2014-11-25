@@ -1,17 +1,30 @@
 angular.module('restoApp.services')
-.factory('Restos',['$q','$http',function($q,$http){
+.factory('Restos',['$q','$http','PageState',function($q,$http,PageState){
 
   var Restos = {};
 
   Restos.dataRestos = [];
+	Restos.barrio_id = [];
 
   Restos.data = function(restos){
-    if(restos){
+    if(!_.isEmpty(restos)){
       this.dataRestos.push(restos)
     }
   },
-  Restos.getCacheRestos = function(){
-    return _.flatten(this.dataRestos)
+  Restos.getCacheRestos = function(barrio_id){
+		if(_.isEmpty(this.barrio_id)){
+			this.barrio_id.push(barrio_id)
+			return _.flatten(this.dataRestos)
+		}else {
+			if(this.barrio_id[0] === barrio_id){
+				return _.flatten(this.dataRestos)
+			}else {
+				PageState.initialize();
+				this.barrio_id = [];
+				this.barrio_id.push(barrio_id)
+				return this.dataRestos = [];
+			}
+		}
   },
   Restos.all = function(barrioId,page){
     var deferred = $q.defer()

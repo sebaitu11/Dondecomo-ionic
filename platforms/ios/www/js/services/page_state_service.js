@@ -4,6 +4,7 @@ angular.module('restoApp.services')
   return {
     initialize: function(){
       this.state = 0;
+			this.finish = false;
       return this.state
     },
     add : function(){
