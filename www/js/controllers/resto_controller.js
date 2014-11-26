@@ -2,11 +2,9 @@ angular.module('restoApp.controllers')
 
 .controller('RestoDetailCtrl', function($scope,Restos,Barrios,Menus,Promos,LoadingService,$ionicScrollDelegate,$stateParams,$state,$rootScope,$cordovaGeolocation) {
 
-  $scope.$root.tabsHidden = true;
   $scope.resto = Restos.getSelectedResto()
   $scope.barrio = Barrios.getSelectedBarrio()
   $scope.current_time = new Date().getHours()
-  $scope.$root.tabsHidden = "tabs-item-hide";
 
 
   $scope.atras = function(){
@@ -21,9 +19,7 @@ angular.module('restoApp.controllers')
   }
 
   $scope.getMenus = function(){
-    LoadingService.show(true,"Cargando..");
     Menus.all($scope.resto.id).then(function(response){
-      LoadingService.hide();
       $scope.menus = response
     })
   }

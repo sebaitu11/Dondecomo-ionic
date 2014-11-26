@@ -1,10 +1,10 @@
-<ion-view title="{{resto.name}}">
+<ion-view view-title="{{resto.name}}">
   <ion-content scrollbar-y="false" scroll="true" class="resto-detail-view" has-header="true">
     
 <!--     <ion-refresher
       pulling-text="Pull to refresh..."
       on-refresh="doRefresh()">
-    </ion-refresher> -->
+    </ion-refresher> --> 
     
     <div class="image-container-detail">
       <img ng-cache class="resto-image" ng-src="{{resto.image_url}}">  
@@ -19,46 +19,10 @@
     <div class="resto-details">
       <p>"{{resto.details}}"</p>
     </div>
-    <div class="resto-attr" ng-controller="attrCtrl">
-      
-      <div class="attr-container" ng-click="openModalAttr()">
-        <div class="attr" ng-class="{ 'enabled' : resto.hasWifi }">
-          <i class="icon ion-wifi"></i>
-        </div>
-      </div>
-
-      <div class="attr-container" ng-click="openModalAttr()">
-        <div class="attr" ng-class="{ 'enabled' : resto.hasFumadores }">
-          <img ng-if="resto.hasFumadores" class="smoke-image"ng-src="img/smokeN.png">
-          <img ng-if="resto.hasFumadores == false" class="smoke-image" ng-src="img/smokeDisabled.png">
-        </div>
-      </div>
-
-      <div class="attr-container" ng-click="openModalAttr()">
-        <div class="attr"  ng-class="{ 'enabled' : resto.hasParking }">
-          <i class="icon ion-model-s"></i>
-        </div>
-      </div>
-
-      <div class="attr-container" ng-click="openModalAttr()">
-        <div class="attr" ng-class="{ 'enabled' : resto.hasTickets }">
-          <i class="icon ion-pricetags"></i>
-        </div>
-      </div>
-      <div class="attr-container" ng-click="openModalAttr()">
-        <div class="attr" ng-class="{ 'enabled' : resto.hasMenu }">
-          <i class="icon ion-fork"></i>
-        </div>
-      </div>
-      <div class="attr-container" ng-click="openModalAttr()">
-        <div class="attr" ng-class="{ 'enabled' : resto.hasReservas }">
-          <i class="icon ion-ios7-bookmarks"></i>
-        </div>
-      </div>
-    </div>
 
   <div class="resto-info">
     <ul class="list">
+
       <li class="item">
         <h4>Horario</h4>
         <p>{{resto.open}}:00hrs a {{resto.close}}:00hrs</p>
@@ -67,6 +31,7 @@
           <p class="close" ng-if="current_time >= resto.close || current_time < resto.open">cerrado</p>
         </div>
       </li>
+
       <li class="item">
         <h4>Dirección</h4>
         <p>{{resto.direccion}}</p>
@@ -74,26 +39,25 @@
           <p class="vermapa">Ver Mapa</p>
         </div>
       </li>
-      <div class="menus-container" ng-controller="MenuCtrl">
+
+      <div class="menus-container" ng-controller="MenusCtrl">
         <h4 class="title">Menus del Día</h4>
         <a loadMenus ng-repeat="menu in menus" class="item menu-item item-thumbnail-left" ng-click="openModalMenu(menu)">
-          <img src="{{menu.image_url}}">
+          <img ng-src="{{menu.image_url}}">
           <h2>{{menu.name}}</h2>
           <p>{{menu.entrada}},{{menu.fondo}},{{menu.postre}} </p>
         </a>
       </div>
+
       <div class="promos-container" ng-controller="PromosCtrl">
         <h4 class="title">Promociones</h4>
         <a loadMenus ng-repeat="promo in promos" ng-click="openModalPromo(promo)" class="item menu-item item-thumbnail-left">
-          <img src="{{promo.image_url}}">
+          <img ng-src="{{promo.image_url}}">
           <h2>{{promo.name}}</h2>
           <p>{{promo.description}}</p>
         </a>
       </div>
-      <!-- <li class="item tags">
-        <h4>Especialidades</h4>
-        <p ng-repeat="tag in resto.tags">{{tag}}</p>
-      </li> -->
+
     </ul>
   </div>
 

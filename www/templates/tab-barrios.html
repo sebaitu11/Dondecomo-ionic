@@ -1,7 +1,26 @@
 <ion-view title="Elige un Barrio">
   <ion-content class="has-header" scrollbar-y="false">
-   
-   <ng-include src="'templates/partials/tab-barrios/_slide-box-barrios.html'"></ng-include>
+     
+  <ion-list class="barrios">
+    <ion-item 
+      class="barrio-item item"
+      collection-repeat="barrio in barrios"
+      collection-item-width="'100%'"
+      collection-item-height="220"
+      ng-style="{height: 220}"
+      ui-sref="restos({barrioId :barrio.id})">
+
+      <div class="image-container" >
+        <img ng-src="img/barrio{{barrio.id}}.jpg" image-barrio/>
+      </div>
+      <div class="barrio-data">
+        <div class="data">
+          <h2>{{barrio.name}}</h2>
+          <p>{{barrio.restos_count}} Restaurantes en este Barrio</p>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
 
   </ion-content>
 </ion-view>

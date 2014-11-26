@@ -1,32 +1,37 @@
-<ion-modal-view class="my-overlay attr">
-  <h2>Servicios</h2>
-  <div class="list attr-list">
-    <li ng-if="resto.hasWifi" class="item item-icon-right">
-      Wifi
-      <i class="icon ion-wifi"></i>
-    </li>
-    <li ng-if="resto.hasFumadores" class="item item-icon-right">
-      Fumadores
-      <img class="icon smoke-image" ng-src="img/smokeB.png">
-    </li>
-    <li ng-if="resto.hasParking" class="item item-icon-right">
-      Estacionamiento
-      <i class="icon ion-model-s"></i>
-    </li>
-    <li ng-if="resto.hasTickets" class="item item-icon-right">
-      Cheq.Restaurante
-      <i class="icon ion-pricetags"></i>
-    </li>
-    <li ng-if="resto.hasMenu" class="item item-icon-right" >
-      Menu del Día
-      <i class="icon ion-fork"></i>
-    </li>
-    <li ng-if="resto.hasReservas" class="item item-icon-right" >
-      Reservas
-      <i class="icon ion-ios7-bookmarks"></i>
-    </li>
-  </div>
-  <div class="bar bar-footer close" ng-click="closeModalAttr()">
-    <div class="title">Cerrar</div>
-  </div>
-</ion-modal-view>
+<div class="resto-attr" ng-controller="attrCtrl">
+      
+      <div class="attr-container" ng-click="openModalAttr()">
+        <div class="attr" ng-class="{ 'enabled' : resto.hasWifi }">
+          <i class="icon ion-wifi"></i>
+        </div>
+      </div>
+
+      <div class="attr-container" ng-click="openModalAttr()">
+        <div class="attr" ng-class="{ 'enabled' : resto.hasFumadores }">
+          <img ng-if="resto.hasFumadores" class="smoke-image"ng-src="img/smokeN.png">
+          <img ng-if="resto.hasFumadores == false" class="smoke-image" ng-src="img/smokeDisabled.png">
+        </div>
+      </div>
+
+      <div class="attr-container" ng-click="openModalAttr()">
+        <div class="attr"  ng-class="{ 'enabled' : resto.hasParking }">
+          <i class="icon ion-model-s"></i>
+        </div>
+      </div>
+
+      <div class="attr-container" ng-click="openModalAttr()">
+        <div class="attr" ng-class="{ 'enabled' : resto.hasTickets }">
+          <i class="icon ion-pricetags"></i>
+        </div>
+      </div>
+      <div class="attr-container" ng-click="openModalAttr()">
+        <div class="attr" ng-class="{ 'enabled' : resto.hasMenu }">
+          <i class="icon ion-fork"></i>
+        </div>
+      </div>
+      <div class="attr-container" ng-click="openModalAttr()">
+        <div class="attr" ng-class="{ 'enabled' : resto.hasReservas }">
+          <i class="icon ion-ios7-bookmarks"></i>
+        </div>
+      </div>
+    </div>

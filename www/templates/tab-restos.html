@@ -7,13 +7,9 @@
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
   </ion-nav-buttons>
 
-  <ion-content paging="true" scrollbar-y="false" class="has-header" padding="false">
-    
-    <!-- <ion-refresher  
-      on-refresh="doRefresh()">
-    </ion-refresher> -->
+  <ion-content scrollbar-y="false" class="has-header" padding="false">
 
-    <ion-slide-box ng-if="dataIsThere" show-pager="false" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
+    <!-- <ion-slide-box ng-if="dataIsThere" show-pager="false" class="resto-slides" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)">
     
       <ion-slide ng-click="setSelectedResto(prem)" ng-repeat="prem in premRestos">  
           <a ui-sref="restos-detail({id :prem.id})">
@@ -30,7 +26,7 @@
       </ion-slide>
 
     </ion-slide-box>
-
+ -->
     <ion-list>
       <ion-item 
         class="resto-item item"

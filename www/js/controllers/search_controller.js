@@ -2,9 +2,8 @@ angular.module('restoApp.controllers')
 
 .controller('SearchCtrl', function($scope,$ionicModal,Search,Restos,LoadingService) {
 
-$ionicModal.fromTemplateUrl('templates/partials/tab-restos/_search.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
+  $ionicModal.fromTemplateUrl('templates/partials/tab-restos/_search.html', {
+    scope: $scope
     }).then(function(modal) {
       $scope.modalSearch = modal;
     });
