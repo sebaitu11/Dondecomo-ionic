@@ -1,26 +1,22 @@
 angular.module('restoApp.controllers')
 
-.controller('RestoDetailCtrl', function($scope,Restos,Barrios,Menus,Promos,LoadingService,$ionicScrollDelegate,$stateParams,$state,$rootScope,$cordovaGeolocation) {
+.controller('RestoDetailCtrl', function($scope,Restos,Menus,Promos) {
 
   $scope.resto = Restos.getSelectedResto()
-  $scope.barrio = Barrios.getSelectedBarrio()
   $scope.current_time = new Date().getHours()
 
-
-  $scope.atras = function(){
-    $state.go('tab.restos',{barrioId: $scope.barrio.id});
-  }
-  $scope.getResto = function(restoId){
-    position = [$scope.lat, $scope.long]
-    Restos.get(restoId,position).then(function(response){
-      $scope.$broadcast('scroll.refreshComplete');
-      $scope.resto.distance = response
-    })
-  }
-
+  $scope.menusLoaded = false ;
+  // $scope.getResto = function(restoId){
+  //   position = [$scope.lat, $scope.long]
+  //   Restos.get(restoId,position).then(function(response){
+  //     $scope.$broadcast('scroll.refreshComplete');
+  //     $scope.resto.distance = response
+  //   })
+  // }
   $scope.getMenus = function(){
     Menus.all($scope.resto.id).then(function(response){
       $scope.menus = response
+      $scope.menusLoaded = true;
     })
   }
 
@@ -33,12 +29,12 @@ angular.module('restoApp.controllers')
   $scope.getMenus();
   $scope.getPromos();
 
-  $scope.doRefresh = function(){
-    $scope.getResto($scope.resto.id);
-  }
-  if(!$scope.resto.distance){
-    $scope.doRefresh();
-  }
+  // $scope.doRefresh = function(){
+  //   $scope.getResto($scope.resto.id);
+  // }
+  // if(!$scope.resto.distance){
+  //   $scope.doRefresh();
+  // }
 
 
 })

@@ -42,11 +42,11 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
   })
 })
 
-.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
+.config(function($stateProvider, $urlRouterProvider,$httpProvider,$compileProvider) {
 
   $httpProvider.defaults.headers.common['Authorization'] = 'Token token=2da9fc9ad75a5f371403394ed7ddc8ec';
   
-  // $httpProvider.interceptors.push('XSRFInterceptor')
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(comgooglemaps|tel):/);  
   
   $stateProvider
 
@@ -59,17 +59,8 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
 
     // Each tab has its own nav history stack:
 
-    .state('barrios', {
-      url: '/barrios',
-      views: {
-        'tab-restos': {
-          templateUrl: 'templates/tab-barrios.html',
-          controller: 'BarriosCtrl'
-        }
-      }
-    })
     .state('restos', {
-      url: '/barrio/:barrioId',
+      url: '/restos',
       views: {
         'tab-restos': {
           templateUrl: 'templates/tab-restos.html',
@@ -88,7 +79,7 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
     })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/barrios');
+  $urlRouterProvider.otherwise('/restos');
 
 });
 

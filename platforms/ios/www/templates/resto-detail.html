@@ -1,4 +1,4 @@
-<ion-view view-title="{{resto.name}}">
+<ion-view title="{{resto.name}}">
   <ion-content scrollbar-y="false" scroll="true" class="resto-detail-view" has-header="true">
     
 <!--     <ion-refresher
@@ -8,6 +8,9 @@
     
     <div class="image-container-detail">
       <img ng-cache class="resto-image" ng-src="{{resto.image_url}}">  
+      <a class="llamar" ng-href="tel:{{resto.telefono}}">
+        <i class="ion-ios7-telephone"></i>
+      </a>
       <a class="direccion direccion-detail">
         <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
         <!-- <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p> -->
@@ -19,6 +22,7 @@
     <div class="resto-details">
       <p>"{{resto.details}}"</p>
     </div>
+    
 
   <div class="resto-info">
     <ul class="list">
@@ -35,14 +39,21 @@
       <li class="item">
         <h4>Dirección</h4>
         <p>{{resto.direccion}}</p>
-        <div ng-controller= "ModalMapCtrl" ng-click="open()" class="right-data">
-          <p class="vermapa">Ver Mapa</p>
+        <div class="right-data">
+          <a ng-href="comgooglemaps://?saddr={{lat}},{{long}}&daddr={{resto.lat}},{{resto.lng}}&directionsmode=transit" class="vermapa">Como llegar</a>
         </div>
+      </li>
+
+      <li class="item">
+        <h4>Atributos</h4>
+        <p class="atributos first-attr" ng-if="resto.hasWifi">Wifi</p>
+        <p class="atributos" ng-if="resto.hasParking">Estacionamiento</p>
       </li>
 
       <div class="menus-container" ng-controller="MenusCtrl">
         <h4 class="title">Menus del Día</h4>
-        <a loadMenus ng-repeat="menu in menus" class="item menu-item item-thumbnail-left" ng-click="openModalMenu(menu)">
+        <p class="no-item" ng-if="menus.length < 1">No hay menus disponibles</p>
+        <a ng-repeat="menu in menus" class="item menu-item item-thumbnail-left" ng-click="openModalMenu(menu)">
           <img ng-src="{{menu.image_url}}">
           <h2>{{menu.name}}</h2>
           <p>{{menu.entrada}},{{menu.fondo}},{{menu.postre}} </p>
@@ -51,6 +62,7 @@
 
       <div class="promos-container" ng-controller="PromosCtrl">
         <h4 class="title">Promociones</h4>
+        <p class="no-item" ng-if="promos.length < 1">No hay promociones disponibles</p>
         <a loadMenus ng-repeat="promo in promos" ng-click="openModalPromo(promo)" class="item menu-item item-thumbnail-left">
           <img ng-src="{{promo.image_url}}">
           <h2>{{promo.name}}</h2>

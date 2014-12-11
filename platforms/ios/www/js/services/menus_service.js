@@ -4,7 +4,7 @@ angular.module('restoApp.services')
   return {
     all:function(restoId){
       var deferred = $q.defer()
-      $http.get("http://dondecomo.herokuapp.com/resto/" + restoId + "/menus.json" ,{cache:true})
+      $http.get("http://dondecomo.herokuapp.com/api/resto/" + restoId + "/menus.json" ,{cache:true})
           .success(function(response){
               deferred.resolve(response)
           })

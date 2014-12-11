@@ -167,11 +167,11 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     color: #fff;
     margin : 0 auto;
     position: absolute;
-    padding: 0.5em 0.8em;
-    right: 1em;
+    padding: 0.7em 1.1em;
+    left: 1em;
     text-align: center;
     text-decoration: none;
-    width: 44px;
+    width: 51px;
     i {
       font-size: 2em;
     }
@@ -180,7 +180,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .right-data {
   right: 0.5em;
   position: absolute;
-  top: 1em;
+  top: 1.3em;
   p {
     border-radius: 6px;
     color: #333;
@@ -201,6 +201,10 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     background: #f06d22;
     color: #fff;
     width: 60px;
+    padding: 0.3em;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8em;
   }
 }
 .modal-map {
@@ -316,11 +320,24 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   }
 }
 .resto-info {
-  background: #fd9627;
+  background: #fff;
   width: 100%;
   // li:first-child {
   //   border-top: none;
   // }
+  .no-item {
+    color: #777;
+    margin: 0;
+    padding: 1em;
+  }
+  .first-attr {
+    border-right : 1px solid #999;
+    padding-left: 0 !important;
+  }
+  .atributos {
+    float: left;
+    padding: 0 0.8em;
+  }
   .menu-item {
     img {
       border-radius: 15px;
@@ -347,61 +364,6 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     }
   }
 }
-.attr-container {
-  // float: left;
-  text-align: center;
-  width: 32%;
-  p {
-    color: #4d676e;
-    margin: 0;
-    opacity: 0.3;
-    font-size: 12px;
-  }
-}
-.enabled {
-    // background: #f06d22 !important;
-    opacity: 1 !important;
-    border: 1px solid #f06d22 !important;
-    i {
-      color: #f06d22 !important;
-    }
-  }
 .opacity {
   opacity: 1 !important;
-}
-.resto-attr {
-  background: #fff;
-  display: -webkit-flex;
-  padding: 0.6em ;
-  overflow: hidden;
-  .attr {
-    border: 1px solid #ccc;
-    border-radius: 26px;
-    padding: 0.5em;
-    margin: 0 auto;
-    text-align: center;
-    opacity: 0.6;
-    width: 44px;
-    .smoke-image {
-      width: 24px;
-    }
-    i {
-      color: #ccc;
-      font-size: 2em;
-    }
-  }
-}
-
-.popover-resto {
-  height:30px; 
-  text-align:center;
-  h2 {
-    color: #fff;
-    font-size: 1.5em;
-    text-transform: capitalize;
-  }
-}
-
-.popover-backdrop.active{
-  background:none !important;
 }

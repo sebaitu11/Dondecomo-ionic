@@ -7,6 +7,9 @@
       width: 100%;
     }
 }
+.full-width {
+  width: 100%;
+}
 .item-content{
   padding: 0px !important;
 }
@@ -48,7 +51,7 @@
 //   }
 .resto-item {
   // border-color: #f1f1f1;
-  border-width: 0;
+  border: 1px solid #777;
   left: 0;
   right: 0;
   padding: 0 !important;

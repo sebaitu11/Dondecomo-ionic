@@ -9,10 +9,12 @@
       <div class="info-menu">
         <h2>Entrada</h2>
         <p>{{selectedMenu.entrada}}</p>
+        <p></p>
         <h2>Fondo</h2>
         <p>{{selectedMenu.fondo}}</p>
         <h2>Postre</h2>
-        <p>{{selectedMenu.postre}}</p>
+        <p ng-if="selectedMenu.postre != '' ">{{selectedMenu.postre}}</p>
+        <p ng-if="selectedMenu.postre == '' ">No Incluido</p>
         <h2>Bebidas</h2>
         <p>{{selectedMenu.bebestible}}</p>
       </div>
