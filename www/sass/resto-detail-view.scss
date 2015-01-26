@@ -64,13 +64,6 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 
 
 .my-overlay {
-   background-color: rgba(0,0,0,0.8);
-   opacity: 1;
-   padding: 7em 0px;
-   .smoke-image {
-      height: 35px !important;
-      width: 35px;
-   }
    .title {
     color: #fff;
   }
@@ -128,7 +121,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     top: 0;
     height: 67px;
     width: 100%;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));
   }
   .overlay {
     position: absolute;

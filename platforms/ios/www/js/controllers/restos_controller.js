@@ -4,7 +4,7 @@ angular.module('restoApp.controllers')
 
   $scope.restos = [];
   $scope.page = PageState.getState();
-  
+
 	if(!$scope.page){
     $scope.page = PageState.initialize();
   }else {
@@ -14,20 +14,7 @@ angular.module('restoApp.controllers')
   var end = false;
 
   $scope.dataIsThere = false;
-  
-  $scope.predicate = "distance"
 
-  // $scope.getPremiums = function(){
-  //   Restos.getPremium($stateParams.barrioId).then(function(response){
-  //     $scope.premRestos = response
-  //     $scope.dataIsThere = true;
-  //   })
-  // }
-  if(_.isEmpty($scope.restos)){
-    $scope.restos = Restos.getCacheRestos();
-  }
-  // $scope.getPremiums();
-  
   $scope.loadMore = function(){
     if (end) return;
     if (PageState.empty()) return;
@@ -41,7 +28,7 @@ angular.module('restoApp.controllers')
 
       Restos.getWithPosition(position,page).then(function(response){
         if(response.length){
-          $scope.restos = $scope.restos.concat(response) 
+          $scope.restos = $scope.restos.concat(response)
           $scope.$root.restosLoaded = true;
           $cordovaSplashscreen.hide();
           $scope.$broadcast("scroll.infiniteScrollComplete");
@@ -49,13 +36,13 @@ angular.module('restoApp.controllers')
           end = true;
           PageState.setEmpty()
         }
-      }); 
+      });
 
     }else {
-      
+
       Restos.all(page).then(function(response){
         if(response.length){
-          $scope.restos = $scope.restos.concat(response) 
+          $scope.restos = $scope.restos.concat(response)
           $scope.$root.restosLoaded = true;
           $cordovaSplashscreen.hide();
           $scope.$broadcast("scroll.infiniteScrollComplete");
@@ -63,12 +50,12 @@ angular.module('restoApp.controllers')
           end = true;
           PageState.setEmpty()
         }
-      });       
+      });
     }
   }
 
   $scope.setSelectedResto = function(resto){
     Restos.setSelectedResto(resto)
   }
-  
+
 });

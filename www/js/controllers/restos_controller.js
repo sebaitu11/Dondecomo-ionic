@@ -13,20 +13,11 @@ angular.module('restoApp.controllers')
 
   var end = false;
 
-  $scope.dataIsThere = false;
-
-  $scope.predicate = "distance"
-
-  // $scope.getPremiums = function(){
-  //   Restos.getPremium($stateParams.barrioId).then(function(response){
-  //     $scope.premRestos = response
-  //     $scope.dataIsThere = true;
-  //   })
-  // }
-  if(_.isEmpty($scope.restos)){
+  if(_.isEmpty($scope.restos) && Restos.getCacheRestos().length > 0 ){
     $scope.restos = Restos.getCacheRestos();
   }
-  // $scope.getPremiums();
+
+  $scope.dataIsThere = false;
 
   $scope.loadMore = function(){
     if (end) return;

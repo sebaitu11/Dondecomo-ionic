@@ -251,37 +251,30 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     left: 0;
     bottom: 18px; }
 
-.my-overlay {
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 1;
-  padding: 7em 0px; }
-  .my-overlay .smoke-image {
-    height: 35px !important;
-    width: 35px; }
-  .my-overlay .title {
-    color: #fff; }
-  .my-overlay h2 {
-    text-align: center;
+.my-overlay .title {
+  color: #fff; }
+.my-overlay h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 20px; }
+.my-overlay .attr-list {
+  border-top: 1px solid #ccc;
+  margin: 0 auto;
+  width: 80%; }
+  .my-overlay .attr-list li {
+    border: none;
+    background: none;
+    border-width: 0;
     color: #fff;
-    font-size: 20px; }
-  .my-overlay .attr-list {
-    border-top: 1px solid #ccc;
-    margin: 0 auto;
-    width: 80%; }
-    .my-overlay .attr-list li {
-      border: none;
-      background: none;
-      border-width: 0;
-      color: #fff;
-      font-weight: 500;
-      text-decoration: none; }
-  .my-overlay .close {
-    background: #f06d22;
-    text-align: center;
-    width: 100%; }
-    .my-overlay .close i {
-      color: #fff;
-      font-size: 3em; }
+    font-weight: 500;
+    text-decoration: none; }
+.my-overlay .close {
+  background: #f06d22;
+  text-align: center;
+  width: 100%; }
+  .my-overlay .close i {
+    color: #fff;
+    font-size: 3em; }
 
 .atras-container {
   margin: 1.2em 0.5em;

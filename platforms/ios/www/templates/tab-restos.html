@@ -1,4 +1,4 @@
-<ion-view title="Elige un restaurante">
+<ion-view view-title="Elige un restaurante">
 
   <ion-nav-buttons side="right" ng-controller="SearchCtrl">
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
@@ -6,14 +6,13 @@
 
   <ion-content scrollbar-y="false" class="has-header" padding="false">
 
-    <div class="list">
-      <div 
+    <ion-list>
+      <ion-item
         class="resto-item item full-width"
         collection-repeat="resto in restos"
         collection-item-height="245"
         ng-style="{height: 245}"
         ng-click="setSelectedResto(resto)"
-        ng-class="{'here' : resto.distance == 0}"
         ui-sref="restos-detail({id :resto.id})">
 
         <div class="image-container" >
@@ -28,8 +27,8 @@
           <h2>{{resto.name}}</h2><span>| {{resto.tipo}}</span>
           <p>{{resto.details}}</p>
         </div>
-      </div>
-    </div>
+      </ion-item>
+    </ion-list>
 
     <ion-infinite-scroll
       icon="ion-loading-c"
