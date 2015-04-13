@@ -18,7 +18,7 @@
   .here h2 {
     color: #fff !important; }
   .here .tipo p {
-    color: white !important; }
+    color: #fff !important; }
   .here .distancia i {
     color: #fff !important; }
   .here .distancia p {
@@ -251,30 +251,33 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     left: 0;
     bottom: 18px; }
 
-.my-overlay .title {
-  color: #fff; }
-.my-overlay h2 {
-  text-align: center;
-  color: #fff;
-  font-size: 20px; }
-.my-overlay .attr-list {
-  border-top: 1px solid #ccc;
-  margin: 0 auto;
-  width: 80%; }
-  .my-overlay .attr-list li {
-    border: none;
-    background: none;
-    border-width: 0;
+.my-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 50% 0px; }
+  .my-overlay .title {
+    color: #fff; }
+  .my-overlay h2 {
+    text-align: center;
     color: #fff;
-    font-weight: 500;
-    text-decoration: none; }
-.my-overlay .close {
-  background: #f06d22;
-  text-align: center;
-  width: 100%; }
-  .my-overlay .close i {
-    color: #fff;
-    font-size: 3em; }
+    font-size: 20px; }
+  .my-overlay .attr-list {
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    width: 80%; }
+    .my-overlay .attr-list li {
+      border: none;
+      background: none;
+      border-width: 0;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none; }
+  .my-overlay .close {
+    background: #f06d22;
+    text-align: center;
+    width: 100%; }
+    .my-overlay .close i {
+      color: #fff;
+      font-size: 3em; }
 
 .atras-container {
   margin: 1.2em 0.5em;
@@ -299,13 +302,13 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     top: 0;
     height: 67px;
     width: 100%;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0))); }
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, transparent)); }
   .image-container-detail .overlay {
     position: absolute;
     bottom: 0;
     height: 84px;
     width: 100%;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.9))); }
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.9))); }
   .image-container-detail .resto-name {
     bottom: 6px;
     margin: 0.4em 0.8em;
@@ -338,6 +341,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 51px; }
     .image-container-detail .llamar i {
       font-size: 2em; }
+  .image-container-detail .attr {
+    background: #333;
+    left: 5.5em; }
 
 .right-data {
   right: 0.5em;
@@ -540,18 +546,18 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   .menu-modal .padding-top {
     padding: 2em 0 !important; }
   .menu-modal h3 {
-    color: #333;
+    color: #fff;
     text-align: center; }
   .menu-modal .info-menu {
     padding: 0 2em; }
     .menu-modal .info-menu h2 {
-      color: #333;
+      color: #fff;
       font-size: 20px;
       margin: 10px 0;
       text-align: left; }
     .menu-modal .info-menu p {
       border-bottom: 1px solid #444;
-      color: #333;
+      color: #fff;
       margin: 0; }
   .menu-modal .image {
     position: relative;
@@ -572,7 +578,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
       margin: 0;
       padding: 10px; }
   .menu-modal p {
-    color: #333; }
+    color: #fff; }
 
 .promo-card {
   margin-top: 8px !important; }
@@ -672,8 +678,14 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .bar {
   border-bottom: none; }
 
-.modal {
+.menu-modal {
+  background-color: rgba(0, 0, 0, 0.8) !important;
   z-index: 100000 !important; }
+  .menu-modal .close {
+    background: #f06d22;
+    color: #fff;
+    text-align: center;
+    width: 100%; }
 
 .scroll {
   height: 100%;
@@ -704,3 +716,5 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     color: #333; }
   .loading i {
     font-size: 2em; }
+
+/*# sourceMappingURL=style.css.map */

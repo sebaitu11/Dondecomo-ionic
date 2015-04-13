@@ -7,8 +7,6 @@ angular.module('restoApp.controllers')
     }).then(function(modal) {
       $scope.modalSearch = modal;
     });
-
-  
   var position = [$scope.lat, $scope.long]
   
   $scope.restosSearch = []
@@ -36,11 +34,6 @@ angular.module('restoApp.controllers')
       $scope.showGuideInfo = true;
       $scope.showNoData = false;
     }
-  }
-
-  $scope.goToResto = function(resto){
-    selected_resto = _.where($scope.restos,{id:resto.id})
-    Restos.setSelectedResto(selected_resto[0]);
   }
 
   $scope.setSelected = function(resto){

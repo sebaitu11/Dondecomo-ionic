@@ -64,6 +64,8 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 
 
 .my-overlay {
+   background-color: rgba(0,0,0,0.8);
+   padding : 50% 0px;
    .title {
     color: #fff;
   }
@@ -168,6 +170,10 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     i {
       font-size: 2em;
     }
+  }
+  .attr {
+    background: #333;
+    left: 5.5em;
   }
 }
 .right-data {

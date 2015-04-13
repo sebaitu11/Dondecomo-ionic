@@ -13,49 +13,53 @@ angular.module('restoApp.controllers')
 
   var end = false;
 
+  if(_.isEmpty($scope.restos) && Restos.getCacheRestos().length > 0 ){
+    $scope.restos = Restos.getCacheRestos();
+  }
+
   $scope.dataIsThere = false;
 
   $scope.loadMore = function(){
     if (end) return;
     if (PageState.empty()) return;
-    $scope.page = PageState.add()
+    $scope.page = PageState.add();
     $scope.getData($scope.page);
-  }
+  };
 
   $scope.getData = function(page){
-    position = [$scope.lat, $scope.long]
-    if($scope.lat && $scope.long){
 
-      Restos.getWithPosition(position,page).then(function(response){
-        if(response.length){
-          $scope.restos = $scope.restos.concat(response)
-          $scope.$root.restosLoaded = true;
-          $cordovaSplashscreen.hide();
-          $scope.$broadcast("scroll.infiniteScrollComplete");
-        }else {
-          end = true;
-          PageState.setEmpty()
-        }
-      });
-
-    }else {
-
+    // navigator.geolocation.getCurrentPosition(function(pos) {
+    //   console.log("ubicacion obtenida");
+    //   position = [pos.coords.latitude, pos.coords.longitude];
+    //   Restos.getWithPosition(position,page).then(function(response){
+    //     if(response.length){
+    //       $scope.restos = $scope.restos.concat(response);
+    //       $scope.$root.restosLoaded = true;
+    //       $cordovaSplashscreen.hide();
+    //       $scope.$broadcast("scroll.infiniteScrollComplete");
+    //     }else {
+    //       end = true;
+    //       PageState.setEmpty();
+    //     }
+    //   });
+    // }, function(error) {
+      console.log("error");
       Restos.all(page).then(function(response){
         if(response.length){
-          $scope.restos = $scope.restos.concat(response)
+          $scope.restos = $scope.restos.concat(response);
           $scope.$root.restosLoaded = true;
           $cordovaSplashscreen.hide();
           $scope.$broadcast("scroll.infiniteScrollComplete");
         }else {
           end = true;
-          PageState.setEmpty()
+          PageState.setEmpty();
         }
       });
-    }
-  }
+    // });
+  };
 
   $scope.setSelectedResto = function(resto){
-    Restos.setSelectedResto(resto)
-  }
+    Restos.setSelectedResto(resto);
+  };
 
 });

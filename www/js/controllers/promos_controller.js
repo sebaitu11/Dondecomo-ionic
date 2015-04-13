@@ -4,7 +4,6 @@ angular.module('restoApp.controllers')
   
   $ionicModal.fromTemplateUrl('templates/partials/resto-details/promo-modal.html', {
     scope: $scope,
-    animation: 'fade-in'
     }).then(function(modal) {
       $scope.promoModal = modal;
     });

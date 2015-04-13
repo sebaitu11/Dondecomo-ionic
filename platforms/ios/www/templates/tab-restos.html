@@ -1,4 +1,4 @@
-<ion-view view-title="Elige un restaurante">
+<ion-view title="Elige un restaurante">
 
   <ion-nav-buttons side="right" ng-controller="SearchCtrl">
       <button class="button button-icon icon ion-ios7-search" ng-click="openModalSearch()"></button>
@@ -16,7 +16,7 @@
         ui-sref="restos-detail({id :resto.id})">
 
         <div class="image-container" >
-          <img ng-src="{{resto.image_url}}" image-resto/>
+          <img ng-src="{{resto.image}}" image-resto/>
         </div>
         <a class="direccion direccion-restos">
           <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>

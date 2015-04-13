@@ -9,13 +9,6 @@ angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','r
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-  navigator.geolocation.getCurrentPosition(function(pos) {
-    console.log("ubicacion obtenida")
-    $rootScope.lat  = pos.coords.latitude
-    $rootScope.long = pos.coords.longitude
-  }, function(error) {
-    console.log("error")
-  })
 
   ImgCache.init(function() {
       console.log('ImgCache init: success!');

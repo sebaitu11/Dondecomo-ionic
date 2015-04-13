@@ -1,40 +1,26 @@
 angular.module('restoApp.controllers')
 
-.controller('RestoDetailCtrl', function($scope,Restos,Menus,Promos) {
+.controller('RestoDetailCtrl', function($scope,Restos,$state,Location,LoadingService) {
 
-  $scope.resto = Restos.getSelectedResto()
-  $scope.current_time = new Date().getHours()
+  var resto_id = $state.params.id;
+  LoadingService.show();
+  Location.get().then(function(response){
+    Restos.get(resto_id,response).then(function(response){
+      $scope.resto = response;
+      LoadingService.hide();
+    });
+  })
 
-  $scope.menusLoaded = false ;
-  // $scope.getResto = function(restoId){
-  //   position = [$scope.lat, $scope.long]
-  //   Restos.get(restoId,position).then(function(response){
-  //     $scope.$broadcast('scroll.refreshComplete');
-  //     $scope.resto.distance = response
-  //   })
-  // }
-  $scope.getMenus = function(){
-    Menus.all($scope.resto.id).then(function(response){
-      $scope.menus = response
-      $scope.menusLoaded = true;
+  $scope.current_time = new Date().getHours();
+
+  $scope.dataLoaded = false ;
+  $scope.loadRestoData = function(){
+    Restos.getData(resto_id).then(function(response){
+      $scope.menus = response.menus;
+      $scope.promos = response.promos;
+      $scope.dataLoaded = true;
     })
   }
-
-  $scope.getPromos = function(){
-    Promos.all($scope.resto.id).then(function(response){
-      $scope.promos = response
-    })
-  }  
-
-  $scope.getMenus();
-  $scope.getPromos();
-
-  // $scope.doRefresh = function(){
-  //   $scope.getResto($scope.resto.id);
-  // }
-  // if(!$scope.resto.distance){
-  //   $scope.doRefresh();
-  // }
-
+  $scope.loadRestoData();
 
 })

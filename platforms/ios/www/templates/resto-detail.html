@@ -1,10 +1,13 @@
-<ion-view view-title="{{resto.name}}">
+<ion-view title="{{resto.name}}">
   <ion-content scrollbar-y="false" scroll="true" class="resto-detail-view" has-header="true">
 
     <div class="image-container-detail">
       <img ng-cache class="resto-image" ng-src="{{resto.image_url}}">
       <a class="llamar" ng-href="tel:{{resto.telefono}}">
         <i class="ion-ios7-telephone"></i>
+      </a>
+      <a class="llamar attr" ng-controller="attrCtrl">
+        <i class="ion-more" ng-click="openModalAttr()"></i>
       </a>
       <a class="direccion direccion-detail">
         <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
@@ -21,7 +24,6 @@
 
   <div class="resto-info">
     <ul class="list">
-
       <li class="item">
         <h4>Horario</h4>
         <p>{{resto.open}}:00hrs a {{resto.close}}:00hrs</p>
@@ -39,11 +41,11 @@
         </div>
       </li>
 
-      <li class="item">
+      <!-- <li class="item">
         <h4>Atributos</h4>
         <p class="atributos first-attr" ng-if="resto.hasWifi">Wifi</p>
         <p class="atributos" ng-if="resto.hasParking">Estacionamiento</p>
-      </li>
+      </li> -->
 
       <div class="menus-container" ng-controller="MenusCtrl">
         <h4 class="title">Menus del Día</h4>

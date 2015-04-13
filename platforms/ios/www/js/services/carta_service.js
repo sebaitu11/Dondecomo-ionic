@@ -11,7 +11,7 @@ angular.module('restoApp.services')
     all:function(id){
       var deferred = $q.defer()
       var self = this;
-      $http.get("http://dondecomo.herokuapp.com/api/resto/" + id + "/carta.json" ,{cache:true})
+      $http.get("http://localhost:3000/api/resto/" + id + "/carta.json" ,{cache:true})
           .success(function(response){
               deferred.resolve(response)
               self.data(response)
