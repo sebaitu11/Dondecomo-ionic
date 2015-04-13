@@ -40,7 +40,9 @@
         </div>
       </li>
 
-      <ion-spinner icon="spiral" ng-if='!dataLoaded' class='text-center'></ion-spinner>
+      <div class="loading-for-data" ng-if='!dataLoaded'>
+        <ion-spinner icon="spiral"></ion-spinner>
+      </div>
       <div ng-if='dataLoaded' class="data-container">
         <div class="menus-container" ng-controller="MenusCtrl">
           <h4 class="title">Menu del Día</h4>

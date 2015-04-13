@@ -659,12 +659,6 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .tabs {
   background-color: #f1f1f1; }
 
-.loading-for-data {
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
-  width: 100%; }
-
 .pane {
   background-color: #f1f1f1 !important; }
 
@@ -723,4 +717,4 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   .loading i {
     font-size: 2em; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

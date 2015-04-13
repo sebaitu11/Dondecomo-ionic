@@ -22,6 +22,13 @@
   // color: #fff;
   // padding-top: 0px;
 }
+.loading-for-data {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  width: 100%;
+}
+
 .pane {
   background-color: #f1f1f1 !important;
 }
@@ -78,6 +85,7 @@
   margin: 0 !important;
   border-width: 0 !important;
 }
+
 
 .loading {
   background-color: #fff !important;
