@@ -6,6 +6,10 @@
   .resto-slides img {
     width: 100%; }
 
+.empty-restos {
+  padding: 1em;
+  text-align: center; }
+
 .full-width {
   width: 100%; }
 
@@ -86,7 +90,8 @@
 .image-container img {
   opacity: 1;
   transition: opacity .3s ease-in;
-  width: 100%; }
+  width: 100%;
+  min-height: 184px; }
 .image-container span {
   height: 200px;
   width: 320px; }
@@ -251,30 +256,33 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     left: 0;
     bottom: 18px; }
 
-.my-overlay .title {
-  color: #fff; }
-.my-overlay h2 {
-  text-align: center;
-  color: #fff;
-  font-size: 20px; }
-.my-overlay .attr-list {
-  border-top: 1px solid #ccc;
-  margin: 0 auto;
-  width: 80%; }
-  .my-overlay .attr-list li {
-    border: none;
-    background: none;
-    border-width: 0;
+.my-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 50% 0px; }
+  .my-overlay .title {
+    color: #fff; }
+  .my-overlay h2 {
+    text-align: center;
     color: #fff;
-    font-weight: 500;
-    text-decoration: none; }
-.my-overlay .close {
-  background: #f06d22;
-  text-align: center;
-  width: 100%; }
-  .my-overlay .close i {
-    color: #fff;
-    font-size: 3em; }
+    font-size: 20px; }
+  .my-overlay .attr-list {
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    width: 80%; }
+    .my-overlay .attr-list li {
+      border: none;
+      background: none;
+      border-width: 0;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none; }
+  .my-overlay .close {
+    background: #f06d22;
+    text-align: center;
+    width: 100%; }
+    .my-overlay .close i {
+      color: #fff;
+      font-size: 3em; }
 
 .atras-container {
   margin: 1.2em 0.5em;
@@ -293,6 +301,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   overflow: hidden;
   position: relative; }
   .image-container-detail img {
+    min-height: 204px;
     width: 100%; }
   .image-container-detail .overlay-top {
     position: absolute;
@@ -338,6 +347,9 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
     width: 51px; }
     .image-container-detail .llamar i {
       font-size: 2em; }
+  .image-container-detail .attr {
+    background: #333;
+    left: 5.5em; }
 
 .right-data {
   right: 0.5em;
@@ -650,8 +662,17 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   .bar-stable .button {
     color: #f06d22 !important; }
 
+.text-align-center {
+  text-align: center; }
+
 .tabs {
   background-color: #f1f1f1; }
+
+.loading-for-data {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  width: 100%; }
 
 .pane {
   background-color: #f1f1f1 !important; }
@@ -672,9 +693,14 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
 .bar {
   border-bottom: none; }
 
-.modal {
-  background-color: #333 !important;
+.menu-modal {
+  background-color: rgba(0, 0, 0, 0.8) !important;
   z-index: 100000 !important; }
+  .menu-modal .close {
+    background: #f06d22;
+    color: #fff;
+    text-align: center;
+    width: 100%; }
 
 .scroll {
   height: 100%;

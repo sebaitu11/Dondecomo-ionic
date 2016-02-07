@@ -1,27 +1,31 @@
-<ion-view title="{{resto.name}}">
+<ion-view >
+  <ion-nav-title>{{resto.name}}</ion-nav-title>
+
   <ion-content scrollbar-y="false" class="resto-detail-view" has-header="true">
 
-    <div class="image-container-detail">
-      <img ng-src="{{resto.image}}" image-resto />
-      <a class="llamar" ng-href="tel:{{resto.telefono}}">
-        <i class="ion-ios-telephone"></i>
-      </a>
-      <a class="llamar attr" ng-controller="attrCtrl">
-        <i class="ion-more" ng-click="openModalAttr()"></i>
-      </a>
-      <a class="direccion direccion-detail">
-        <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
-        <!-- <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p> -->
-        <p ng-if="resto.distance">{{resto.distance}}</p>
-        <p ng-if="resto.distance" class="kms">kms</p>
-      </a>
+    <div ng-if='dataLoaded'>
+      <div class="image-container-detail">
+        <img ng-src="{{resto.image}}" image-resto />
+        <a class="llamar" ng-href="tel:{{resto.telefono}}">
+          <i class="ion-ios-telephone"></i>
+        </a>
+        <a class="llamar attr" ng-controller="attrCtrl">
+          <i class="ion-more" ng-click="openModalAttr()"></i>
+        </a>
+        <a class="direccion direccion-detail">
+          <div class="blank-point" ng-class="{'here' : resto.distance == 0 }"></div>
+          <!-- <p ng-if="resto.distance == 0"class="estas-aqui">Estas Aqui</p> -->
+          <p ng-if="resto.distance">{{resto.distance}}</p>
+          <p ng-if="resto.distance" class="kms">kms</p>
+        </a>
+      </div>
+
+      <div class="resto-details">
+        <p>"{{resto.details}}"</p>
+      </div>
     </div>
 
-    <div class="resto-details">
-      <p>"{{resto.details}}"</p>
-    </div>
-
-  <div class="resto-info">
+  <div class="resto-info" ng-if='dataLoaded'>
     <ul class="list">
       <li class="item">
         <h4>Horario</h4>

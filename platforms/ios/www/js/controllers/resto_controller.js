@@ -1,13 +1,24 @@
 angular.module('restoApp.controllers')
 
-.controller('RestoDetailCtrl', function($scope,Restos,Menus,Promos) {
+.controller('RestoDetailCtrl', function($scope,Restos,$state,Location,LoadingService) {
 
-  $scope.resto = Restos.getSelectedResto()
-  $scope.current_time = new Date().getHours()
+  var resto_id = $state.params.id;
+  LoadingService.show();
+  
+  Location.get().then(function(response){
+    $scope.lat = response[0]
+    $scope.long = response[1]
+    Restos.get(resto_id,response).then(function(response){
+      $scope.resto = response;
+      LoadingService.hide();
+    });
+  })
+
+  $scope.current_time = new Date().getHours();
 
   $scope.dataLoaded = false ;
   $scope.loadRestoData = function(){
-    Restos.getData($scope.resto.id).then(function(response){
+    Restos.getData(resto_id).then(function(response){
       $scope.menus = response.menus;
       $scope.promos = response.promos;
       $scope.dataLoaded = true;

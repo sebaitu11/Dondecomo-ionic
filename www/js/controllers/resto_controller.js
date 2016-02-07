@@ -4,7 +4,10 @@ angular.module('restoApp.controllers')
 
   var resto_id = $state.params.id;
   LoadingService.show();
+  
   Location.get().then(function(response){
+    $scope.lat = response[0]
+    $scope.long = response[1]
     Restos.get(resto_id,response).then(function(response){
       $scope.resto = response;
       LoadingService.hide();

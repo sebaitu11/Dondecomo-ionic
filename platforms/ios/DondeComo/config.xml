@@ -38,18 +38,19 @@
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
     </feature>
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />
     <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
     <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
+    <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
     <icon height="50" src="resources/ios/icon/icon-50.png" width="50" />
     <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100" />
     <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />
@@ -78,7 +79,7 @@
     <author email="hi@elevation.com" href="http://elevation.com/">
       Elevation Team
     </author>
-    <content original-src="index.html" src="http://10.0.1.6:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <access origin="comgooglemaps://*" />
     <access launch-external="yes" origin="tel:*" />
@@ -87,5 +88,5 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
-    <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
+    <icon src="resources/ios/icon/icon-40@2x.png" />
 </widget>

@@ -12,19 +12,21 @@ angular.module('restoApp.services')
     }, function(error) {
       console.log("error");
       Location.position = error;
-      deferred.reject();
+      deferred.reject(Location.position);
     });
 
     return deferred.promise;
   },
 
-  Location.get = function(){
+  Location.get = function(refresh){
     var deferred = $q.defer();
-    if(Location.position){
+    if(Location.position && refresh === false){
       deferred.resolve(Location.position)
     }else {
       Location.set().then(function(response){
         deferred.resolve(Location.position)
+      }, function(error){
+        deferred.reject(error)
       })
     }
     return deferred.promise;

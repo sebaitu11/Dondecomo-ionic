@@ -9,14 +9,19 @@
       Estacionamiento
       <i class="icon ion-model-s"></i>
     </li>
-    <li ng-if="resto.hasMenu" class="item item-icon-right" >
-      Menu del Día
-      <i class="icon ion-fork"></i>
-    </li>
     <li ng-if="resto.hasReservas" class="item item-icon-right" >
       Reservas
-      <i class="icon ion-ios7-bookmarks"></i>
+      <i class="icon ion-ios-bookmarks"></i>
     </li>
+    <li ng-if="resto.hasDelivery" class="item item-icon-right" >
+      Delivery
+      <i class="icon ion-ios-paperplane"></i>
+    </li>
+    <li ng-if="resto.hasTickets" class="item item-icon-right" >
+      Cheque Restaurant
+      <i class="icon ion-ios-pricetags"></i>
+    </li>
+
   </div>
   <div class="bar bar-footer close" ng-click="closeModalAttr()">
     <div class="title">Cerrar</div>

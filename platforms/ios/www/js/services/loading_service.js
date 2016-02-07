@@ -7,10 +7,10 @@ angular.module('restoApp.services')
             message = "Cargando..."
           }
           $ionicLoading.show({
-              template: '<i class="icon ion-ios7-reloading"></i><br />' + message,
+              template: '<ion-spinner icon="spiral">' + message + '</ion-spinner>',
               animation: 'fade-in',
               showBackdrop: param,
-              maxWidth: 300,
+              maxWidth: 500,
               showDelay: 10
             });
         },

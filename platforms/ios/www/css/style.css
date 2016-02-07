@@ -6,6 +6,10 @@
   .resto-slides img {
     width: 100%; }
 
+.empty-restos {
+  padding: 1em;
+  text-align: center; }
+
 .full-width {
   width: 100%; }
 
@@ -86,7 +90,8 @@
 .image-container img {
   opacity: 1;
   transition: opacity .3s ease-in;
-  width: 100%; }
+  width: 100%;
+  min-height: 184px; }
 .image-container span {
   height: 200px;
   width: 320px; }
@@ -296,6 +301,7 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   overflow: hidden;
   position: relative; }
   .image-container-detail img {
+    min-height: 204px;
     width: 100%; }
   .image-container-detail .overlay-top {
     position: absolute;
@@ -656,8 +662,17 @@ button.button-icon.icon.ion-ios7-arrow-back.button.back-button {
   .bar-stable .button {
     color: #f06d22 !important; }
 
+.text-align-center {
+  text-align: center; }
+
 .tabs {
   background-color: #f1f1f1; }
+
+.loading-for-data {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  width: 100%; }
 
 .pane {
   background-color: #f1f1f1 !important; }

@@ -1,14 +1,12 @@
 angular.module('restoApp.controllers')
 
-.controller('SearchCtrl', function($scope,$ionicModal,Search,Restos,LoadingService) {
+.controller('SearchCtrl', function($scope,$ionicModal,Search,Restos,LoadingService,Location) {
 
   $ionicModal.fromTemplateUrl('templates/partials/tab-restos/_search.html', {
     scope: $scope
     }).then(function(modal) {
       $scope.modalSearch = modal;
     });
-
-  
   var position = [$scope.lat, $scope.long]
   
   $scope.restosSearch = []
@@ -21,26 +19,23 @@ angular.module('restoApp.controllers')
   $scope.search = function(text){
     if(text.length > 2){
       LoadingService.show(false);
-      Search.search(text,position).then(function(response){
-        $scope.restosSearch = response;
-        if(response.length > 0){
-          $scope.showGuideInfo = false;
-          $scope.showNoData = false;
-        }else {
-          $scope.showNoData = true
-        }
-        LoadingService.hide();
+      Location.get().then(function(response){
+        Search.search(text,response).then(function(response){
+          $scope.restosSearch = response;
+          if(response.length > 0){
+            $scope.showGuideInfo = false;
+            $scope.showNoData = false;
+          }else {
+            $scope.showNoData = true
+          }
+          LoadingService.hide();
+        })
       })
     }else{
       $scope.restosSearch = [];
       $scope.showGuideInfo = true;
       $scope.showNoData = false;
     }
-  }
-
-  $scope.goToResto = function(resto){
-    selected_resto = _.where($scope.restos,{id:resto.id})
-    Restos.setSelectedResto(selected_resto[0]);
   }
 
   $scope.setSelected = function(resto){

@@ -1,6 +1,5 @@
 <ion-modal-view>
     <ion-content class="search-view">
-      
       <div class="bar bar-header item-input-inset">
         <label class="item-input-wrapper">
           <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -12,8 +11,8 @@
     </div>
 
     <div class="list">
-      <a ng-click="goToResto(resto)" class="item resto-search item-thumbnail-left" ng-repeat="resto in restosSearch" ui-sref="restos-detail({id :resto.id})">
-        <img ng-src="{{resto.image_url}}">  
+      <a ng-click="closeModalSearch()" class="item resto-search item-thumbnail-left" ng-repeat="resto in restosSearch" ui-sref="restos-detail({id :resto.id})">
+        <img ng-src="{{resto.image}}">  
         <h2>{{resto.name}}</h2>
         <span>| {{resto.tipo}}</span>
         <p>{{resto.details}}</p>

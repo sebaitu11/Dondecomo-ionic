@@ -1,11 +1,11 @@
 
-angular.module('restoApp', ['ionic','ngCordova','angular-data.DSCacheFactory','restoApp.controllers', 'restoApp.services', 'restoApp.directives','ngImgCache'])
+angular.module('restoApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch','angular-data.DSCacheFactory','restoApp.controllers', 'restoApp.services', 'restoApp.directives','ngImgCache'])
 
-.run(function($ionicPlatform,DSCacheFactory,$http,$cordovaGeolocation,$rootScope) {
+.run(function($ionicPlatform,DSCacheFactory,$http,$cordovaGeolocation,$rootScope,Location) {
   
   ImgCache.options.debug = false;
   ImgCache.options.chromeQuota = 50*1024*1024;        
-  
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

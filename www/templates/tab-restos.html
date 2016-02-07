@@ -7,6 +7,13 @@
   </ion-nav-buttons>
 
   <ion-content scrollbar-y="false" class="has-header" padding="false">
+  
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="updateRestos()">
+    </ion-refresher>
+    
+    <h4 ng-if="errorMsg" class="text-align-center">{{errorMsg}}</h4>
 
     <ion-list>
       <ion-item
@@ -32,7 +39,8 @@
     </ion-list>
 
     <ion-infinite-scroll
-      icon="ion-loading-c"
+      ng-if="hasMoreData"
+      spinner="ios"
       on-infinite="loadMore()"
       distance = "20%">
     </ion-infinite-scroll>

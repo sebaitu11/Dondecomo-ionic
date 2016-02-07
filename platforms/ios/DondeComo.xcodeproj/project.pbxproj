@@ -6,6 +6,7 @@
 	objectVersion = 46;
 	objects = {
 /* Begin PBXBuildFile section */
+		0FFC90F06BD9430B991DFB05 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 191B9F5D2140475A9EF154B0 /* CDVSplashScreen.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
@@ -27,9 +28,9 @@
 		30B4F30219D5E07200D9F7D8 /* Default-Landscape-736h.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B4F2FF19D5E07200D9F7D8 /* Default-Landscape-736h.png */; };
 		30C1856619D5FC0A00212699 /* icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C1856519D5FC0A00212699 /* icon-60@3x.png */; };
 		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
-		3FC6562DFC584F9DAF806D39 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00F73227054EB9B1B51C08 /* CDVSplashScreen.m */; };
 		4ECA2C46492E4097A95C72EA /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE05B0EADA1420BB18771F3 /* UIWebViewExtension.m */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
+		5EE21EAB1D9D4404AF68A386 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CE0710AF7643AEA2FD7DCD /* CDVViewController+SplashScreen.m */; };
 		5F7BE541C2964DEBB97D45CC /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF24D57824448ABA43BB8FB /* CDVAssetLibraryFilesystem.m */; };
 		7E7966DE1810823500FA85AD /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D41810823500FA85AD /* icon-40.png */; };
 		7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D51810823500FA85AD /* icon-40@2x.png */; };
@@ -71,6 +72,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18032A956A6944E6A01EB2F4 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; };
+		18843E2AE3804E4F8BA4049A /* CDVSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
+		191B9F5D2140475A9EF154B0 /* CDVSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* DondeComo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DondeComo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +108,7 @@
 		4208A6F769C74DB09AE13FB2 /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = org.apache.cordova.console/CDVLogger.m; sourceTree = "<group>"; };
 		44184B005B2541ADB8A75D65 /* CDVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = org.apache.cordova.device/CDVDevice.m; sourceTree = "<group>"; };
 		4770C7429B3140C390792F8E /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = org.apache.cordova.device/CDVDevice.h; sourceTree = "<group>"; };
+		55CE0710AF7643AEA2FD7DCD /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		5DE21E163CEE4F519912AD13 /* CDVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVFile.h; path = org.apache.cordova.file/CDVFile.h; sourceTree = "<group>"; };
 		600679C135854EBBA95D39C9 /* CDVStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = org.apache.cordova.statusbar/CDVStatusBar.m; sourceTree = "<group>"; };
@@ -259,6 +264,10 @@
 				AD5D5615DF5B47FB84F2D1EB /* CDVSplashScreen.h */,
 				600679C135854EBBA95D39C9 /* CDVStatusBar.m */,
 				D9E5FFA6AF854F1ABBC7AC71 /* CDVStatusBar.h */,
+				191B9F5D2140475A9EF154B0 /* CDVSplashScreen.m */,
+				55CE0710AF7643AEA2FD7DCD /* CDVViewController+SplashScreen.m */,
+				18843E2AE3804E4F8BA4049A /* CDVSplashScreen.h */,
+				18032A956A6944E6A01EB2F4 /* CDVViewController+SplashScreen.h */,
 			);
 			name = Plugins;
 			path = DondeComo/Plugins;
@@ -457,8 +466,9 @@
 				5F7BE541C2964DEBB97D45CC /* CDVAssetLibraryFilesystem.m in Sources */,
 				8063E49764874FCBAAC5BFDC /* CDVFileTransfer.m in Sources */,
 				81CA6CE954924516BA6F345E /* CDVLocation.m in Sources */,
-				3FC6562DFC584F9DAF806D39 /* CDVSplashScreen.m in Sources */,
 				FAF469DD5E3D430F9CF3CC6B /* CDVStatusBar.m in Sources */,
+				0FFC90F06BD9430B991DFB05 /* CDVSplashScreen.m in Sources */,
+				5EE21EAB1D9D4404AF68A386 /* CDVViewController+SplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +488,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: eddie rosenmann (W5A3SS43VW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -502,7 +512,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = DondeComo;
-				PROVISIONING_PROFILE = "e6b8659e-fcf6-4541-b77c-b6414e5cf095";
+				PROVISIONING_PROFILE = "e903b849-2596-487b-b5bc-db6b7e545e8c";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -512,7 +522,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: eddie rosenmann (W5A3SS43VW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -534,7 +544,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = DondeComo;
-				PROVISIONING_PROFILE = "e6b8659e-fcf6-4541-b77c-b6414e5cf095";
+				PROVISIONING_PROFILE = "e903b849-2596-487b-b5bc-db6b7e545e8c";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -549,7 +559,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: eddie rosenmann (FWP762NJ58)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
@@ -564,6 +574,7 @@
 					"\"$(OBJROOT)/UninstalledProducts/include\"",
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 				);
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -588,7 +599,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: eddie rosenmann (W5A3SS43VW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -610,7 +621,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = DondeComo;
-				PROVISIONING_PROFILE = "e6b8659e-fcf6-4541-b77c-b6414e5cf095";
+				PROVISIONING_PROFILE = "e903b849-2596-487b-b5bc-db6b7e545e8c";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Distribution;
@@ -625,8 +636,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: eddie rosenmann (FWP762NJ58)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eddie rosenmann (FWP762NJ58)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
@@ -670,7 +681,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: eddie rosenmann (FWP762NJ58)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
@@ -684,7 +695,9 @@
 					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
 					"\"$(OBJROOT)/UninstalledProducts/include\"",
 					"\"$(BUILT_PRODUCTS_DIR)\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"\n",
 				);
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"\n";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-weak_framework",

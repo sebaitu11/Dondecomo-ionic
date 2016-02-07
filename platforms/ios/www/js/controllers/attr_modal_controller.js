@@ -4,22 +4,21 @@ angular.module('restoApp.controllers')
 
   $ionicModal.fromTemplateUrl('templates/partials/resto-details/_attr.html', {
     scope: $scope,
-    animation: 'fade-in'
     }).then(function(modal) {
       $scope.attrModal = modal;
     });
 
-  $scope.openModalAttr = function() {
-    $scope.attrModal.show();
-  };
+    $scope.openModalAttr = function() {
+      $scope.attrModal.show();
+    };
 
-  $scope.closeModalAttr = function() {
-    $scope.attrModal.hide();
-  };
+    $scope.closeModalAttr = function() {
+      $scope.attrModal.hide();
+    };
 
-  $scope.$on('$destroy', function() {
-    $scope.attrModal.remove();
-    console.log("destroy")
-  });
+    $scope.$on('$destroy', function() {
+      $scope.attrModal.remove();
+      console.log("destroy")
+    });
 
   });
